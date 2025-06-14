@@ -1,0 +1,261 @@
+---
+title: "[CSP-J 2021] 网络连接"
+date: 2025-06-11 22:02:41
+tags:
+---
+
+TCP/IP 协议是网络通信领域的一项重要协议。
+今天你的任务，就是尝试利用这个协议，还原一个简化后的网络连接场景。
+
+<!-- More -->
+
+在本问题中，计算机分为两大类：
+服务机（`Server`）和客户机（`Client`）。
+服务机负责建立连接，客户机负责加入连接。
+
+需要进行网络连接的计算机共有 $n$ 台，编号为 $1∼n$，这些机器将按编号递增的顺序，依次发起一条建立连接或加入连接的操作。
+
+每台机器在尝试建立或加入连接时需要提供一个地址串。
+服务机提供的地址串表示它尝试建立连接的地址，客户机提供的地址串表示它尝试加入连接的地址。
+
+一个符合规范的地址串应当具有以下特征：
+
+- 必须形如 `a.b.c.d:e` 的格式，其中 $a,b,c,d,e$ 均为非负整数；
+- $0 \le a,b,c,d \le 255$，$0 \le e \le 65535$；
+- $a,b,c,d,e$ 均不能含有多余的前导 0。
+
+相应地，不符合规范的地址串可能具有以下特征：
+
+- 不是形如 `a.b.c.d:e` 格式的字符串，例如含有多于 3 个字符 `.` 或多于 1 个字符 `:` 等情况；
+- 整数 $a,b,c,d,e$ 中某一个或多个超出上述范围；
+- 整数 $a,b,c,d,e$ 中某一个或多个含有多余的前导 0。
+
+例如，地址串 `192.168.0.255:80` 是符合规范的，但 `192.168.0.999:80`、`192.168.00.1:10`、`192.168.0.1:088`、`192:168:0:1.233` 均是不符合规范的。
+
+如果服务机或客户机在发起操作时提供的地址串不符合规范，这条操作将被直接忽略。
+
+在本问题中，我们假定凡是符合上述规范的地址串均可参与正常的连接，你无需考虑每个地址串的实际意义。
+
+由于网络阻塞等原因，不允许两台服务机使用相同的地址串，如果此类现象发生，后一台尝试建立连接的服务机将会无法成功建立连接；
+除此之外，凡是提供符合规范的地址串的服务机均可成功建立连接。
+
+如果某台提供符合规范的地址的客户机在尝试加入连接时，与先前某台已经成功建立连接的服务机提供的地址串相同，这台客户机就可以成功加入连接，并称其连接到这台服务机；
+如果找不到这样的服务机，则认为这台客户机无法成功加入连接。
+
+请注意，尽管不允许两台不同的服务机使用相同的地址串，但多台客户机使用同样的地址串，以及同一台服务机同时被多台客户机连接的情况是被允许的。
+
+你的任务很简单：
+在给出每台计算机的类型以及地址串之后，判断这台计算机的连接情况。
+
+## I/O
+
+### 输入
+
+第一行，一个正整数 $n$。
+
+接下来 $n$ 行，每行两个字符串 $op,ad$，按照编号从小到大给出每台计算机的类型及地址串。
+
+其中 $op$ 保证为字符串 `Server` 或 `Client` 之一，$ad$ 为一个长度不超过 25 的，仅由数字、字符 `.` 和字符 `:` 组成的非空字符串。
+
+每行的两个字符串之间用恰好一个空格分隔开，每行的末尾没有多余的空格。
+
+#### 样例
+
+```txt 1
+5
+Server 192.168.1.1:8080
+Server 192.168.1.1:8080
+Client 192.168.1.1:8080
+Client 192.168.1.1:80
+Client 192.168.1.1:99999
+```
+
+```txt 2
+10
+Server 192.168.1.1:80
+Client 192.168.1.1:80
+Client 192.168.1.1:8080
+Server 192.168.1.1:80
+Server 192.168.1.1:8080
+Server 192.168.1.999:0
+Client 192.168.1.1.8080
+Client 192.168.1.1:8080
+Client 192.168.1.1:80
+Client 192.168.1.999:0
+```
+
+### 输出
+
+输出共 $n$ 行，每行一个正整数或字符串表示第 $i$ 台计算机的连接状态。
+其中：
+
+- 如果第 $i$ 台计算机为服务机，则：
+
+  - 如果其提供符合规范的地址串且成功建立连接，输出字符串 `OK`。
+  - 如果其提供符合规范的地址串，但由于先前有相同地址串的服务机而无法成功建立连接，输出字符串 `FAIL`。
+  - 如果其提供的地址串不是符合规范的地址串，输出字符串 `ERR`。
+
+- 如果第 i 台计算机为客户机，则：
+  - 如果其提供符合规范的地址串且成功加入连接，输出一个正整数表示这台客户机连接到的服务机的编号。
+  - 如果其提供符合规范的地址串，但无法成功加入连接时，输出字符串 `FAIL`。
+  - 如果其提供的地址串不是符合规范的地址串，输出字符串 `ERR`。
+
+#### 样例
+
+```txt 1
+OK
+FAIL
+1
+FAIL
+ERR
+```
+
+```txt 2
+OK
+1
+FAIL
+FAIL
+OK
+ERR
+ERR
+5
+1
+ERR
+```
+
+### 数据范围
+
+| 测试点编号 | $n \le$ | 特殊性质 |
+| ---------- | ------- | -------- |
+| 1          | 10      | 1 2 3    |
+| 2~3        | 100     | 1 2 3    |
+| 4~5        | 1000    | 1 2 3    |
+| 6~8        | 1000    | 1 2      |
+| 9~11       | 1000    | 1        |
+| 12~13      | 1000    | 2        |
+| 14~15      | 1000    | 4        |
+| 16~17      | 1000    | 5        |
+| 18~20      | 1000    | 无       |
+
+性质：
+1. 保证所有的地址串均符合规范
+2. 保证对于任意两台不同的计算机，如果它们同为服务机或者同为客户机，则它们提供的地址串一定不同
+3. 保证任意一台服务机的编号都小于所有的客户机
+4. 保证所有的地址串均形如 `a.b.c.d:e` 的格式，其中 $a,b,c,d,e$ 均为不超过 $10^9$ 且不含有多余前导 0 的非负整数
+5. 保证所有的地址串均形如 `a.b.c.d:e` 的格式，其中 $a,b,c,d,e$ 均为只含有数字的非空字符串
+
+对于 100% 的数据，保证 $1 \le n \le 1000$。
+
+#### 样例 1 解释
+
+计算机 1 为服务机，提供符合规范的地址串 `192.168.1.1:8080`，成功建立连接；
+
+计算机 2 为服务机，提供与计算机 1 相同的地址串，未能成功建立连接；
+
+计算机 3 为客户机，提供符合规范的地址串 `192.168.1.1:8080`，成功加入连接，并连接到服务机 1；
+
+计算机 4 为客户机，提供符合规范的地址串 `192.168.1.1:80`，找不到服务机与其连接；
+
+计算机 5 为客户机，提供的地址串 `192.168.1.1:99999` 不符合规范。
+
+## 题解
+
+```cpp
+#pragma GCC optimize(3, "Ofast", "inline")
+#include <iostream>
+#include <string>
+#include <map>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+map<string,int> conns;
+
+bool partCheck(string &part, int max, int min){
+    if(part.empty()){
+        //cout << "Part is empty." << endl;
+        return false;
+    }
+    long long value = 0;
+    for(char c : part){
+        if(c>='0' && c<='9') value = value*10 + c - '0';
+        else{
+            //cout << "Character out of range." << endl;
+            return false;
+        }
+    }
+    if(value<min || value>max){
+        //cout << "Part value out of range." << endl;
+        return false;
+    }
+    part.clear();
+    do{
+        part += (char)(value%10 + '0');
+        value /= 10;
+    }while(value);
+    reverse(part.begin(), part.end());
+    return true;
+}
+
+bool check(string addr){
+    int pos = -1, lastPos = -1;
+    vector<string> parts;
+    string part;
+    while((pos = addr.find('.', pos+1))!=string::npos){
+        part = addr.substr(lastPos+1, pos-lastPos-1);
+        if(!partCheck(part, 255, 0)) return false;
+        parts.push_back(part);
+        lastPos = pos;
+    }
+    if(parts.size()!=3){
+        //cout << "Quantity of parts wrong." << endl;
+        return false;
+    }
+    pos = addr.find(':');
+    if(pos==string::npos){
+        //cout << "Colon not found." << endl;
+        return false;
+    }
+    part = addr.substr(lastPos+1, pos-lastPos-1);
+    if(!partCheck(part, 255, 0)) return false;
+    string port = addr.substr(pos+1);
+    if(!partCheck(port, 65535, 0)) return false;
+    string formedAddr = "";
+    for(string p : parts) formedAddr += p + '.';
+    formedAddr += part + ':' + port;
+    if(formedAddr == addr){
+        return true;
+    }else{
+        //cout << formedAddr << " not match." << endl;
+        return false;
+    }
+}
+
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    int n;
+    cin >> n;
+    for(int i=1;i<=n;i++){
+        string op, ad;
+        cin >> op >> ad;
+        if(!check(ad)){
+            cout << "ERR" << endl;
+            continue;
+        }
+        switch(op[0]){
+            case 'S':
+                if(conns.count(ad)) cout << "FAIL" << endl;
+                else{
+                    cout << "OK" << endl;
+                    conns[ad] = i;
+                }
+                break;
+            case 'C':
+                if(conns.count(ad)) cout << conns[ad] << endl;
+                else cout << "FAIL" << endl;
+        }
+    }
+    return 0;
+}
+```
