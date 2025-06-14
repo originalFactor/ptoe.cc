@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.ptoe.cc","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.23.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="TCP&#x2F;IP 协议是网络通信领域的一项重要协议。 今天你的任务，就是尝试利用这个协议，还原一个简化后的网络连接场景。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[CSP-J 2021] 网络连接">
+<meta property="og:url" content="https://www.ptoe.cc/network-connections.html">
+<meta property="og:site_name" content="元素的笔记">
+<meta property="og:description" content="TCP&#x2F;IP 协议是网络通信领域的一项重要协议。 今天你的任务，就是尝试利用这个协议，还原一个简化后的网络连接场景。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-06-11T14:02:41.000Z">
+<meta property="article:modified_time" content="2025-06-13T12:12:29.350Z">
+<meta property="article:author" content="元素">
+<meta property="article:tag" content="C++">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://www.ptoe.cc/network-connections.html">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.ptoe.cc/network-connections.html","path":"network-connections.html","title":"[CSP-J 2021] 网络连接"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>[CSP-J 2021] 网络连接 | 元素的笔记</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">元素的笔记</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">技术创造新生</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#io"><span class="nav-number">1.</span> <span class="nav-text">I&#x2F;O</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5"><span class="nav-number">1.1.</span> <span class="nav-text">输入</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B"><span class="nav-number">1.1.1.</span> <span class="nav-text">样例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA"><span class="nav-number">1.2.</span> <span class="nav-text">输出</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">样例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E8%8C%83%E5%9B%B4"><span class="nav-number">1.3.</span> <span class="nav-text">数据范围</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B-1-%E8%A7%A3%E9%87%8A"><span class="nav-number">1.3.1.</span> <span class="nav-text">样例 1 解释</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3"><span class="nav-number">2.</span> <span class="nav-text">题解</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">元素</p>
+  <div class="site-description" itemprop="description">只是一个臭写算法的</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.ptoe.cc/network-connections.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="元素">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="元素的笔记">
+      <meta itemprop="description" content="只是一个臭写算法的">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="[CSP-J 2021] 网络连接 | 元素的笔记">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [CSP-J 2021] 网络连接
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-06-11 22:02:41" itemprop="dateCreated datePublished" datetime="2025-06-11T22:02:41+08:00">2025-06-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-06-13 20:12:29" itemprop="dateModified" datetime="2025-06-13T20:12:29+08:00">2025-06-13</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>TCP/IP 协议是网络通信领域的一项重要协议。
+今天你的任务，就是尝试利用这个协议，还原一个简化后的网络连接场景。</p>
+<span id="more"></span>
+<p>在本问题中，计算机分为两大类：
+服务机（<code>Server</code>）和客户机（<code>Client</code>）。
+服务机负责建立连接，客户机负责加入连接。</p>
+<p>需要进行网络连接的计算机共有 <span
+class="math inline"><em>n</em></span> 台，编号为 <span
+class="math inline">1 ∼ <em>n</em></span>，这些机器将按编号递增的顺序，依次发起一条建立连接或加入连接的操作。</p>
+<p>每台机器在尝试建立或加入连接时需要提供一个地址串。
+服务机提供的地址串表示它尝试建立连接的地址，客户机提供的地址串表示它尝试加入连接的地址。</p>
+<p>一个符合规范的地址串应当具有以下特征：</p>
+<ul>
+<li>必须形如 <code>a.b.c.d:e</code> 的格式，其中 <span
+class="math inline"><em>a</em>, <em>b</em>, <em>c</em>, <em>d</em>, <em>e</em></span>
+均为非负整数；</li>
+<li><span
+class="math inline">0 ≤ <em>a</em>, <em>b</em>, <em>c</em>, <em>d</em> ≤ 255</span>，<span
+class="math inline">0 ≤ <em>e</em> ≤ 65535</span>；</li>
+<li><span
+class="math inline"><em>a</em>, <em>b</em>, <em>c</em>, <em>d</em>, <em>e</em></span>
+均不能含有多余的前导 0。</li>
+</ul>
+<p>相应地，不符合规范的地址串可能具有以下特征：</p>
+<ul>
+<li>不是形如 <code>a.b.c.d:e</code> 格式的字符串，例如含有多于 3 个字符
+<code>.</code> 或多于 1 个字符 <code>:</code> 等情况；</li>
+<li>整数 <span
+class="math inline"><em>a</em>, <em>b</em>, <em>c</em>, <em>d</em>, <em>e</em></span>
+中某一个或多个超出上述范围；</li>
+<li>整数 <span
+class="math inline"><em>a</em>, <em>b</em>, <em>c</em>, <em>d</em>, <em>e</em></span>
+中某一个或多个含有多余的前导 0。</li>
+</ul>
+<p>例如，地址串 <code>192.168.0.255:80</code> 是符合规范的，但
+<code>192.168.0.999:80</code>、<code>192.168.00.1:10</code>、<code>192.168.0.1:088</code>、<code>192:168:0:1.233</code>
+均是不符合规范的。</p>
+<p>如果服务机或客户机在发起操作时提供的地址串不符合规范，这条操作将被直接忽略。</p>
+<p>在本问题中，我们假定凡是符合上述规范的地址串均可参与正常的连接，你无需考虑每个地址串的实际意义。</p>
+<p>由于网络阻塞等原因，不允许两台服务机使用相同的地址串，如果此类现象发生，后一台尝试建立连接的服务机将会无法成功建立连接；
+除此之外，凡是提供符合规范的地址串的服务机均可成功建立连接。</p>
+<p>如果某台提供符合规范的地址的客户机在尝试加入连接时，与先前某台已经成功建立连接的服务机提供的地址串相同，这台客户机就可以成功加入连接，并称其连接到这台服务机；
+如果找不到这样的服务机，则认为这台客户机无法成功加入连接。</p>
+<p>请注意，尽管不允许两台不同的服务机使用相同的地址串，但多台客户机使用同样的地址串，以及同一台服务机同时被多台客户机连接的情况是被允许的。</p>
+<p>你的任务很简单：
+在给出每台计算机的类型以及地址串之后，判断这台计算机的连接情况。</p>
+<h2 id="io">I/O</h2>
+<h3 id="输入">输入</h3>
+<p>第一行，一个正整数 <span class="math inline"><em>n</em></span>。</p>
+<p>接下来 <span class="math inline"><em>n</em></span> 行，每行两个字符串
+<span
+class="math inline"><em>o</em><em>p</em>, <em>a</em><em>d</em></span>，按照编号从小到大给出每台计算机的类型及地址串。</p>
+<p>其中 <span class="math inline"><em>o</em><em>p</em></span>
+保证为字符串 <code>Server</code> 或 <code>Client</code> 之一，<span
+class="math inline"><em>a</em><em>d</em></span> 为一个长度不超过 25
+的，仅由数字、字符 <code>.</code> 和字符 <code>:</code>
+组成的非空字符串。</p>
+<p>每行的两个字符串之间用恰好一个空格分隔开，每行的末尾没有多余的空格。</p>
+<h4 id="样例">样例</h4>
+<figure class="highlight txt"><figcaption><span>1</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">5</span><br><span class="line">Server 192.168.1.1:8080</span><br><span class="line">Server 192.168.1.1:8080</span><br><span class="line">Client 192.168.1.1:8080</span><br><span class="line">Client 192.168.1.1:80</span><br><span class="line">Client 192.168.1.1:99999</span><br></pre></td></tr></table></figure>
+<figure class="highlight txt"><figcaption><span>2</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">10</span><br><span class="line">Server 192.168.1.1:80</span><br><span class="line">Client 192.168.1.1:80</span><br><span class="line">Client 192.168.1.1:8080</span><br><span class="line">Server 192.168.1.1:80</span><br><span class="line">Server 192.168.1.1:8080</span><br><span class="line">Server 192.168.1.999:0</span><br><span class="line">Client 192.168.1.1.8080</span><br><span class="line">Client 192.168.1.1:8080</span><br><span class="line">Client 192.168.1.1:80</span><br><span class="line">Client 192.168.1.999:0</span><br></pre></td></tr></table></figure>
+<h3 id="输出">输出</h3>
+<p>输出共 <span class="math inline"><em>n</em></span>
+行，每行一个正整数或字符串表示第 <span
+class="math inline"><em>i</em></span> 台计算机的连接状态。 其中：</p>
+<ul>
+<li><p>如果第 <span class="math inline"><em>i</em></span>
+台计算机为服务机，则：</p>
+<ul>
+<li>如果其提供符合规范的地址串且成功建立连接，输出字符串
+<code>OK</code>。</li>
+<li>如果其提供符合规范的地址串，但由于先前有相同地址串的服务机而无法成功建立连接，输出字符串
+<code>FAIL</code>。</li>
+<li>如果其提供的地址串不是符合规范的地址串，输出字符串
+<code>ERR</code>。</li>
+</ul></li>
+<li><p>如果第 i 台计算机为客户机，则：</p>
+<ul>
+<li>如果其提供符合规范的地址串且成功加入连接，输出一个正整数表示这台客户机连接到的服务机的编号。</li>
+<li>如果其提供符合规范的地址串，但无法成功加入连接时，输出字符串
+<code>FAIL</code>。</li>
+<li>如果其提供的地址串不是符合规范的地址串，输出字符串
+<code>ERR</code>。</li>
+</ul></li>
+</ul>
+<h4 id="样例-1">样例</h4>
+<figure class="highlight txt"><figcaption><span>1</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">OK</span><br><span class="line">FAIL</span><br><span class="line">1</span><br><span class="line">FAIL</span><br><span class="line">ERR</span><br></pre></td></tr></table></figure>
+<figure class="highlight txt"><figcaption><span>2</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">OK</span><br><span class="line">1</span><br><span class="line">FAIL</span><br><span class="line">FAIL</span><br><span class="line">OK</span><br><span class="line">ERR</span><br><span class="line">ERR</span><br><span class="line">5</span><br><span class="line">1</span><br><span class="line">ERR</span><br></pre></td></tr></table></figure>
+<h3 id="数据范围">数据范围</h3>
+<table>
+<thead>
+<tr>
+<th>测试点编号</th>
+<th><span class="math inline"><em>n</em>≤</span></th>
+<th>特殊性质</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>10</td>
+<td>1 2 3</td>
+</tr>
+<tr>
+<td>2~3</td>
+<td>100</td>
+<td>1 2 3</td>
+</tr>
+<tr>
+<td>4~5</td>
+<td>1000</td>
+<td>1 2 3</td>
+</tr>
+<tr>
+<td>6~8</td>
+<td>1000</td>
+<td>1 2</td>
+</tr>
+<tr>
+<td>9~11</td>
+<td>1000</td>
+<td>1</td>
+</tr>
+<tr>
+<td>12~13</td>
+<td>1000</td>
+<td>2</td>
+</tr>
+<tr>
+<td>14~15</td>
+<td>1000</td>
+<td>4</td>
+</tr>
+<tr>
+<td>16~17</td>
+<td>1000</td>
+<td>5</td>
+</tr>
+<tr>
+<td>18~20</td>
+<td>1000</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<p>性质： 1. 保证所有的地址串均符合规范 2.
+保证对于任意两台不同的计算机，如果它们同为服务机或者同为客户机，则它们提供的地址串一定不同
+3. 保证任意一台服务机的编号都小于所有的客户机 4. 保证所有的地址串均形如
+<code>a.b.c.d:e</code> 的格式，其中 <span
+class="math inline"><em>a</em>, <em>b</em>, <em>c</em>, <em>d</em>, <em>e</em></span>
+均为不超过 <span class="math inline">10<sup>9</sup></span>
+且不含有多余前导 0 的非负整数 5. 保证所有的地址串均形如
+<code>a.b.c.d:e</code> 的格式，其中 <span
+class="math inline"><em>a</em>, <em>b</em>, <em>c</em>, <em>d</em>, <em>e</em></span>
+均为只含有数字的非空字符串</p>
+<p>对于 100% 的数据，保证 <span
+class="math inline">1 ≤ <em>n</em> ≤ 1000</span>。</p>
+<h4 id="样例-1-解释">样例 1 解释</h4>
+<p>计算机 1 为服务机，提供符合规范的地址串
+<code>192.168.1.1:8080</code>，成功建立连接；</p>
+<p>计算机 2 为服务机，提供与计算机 1
+相同的地址串，未能成功建立连接；</p>
+<p>计算机 3 为客户机，提供符合规范的地址串
+<code>192.168.1.1:8080</code>，成功加入连接，并连接到服务机 1；</p>
+<p>计算机 4 为客户机，提供符合规范的地址串
+<code>192.168.1.1:80</code>，找不到服务机与其连接；</p>
+<p>计算机 5 为客户机，提供的地址串 <code>192.168.1.1:99999</code>
+不符合规范。</p>
+<h2 id="题解">题解</h2>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">pragma</span> GCC optimize(3, <span class="string">&quot;Ofast&quot;</span>, <span class="string">&quot;inline&quot;</span>)</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line">map&lt;string,<span class="type">int</span>&gt; conns;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">partCheck</span><span class="params">(string &amp;part, <span class="type">int</span> max, <span class="type">int</span> min)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(part.<span class="built_in">empty</span>())&#123;</span><br><span class="line">        <span class="comment">//cout &lt;&lt; &quot;Part is empty.&quot; &lt;&lt; endl;</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> value = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">char</span> c : part)&#123;</span><br><span class="line">        <span class="keyword">if</span>(c&gt;=<span class="string">&#x27;0&#x27;</span> &amp;&amp; c&lt;=<span class="string">&#x27;9&#x27;</span>) value = value*<span class="number">10</span> + c - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="comment">//cout &lt;&lt; &quot;Character out of range.&quot; &lt;&lt; endl;</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(value&lt;min || value&gt;max)&#123;</span><br><span class="line">        <span class="comment">//cout &lt;&lt; &quot;Part value out of range.&quot; &lt;&lt; endl;</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    part.<span class="built_in">clear</span>();</span><br><span class="line">    <span class="keyword">do</span>&#123;</span><br><span class="line">        part += (<span class="type">char</span>)(value%<span class="number">10</span> + <span class="string">&#x27;0&#x27;</span>);</span><br><span class="line">        value /= <span class="number">10</span>;</span><br><span class="line">    &#125;<span class="keyword">while</span>(value);</span><br><span class="line">    <span class="built_in">reverse</span>(part.<span class="built_in">begin</span>(), part.<span class="built_in">end</span>());</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">check</span><span class="params">(string addr)</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> pos = <span class="number">-1</span>, lastPos = <span class="number">-1</span>;</span><br><span class="line">    vector&lt;string&gt; parts;</span><br><span class="line">    string part;</span><br><span class="line">    <span class="keyword">while</span>((pos = addr.<span class="built_in">find</span>(<span class="string">&#x27;.&#x27;</span>, pos<span class="number">+1</span>))!=string::npos)&#123;</span><br><span class="line">        part = addr.<span class="built_in">substr</span>(lastPos<span class="number">+1</span>, pos-lastPos<span class="number">-1</span>);</span><br><span class="line">        <span class="keyword">if</span>(!<span class="built_in">partCheck</span>(part, <span class="number">255</span>, <span class="number">0</span>)) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        parts.<span class="built_in">push_back</span>(part);</span><br><span class="line">        lastPos = pos;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(parts.<span class="built_in">size</span>()!=<span class="number">3</span>)&#123;</span><br><span class="line">        <span class="comment">//cout &lt;&lt; &quot;Quantity of parts wrong.&quot; &lt;&lt; endl;</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    pos = addr.<span class="built_in">find</span>(<span class="string">&#x27;:&#x27;</span>);</span><br><span class="line">    <span class="keyword">if</span>(pos==string::npos)&#123;</span><br><span class="line">        <span class="comment">//cout &lt;&lt; &quot;Colon not found.&quot; &lt;&lt; endl;</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    part = addr.<span class="built_in">substr</span>(lastPos<span class="number">+1</span>, pos-lastPos<span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">if</span>(!<span class="built_in">partCheck</span>(part, <span class="number">255</span>, <span class="number">0</span>)) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    string port = addr.<span class="built_in">substr</span>(pos<span class="number">+1</span>);</span><br><span class="line">    <span class="keyword">if</span>(!<span class="built_in">partCheck</span>(port, <span class="number">65535</span>, <span class="number">0</span>)) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    string formedAddr = <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="keyword">for</span>(string p : parts) formedAddr += p + <span class="string">&#x27;.&#x27;</span>;</span><br><span class="line">    formedAddr += part + <span class="string">&#x27;:&#x27;</span> + port;</span><br><span class="line">    <span class="keyword">if</span>(formedAddr == addr)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="comment">//cout &lt;&lt; formedAddr &lt;&lt; &quot; not match.&quot; &lt;&lt; endl;</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        string op, ad;</span><br><span class="line">        cin &gt;&gt; op &gt;&gt; ad;</span><br><span class="line">        <span class="keyword">if</span>(!<span class="built_in">check</span>(ad))&#123;</span><br><span class="line">            cout &lt;&lt; <span class="string">&quot;ERR&quot;</span> &lt;&lt; endl;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">switch</span>(op[<span class="number">0</span>])&#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;S&#x27;</span>:</span><br><span class="line">                <span class="keyword">if</span>(conns.<span class="built_in">count</span>(ad)) cout &lt;&lt; <span class="string">&quot;FAIL&quot;</span> &lt;&lt; endl;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                    cout &lt;&lt; <span class="string">&quot;OK&quot;</span> &lt;&lt; endl;</span><br><span class="line">                    conns[ad] = i;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;C&#x27;</span>:</span><br><span class="line">                <span class="keyword">if</span>(conns.<span class="built_in">count</span>(ad)) cout &lt;&lt; conns[ad] &lt;&lt; endl;</span><br><span class="line">                <span class="keyword">else</span> cout &lt;&lt; <span class="string">&quot;FAIL&quot;</span> &lt;&lt; endl;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/soilders-sort.html" rel="prev" title="[C++] 士兵排列">
+                  <i class="fa fa-angle-left"></i> [C++] 士兵排列
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/find-the-number.html" rel="next" title="[C++] 找数">
+                  [C++] 找数 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备2024278726号-1 </a>
+  </div>
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">元素</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
