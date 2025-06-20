@@ -2,27 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.ptoe.cc/transfer-bus.html</loc>
+    <loc>https://www.ptoe.cc/excellent-split.html</loc>
     
-    <lastmod>2025-06-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.ptoe.cc/full-sorting.html</loc>
-    
-    <lastmod>2025-06-13</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.ptoe.cc/number-game.html</loc>
-    
-    <lastmod>2025-06-13</lastmod>
+    <lastmod>2025-06-20</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -31,7 +13,7 @@
   <url>
     <loc>https://www.ptoe.cc/find-the-number.html</loc>
     
-    <lastmod>2025-06-13</lastmod>
+    <lastmod>2025-06-20</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -39,6 +21,33 @@
   
   <url>
     <loc>https://www.ptoe.cc/network-connections.html</loc>
+    
+    <lastmod>2025-06-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ptoe.cc/transfer-bus.html</loc>
+    
+    <lastmod>2025-06-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ptoe.cc/number-game.html</loc>
+    
+    <lastmod>2025-06-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ptoe.cc/full-sorting.html</loc>
     
     <lastmod>2025-06-13</lastmod>
     
@@ -76,7 +85,7 @@
 
   <url>
     <loc>https://www.ptoe.cc/</loc>
-    <lastmod>2025-06-14</lastmod>
+    <lastmod>2025-06-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
