@@ -2,7 +2,10 @@
 title: "[CSP-J 2021] 网络连接"
 date: 2025-06-11 22:02:41
 tags:
+mathjax: true
 ---
+
+[洛谷P7911](https://www.luogu.com.cn/problem/P7911)
 
 TCP/IP 协议是网络通信领域的一项重要协议。
 今天你的任务，就是尝试利用这个协议，还原一个简化后的网络连接场景。
@@ -161,7 +164,6 @@ ERR
 ## 题解
 
 ```cpp
-#pragma GCC optimize(3, "Ofast", "inline")
 #include <iostream>
 #include <string>
 #include <map>
