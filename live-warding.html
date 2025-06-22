@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico">
+  <link rel="mask-icon" href="/favicon.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.ptoe.cc","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.23.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="直播获奖 - 洛谷 NOI2130 即将举行。为了增加观赏性，CCF 决定逐一评出每个选手的成绩，并直播即时的获奖分数线。本次竞赛的获奖率为 w%，即当前排名前 w% 的选手的最低成绩就是即时的分数线。 更具体地，若当前已评出了 p 个选手的成绩，则当前计划获奖人数为 max (1, ⌊p × w%⌋)，其中 w 是获奖百分比，⌊x⌋ 表示对 x 向下取整，max (x, y) 表">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[C++] 直播获奖">
+<meta property="og:url" content="https://www.ptoe.cc/live-warding.html">
+<meta property="og:site_name" content="元素的笔记">
+<meta property="og:description" content="直播获奖 - 洛谷 NOI2130 即将举行。为了增加观赏性，CCF 决定逐一评出每个选手的成绩，并直播即时的获奖分数线。本次竞赛的获奖率为 w%，即当前排名前 w% 的选手的最低成绩就是即时的分数线。 更具体地，若当前已评出了 p 个选手的成绩，则当前计划获奖人数为 max (1, ⌊p × w%⌋)，其中 w 是获奖百分比，⌊x⌋ 表示对 x 向下取整，max (x, y) 表">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.ptoe.cc/live-warding.assets/l453vhow.png">
+<meta property="article:published_time" content="2025-06-21T10:23:44.000Z">
+<meta property="article:modified_time" content="2025-06-22T14:37:26.880Z">
+<meta property="article:author" content="元素">
+<meta property="article:tag" content="C++">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.ptoe.cc/live-warding.assets/l453vhow.png">
+
+
+<link rel="canonical" href="https://www.ptoe.cc/live-warding.html">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.ptoe.cc/live-warding.html","path":"live-warding.html","title":"[C++] 直播获奖"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>[C++] 直播获奖 | 元素的笔记</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">元素的笔记</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">技术创造新生</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B-1"><span class="nav-number">3.</span> <span class="nav-text">输入输出样例 #1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5-1"><span class="nav-number">3.1.</span> <span class="nav-text">输入 #1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA-1"><span class="nav-number">3.2.</span> <span class="nav-text">输出 #1</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B-2"><span class="nav-number">4.</span> <span class="nav-text">输入输出样例 #2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5-2"><span class="nav-number">4.1.</span> <span class="nav-text">输入 #2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA-2"><span class="nav-number">4.2.</span> <span class="nav-text">输出 #2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B4%E6%98%8E%E6%8F%90%E7%A4%BA"><span class="nav-number">5.</span> <span class="nav-text">说明&#x2F;提示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B-1-%E8%A7%A3%E9%87%8A"><span class="nav-number">5.1.</span> <span class="nav-text">样例 1 解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E8%A7%84%E6%A8%A1%E4%B8%8E%E7%BA%A6%E5%AE%9A"><span class="nav-number">5.2.</span> <span class="nav-text">数据规模与约定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E7%A4%BA"><span class="nav-number">5.3.</span> <span class="nav-text">提示</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3"><span class="nav-number">6.</span> <span class="nav-text">题解</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">元素</p>
+  <div class="site-description" itemprop="description">只是一个臭写算法的</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.ptoe.cc/live-warding.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="元素">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="元素的笔记">
+      <meta itemprop="description" content="只是一个臭写算法的">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="[C++] 直播获奖 | 元素的笔记">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [C++] 直播获奖
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-06-21 18:23:44" itemprop="dateCreated datePublished" datetime="2025-06-21T18:23:44+08:00">2025-06-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-06-22 22:37:26" itemprop="dateModified" datetime="2025-06-22T22:37:26+08:00">2025-06-22</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P7072">直播获奖 -
+洛谷</a></p>
+<p>NOI2130 即将举行。为了增加观赏性，CCF
+决定逐一评出每个选手的成绩，并直播即时的获奖分数线。本次竞赛的获奖率为
+<span class="math inline"><em>w</em>%</span>，即当前排名前 <span
+class="math inline"><em>w</em>%</span>
+的选手的最低成绩就是即时的分数线。</p>
+<p>更具体地，若当前已评出了 <span class="math inline"><em>p</em></span>
+个选手的成绩，则当前计划获奖人数为 <span
+class="math inline">max (1, ⌊<em>p</em> × <em>w</em>%⌋)</span>，其中
+<span class="math inline"><em>w</em></span> 是获奖百分比，<span
+class="math inline">⌊<em>x</em>⌋</span> 表示对 <span
+class="math inline"><em>x</em></span> 向下取整，<span
+class="math inline">max (<em>x</em>, <em>y</em>)</span> 表示 <span
+class="math inline"><em>x</em></span> 和 <span
+class="math inline"><em>y</em></span>
+中较大的数。如有选手成绩相同，则所有成绩并列的选手都能获奖，因此实际获奖人数可能比计划中多。</p>
+<p>作为评测组的技术人员，请你帮 CCF 写一个直播程序。</p>
+<span id="more"></span>
+<h2 id="输入格式">输入格式</h2>
+<p>第一行有两个整数 <span
+class="math inline"><em>n</em>, <em>w</em></span>。分别代表选手总数与获奖率。<br />
+第二行有 <span class="math inline"><em>n</em></span>
+个整数，依次代表逐一评出的选手成绩。</p>
+<h2 id="输出格式">输出格式</h2>
+<p>只有一行，包含 <span class="math inline"><em>n</em></span>
+个非负整数，依次代表选手成绩逐一评出后，即时的获奖分数线。相邻两个整数间用一个空格分隔。</p>
+<h2 id="输入输出样例-1">输入输出样例 #1</h2>
+<h3 id="输入-1">输入 #1</h3>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">10 60</span><br><span class="line">200 300 400 500 600 600 0 300 200 100</span><br></pre></td></tr></table></figure>
+<h3 id="输出-1">输出 #1</h3>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">200 300 400 400 400 500 400 400 300 300</span><br></pre></td></tr></table></figure>
+<h2 id="输入输出样例-2">输入输出样例 #2</h2>
+<h3 id="输入-2">输入 #2</h3>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">10 30</span><br><span class="line">100 100 600 100 100 100 100 100 100 100</span><br></pre></td></tr></table></figure>
+<h3 id="输出-2">输出 #2</h3>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">100 100 600 600 600 600 100 100 100 100</span><br></pre></td></tr></table></figure>
+<h2 id="说明提示">说明/提示</h2>
+<h3 id="样例-1-解释">样例 1 解释</h3>
+<p><img src="live-warding.assets/l453vhow.png" /></p>
+<h3 id="数据规模与约定">数据规模与约定</h3>
+<p>各测试点的 <span class="math inline"><em>n</em></span> 如下表：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">测试点编号</th>
+<th style="text-align: center;"><span
+class="math inline"><em>n</em>=</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><span
+class="math inline">1 ∼ 3</span></td>
+<td style="text-align: center;"><span class="math inline">10</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span
+class="math inline">4 ∼ 6</span></td>
+<td style="text-align: center;"><span
+class="math inline">500</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span
+class="math inline">7 ∼ 10</span></td>
+<td style="text-align: center;"><span
+class="math inline">2000</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span
+class="math inline">11 ∼ 17</span></td>
+<td style="text-align: center;"><span
+class="math inline">10<sup>4</sup></span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span
+class="math inline">18 ∼ 20</span></td>
+<td style="text-align: center;"><span
+class="math inline">10<sup>5</sup></span></td>
+</tr>
+</tbody>
+</table>
+<p>对于所有测试点，每个选手的成绩均为不超过 <span
+class="math inline">600</span> 的非负整数，获奖百分比 <span
+class="math inline"><em>w</em></span> 是一个正整数且 <span
+class="math inline">1 ≤ <em>w</em> ≤ 99</span>。</p>
+<h3 id="提示">提示</h3>
+<p>在计算计划获奖人数时，如用浮点类型的变量（如 C/C++ 中的
+<code>float</code> 、 <code>double</code>，Pascal 中的 <code>real</code>
+、 <code>double</code> 、 <code>extended</code> 等）存储获奖比例 <span
+class="math inline"><em>w</em>%</span>，则计算 <span
+class="math inline">5 × 60%</span> 时的结果可能为 <span
+class="math inline">3.000001</span>，也可能为 <span
+class="math inline">2.999999</span>，向下取整后的结果不确定。因此，建议仅使用整型变量，以计算出准确值。</p>
+<h2 id="题解">题解</h2>
+<p>emm，这题感觉有点麻烦，我是用的 <code>std::map</code>
+的有序性（因为是红黑树）做的，这样复杂度低非常~多</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line">map&lt;<span class="type">int</span>, <span class="type">int</span>, greater&lt;<span class="type">int</span>&gt;&gt; Map;</span><br><span class="line"><span class="type">int</span> n, w, p, x, c, b;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; w;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        p = <span class="built_in">max</span>(<span class="number">1</span>, i*w/<span class="number">100</span>);</span><br><span class="line">        cin &gt;&gt; x;</span><br><span class="line">        Map[x]++;</span><br><span class="line">        c = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span>&amp; a : Map)&#123;</span><br><span class="line">            b = a.first;</span><br><span class="line">            c += a.second;</span><br><span class="line">            <span class="keyword">if</span>(c&gt;=p) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; b &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>过是可以过</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/excellent-split.html" rel="prev" title="[C++] 优秀的拆分">
+                  <i class="fa fa-angle-left"></i> [C++] 优秀的拆分
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/p7909.html" rel="next" title="[C++] 分糖果">
+                  [C++] 分糖果 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备2024278726号-1 </a>
+  </div>
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">元素</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>

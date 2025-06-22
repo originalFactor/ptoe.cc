@@ -20,15 +20,13 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.ptoe.cc","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.23.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="洛谷P5660 小 K 同学向小 P 同学发送了一个长度为 8 的 01 字符串 来玩数字游戏，小 P 同学想要知道字符串中究竟有多少个 1。 注意：01 字符串为每一个字符是 0 或者 1 的字符串，如“101”（不含双引号）为一个长度为 3 的 01 字符串。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="[C++] 数字游戏">
-<meta property="og:url" content="https://www.ptoe.cc/number-game.html">
+    <meta name="description" content="只是一个臭写算法的">
+<meta property="og:type" content="website">
+<meta property="og:title" content="元素的笔记">
+<meta property="og:url" content="https://www.ptoe.cc/page/2/">
 <meta property="og:site_name" content="元素的笔记">
-<meta property="og:description" content="洛谷P5660 小 K 同学向小 P 同学发送了一个长度为 8 的 01 字符串 来玩数字游戏，小 P 同学想要知道字符串中究竟有多少个 1。 注意：01 字符串为每一个字符是 0 或者 1 的字符串，如“101”（不含双引号）为一个长度为 3 的 01 字符串。">
+<meta property="og:description" content="只是一个臭写算法的">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-06-13T12:26:55.000Z">
-<meta property="article:modified_time" content="2025-06-20T06:48:19.425Z">
 <meta property="article:author" content="元素">
 <meta property="article:tag" content="C++">
 <meta property="article:tag" content="算法">
@@ -36,13 +34,13 @@
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://www.ptoe.cc/number-game.html">
+<link rel="canonical" href="https://www.ptoe.cc/page/2/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.ptoe.cc/number-game.html","path":"number-game.html","title":"[C++] 数字游戏"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"page/2/index.html","title":""}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>[C++] 数字游戏 | 元素的笔记</title>
+<title>元素的笔记</title>
   
 
 
@@ -70,7 +68,7 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
 <script src="/js/third-party/math/mathjax.js" defer></script>
 
 
@@ -98,7 +96,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <p class="site-title">元素的笔记</p>
+      <h1 class="site-title">元素的笔记</h1>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">技术创造新生</p>
@@ -125,7 +123,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -138,7 +136,6 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#io"><span class="nav-number">1.</span> <span class="nav-text">I&#x2F;O</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5"><span class="nav-number">1.1.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA"><span class="nav-number">1.2.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E8%8C%83%E5%9B%B4"><span class="nav-number">1.3.</span> <span class="nav-text">数据范围</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AD%94%E6%A1%88"><span class="nav-number">2.</span> <span class="nav-text">答案</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -168,18 +165,17 @@
 
     </div>
 
-    <div class="main-inner post posts-expand">
+    <div class="main-inner index posts-expand">
 
-
-  
+    
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.ptoe.cc/number-game.html">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.ptoe.cc/soilders-sort.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -192,13 +188,13 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="[C++] 数字游戏 | 元素的笔记">
+      <meta itemprop="name" content=" | 元素的笔记">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          [C++] 数字游戏
-        </h1>
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/soilders-sort.html" class="post-title-link" itemprop="url">[C++] 士兵排列</a>
+        </h2>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -208,14 +204,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2025-06-13 20:26:55" itemprop="dateCreated datePublished" datetime="2025-06-13T20:26:55+08:00">2025-06-13</time>
+      <time title="创建时间：2025-06-10 21:09:49" itemprop="dateCreated datePublished" datetime="2025-06-10T21:09:49+08:00">2025-06-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-06-20 14:48:19" itemprop="dateModified" datetime="2025-06-20T14:48:19+08:00">2025-06-20</time>
+      <time title="修改时间：2025-06-11 22:01:12" itemprop="dateModified" datetime="2025-06-11T22:01:12+08:00">2025-06-11</time>
     </span>
 
   
@@ -227,33 +223,26 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P5660">洛谷P5660</a></p>
-<p>小 K 同学向小 P 同学发送了一个长度为 8 的 01 字符串 来玩数字游戏，小
-P 同学想要知道字符串中究竟有多少个 1。</p>
-<p>注意：01 字符串为每一个字符是 0 或者 1
-的字符串，如“101”（不含双引号）为一个长度为 3 的 01 字符串。</p>
-<span id="more"></span>
-<h2 id="io">I/O</h2>
-<h3 id="输入">输入</h3>
-<p>共一行，包含一个长度为 8 的 01 字符串 s。</p>
-<figure class="highlight plaintext"><figcaption><span>样例1</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">00010100</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><figcaption><span>样例2</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">11111111</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><figcaption><span>样例3</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">01010101</span><br></pre></td></tr></table></figure>
-<h3 id="输出">输出</h3>
-<p>共一行，包含一个整数，即 01 字符串中字符 1 的个数。</p>
-<figure class="highlight plaintext"><figcaption><span>样例1</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><figcaption><span>样例2</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">8</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><figcaption><span>样例3</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4</span><br></pre></td></tr></table></figure>
-<h3 id="数据范围">数据范围</h3>
-<ul>
-<li>对于 20% 的数据，保证输入的字符全部为 0。</li>
-<li>对于 100% 的数据，输入只可能包含字符 0 和字符 1，字符串长度固定为
-8。</li>
-</ul>
-<h2 id="答案">答案</h2>
-<p>这东西标准库里都有</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    string s;</span><br><span class="line">    cin &gt;&gt; s;</span><br><span class="line">    <span class="function">bitset&lt;8&gt; <span class="title">b</span><span class="params">(s)</span></span>;</span><br><span class="line">    cout &lt;&lt; b.<span class="built_in">count</span>();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="题面">题面</h2>
+<p>假如你是长官，现在有一些新兵入伍。但是他们不是同时到达军营集合。对于某一个士兵
+<span class="math inline"><em>i</em></span>（编号从 <span
+class="math inline">1</span> 到 <span
+class="math inline"><em>n</em></span>）, 如果 <span
+class="math inline"><em>s</em>[<em>i</em>] = 1</span>，那么他从队尾入队，如果
+<span
+class="math inline"><em>s</em>[<em>i</em>] = 0</span>，那么他从队头入队。当所有士兵入队后，这个时候士兵就有一个排列。然后，从队头到队尾，每个士兵会说出他的能力值
+<span
+class="math inline"><em>a</em>[<em>i</em>]</span>，你需要按照能力值从高到低输出对应的一个排列。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/soilders-sort.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
     </div>
 
     
@@ -261,21 +250,8 @@ P 同学想要知道字符串中究竟有多少个 1。</p>
     
 
     <footer class="post-footer">
-
-        
-
-          <div class="post-nav">
-            <div class="post-nav-item">
-                <a href="/find-the-number.html" rel="prev" title="[C++] 找数">
-                  <i class="fa fa-angle-left"></i> [C++] 找数
-                </a>
-            </div>
-            <div class="post-nav-item">
-                <a href="/full-sorting.html" rel="next" title="[C++] 全排列">
-                  [C++] 全排列 <i class="fa fa-angle-right"></i>
-                </a>
-            </div>
-          </div>
+        <div class="post-eof"></div>
+      
     </footer>
   </article>
 </div>
@@ -283,7 +259,9 @@ P 同学想要知道字符串中究竟有多少个 1。</p>
 
 
 
-
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" title="上一页" aria-label="上一页" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
 
 </div>
   </main>
