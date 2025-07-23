@@ -122,21 +122,23 @@ $$
 所以 $m = n + 2 - ed$
 
 因此可列关于 $p,q$ 的二元一次方程组（ $n, m$ 为已知）
-
-```math
+$$
 \begin{cases}
 p + q = m\\
 pq = n
 \end{cases}
-```
+$$
 
 解：
 $$
+\begin{align}
 p = \frac n q\\
 \frac n q + q = m\\
 n + q^2 = mq\\
-q^2 - mq + n = 0\\
+q^2 - mq + n = 0
+\end{align}
 $$
+
 得到一个一元二次方程，其中 $a = 1, b = -m, c = n$ ，即可求判别式 $\Delta = b^2 - 4ac$ 。
 
 若 $\Delta \ge 0$ ，则有解，套用一元二次方程求根公式 $q = \frac {-b \pm \sqrt {\Delta}} {2a}$ 中较大那个（即 $q = \frac {-b + \sqrt {\Delta}} {2a}$）即可。
