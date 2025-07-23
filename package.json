@@ -17,6 +17,7 @@
     "hexo-deployer-git": "^4.0.0",
     "hexo-generator-archive": "^2.0.0",
     "hexo-generator-category": "^2.0.0",
+    "hexo-generator-feed": "^3.0.0",
     "hexo-generator-index": "^3.0.0",
     "hexo-generator-sitemap": "^3.0.1",
     "hexo-generator-tag": "^2.0.0",
@@ -26,5 +27,8 @@
     "hexo-server": "^3.0.0",
     "hexo-theme-next": "^8.23.1",
     "js-yaml": "^4.1.0"
+  }, 
+  "resolutions": {  
+    "stylus": "github:stylus/stylus#0.62.0"  
   }
 }
