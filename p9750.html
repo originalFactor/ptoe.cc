@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico">
+  <link rel="mask-icon" href="/favicon.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fancyapps/ui@6.0.5/dist/fancybox/fancybox.css" integrity="sha256-uTcjoMD6rPt4OyV3Rs02Slxl0BJGMNVKAm/1eYPt2go=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://fastly.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous" defer></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.ptoe.cc","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"default"},"fold":{"enable":false,"height":500},"language":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"changyan","storage":true,"lazyload":true,"nav":null,"activeClass":"changyan"},"stickytabs":false,"motion":{"enable":true,"async":true,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="https://fastly.jsdelivr.net/npm/hexo-theme-next@8.23.2/source/js/config.min.js" defer></script>
+
+    <meta name="description" content="洛谷 P9750 众所周知，对一元二次方程 ax2 + bx + c &#x3D; 0, (a ≠ 0)，可以用以下方式求实数解：  计算 Δ &#x3D; b2 − 4ac，则:  若 Δ &lt; 0，则该一元二次方程无实数解。 2. 否则 Δ ≥ 0，此时该一元二次方程有两个实数解 $x _ {1, 2} &#x3D; \frac{-b \pm \sqrt \Delta}{2a}$。   例如：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[C++] 一元二次方程">
+<meta property="og:url" content="https://www.ptoe.cc/p9750.html">
+<meta property="og:site_name" content="元素的笔记">
+<meta property="og:description" content="洛谷 P9750 众所周知，对一元二次方程 ax2 + bx + c &#x3D; 0, (a ≠ 0)，可以用以下方式求实数解：  计算 Δ &#x3D; b2 − 4ac，则:  若 Δ &lt; 0，则该一元二次方程无实数解。 2. 否则 Δ ≥ 0，此时该一元二次方程有两个实数解 $x _ {1, 2} &#x3D; \frac{-b \pm \sqrt \Delta}{2a}$。   例如：">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-06-26T13:17:13.000Z">
+<meta property="article:modified_time" content="2025-07-23T14:17:16.772Z">
+<meta property="article:author" content="元素">
+<meta property="article:tag" content="C++">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://www.ptoe.cc/p9750.html">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.ptoe.cc/p9750.html","path":"p9750.html","title":"[C++] 一元二次方程"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>[C++] 一元二次方程 | 元素的笔记</title>
+  
+
+
+
+  <script data-pjax defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{&quot;token&quot;: &quot;011652329aa64beba87754b2f741fa14&quot;}'></script>
+
+
+
+
+
+  
+  <script src="https://fastly.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://fastly.jsdelivr.net/npm/@next-theme/pjax@0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous" defer></script>
+  <script src="https://fastly.jsdelivr.net/npm/@fancyapps/ui@6.0.5/dist/fancybox/fancybox.umd.js" integrity="sha256-UiSieVaV/DXce2LW7QH+o77w+AIoAvSCPBkezriZ2DQ=" crossorigin="anonymous" defer></script>
+  <script src="https://fastly.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous" defer></script>
+  <script src="https://fastly.jsdelivr.net/npm/pangu@6.1.3/dist/browser/pangu.umd.js" integrity="sha256-erngBMP3zzoIM6eqQ8dmrReh2vqCRgWmORroIfVoDlE=" crossorigin="anonymous" defer></script>
+<script src="https://fastly.jsdelivr.net/npm/hexo-theme-next@8.23.2/source/js/utils.min.js" defer></script><script src="https://fastly.jsdelivr.net/npm/hexo-theme-next@8.23.2/source/js/motion.min.js" defer></script><script src="https://fastly.jsdelivr.net/npm/hexo-theme-next@8.23.2/source/js/sidebar.min.js" defer></script><script src="https://fastly.jsdelivr.net/npm/hexo-theme-next@8.23.2/source/js/next-boot.min.js" defer></script><script src="https://fastly.jsdelivr.net/npm/hexo-theme-next@8.23.2/source/js/pjax.min.js" defer></script>
+
+  <script src="https://fastly.jsdelivr.net/npm/hexo-generator-searchdb@1.5.0/dist/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="https://fastly.jsdelivr.net/npm/hexo-theme-next@8.23.2/source/js/third-party/search/local-search.min.js" defer></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://fastly.jsdelivr.net/npm/pdfobject@2.3.1/pdfobject.min.js","integrity":"sha256-jI72I8ZLVflVOisZIOaLvRew3tyvzeu6aZXFm7P7dEo="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="https://fastly.jsdelivr.net/npm/hexo-theme-next@8.23.2/source/js/third-party/tags/pdf.min.js" defer></script>
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://fastly.jsdelivr.net/npm/mermaid@11.7.0/dist/mermaid.min.js","integrity":"sha256-4+IKDqhZ/sXjc8Wtl2/MsxI4e0s1KpEVdbEP7V/Lz8U="}}</script>
+  <script src="https://fastly.jsdelivr.net/npm/hexo-theme-next@8.23.2/source/js/third-party/tags/mermaid.min.js" defer></script>
+
+  <script class="next-config" data-name="wavedrom" type="application/json">{"enable":true,"js":{"url":"https://fastly.jsdelivr.net/npm/wavedrom@3.5.0/wavedrom.min.js","integrity":"sha256-INLAoJc6quTNfiMWkGZniYO2cxE8mHpddnLow1m6RFs="}}</script>
+  <script class="next-config" data-name="wavedrom_skin" type="application/json">{"enable":true,"js":{"url":"https://fastly.jsdelivr.net/npm/wavedrom@3.5.0/skins/default.js","integrity":"sha256-fduc/Zszk5ezWws2uInY/ALWVmIrmV6VTgXbsYSReFI="}}</script>
+  <script src="https://fastly.jsdelivr.net/npm/hexo-theme-next@8.23.2/source/js/third-party/tags/wavedrom.min.js" defer></script>
+
+  <script src="https://fastly.jsdelivr.net/npm/hexo-theme-next@8.23.2/source/js/third-party/fancybox.min.js" defer></script>
+
+  <script src="https://fastly.jsdelivr.net/npm/hexo-theme-next@8.23.2/source/js/third-party/pace.min.js" defer></script>
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://fastly.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="https://fastly.jsdelivr.net/npm/hexo-theme-next@8.23.2/source/js/third-party/math/mathjax.min.js" defer></script>
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="元素的笔记" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">元素的笔记</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">技术创造新生</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B-1"><span class="nav-number">4.</span> <span class="nav-text">输入输出样例 #1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5-1"><span class="nav-number">4.1.</span> <span class="nav-text">输入 #1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA-1"><span class="nav-number">4.2.</span> <span class="nav-text">输出 #1</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B4%E6%98%8E%E6%8F%90%E7%A4%BA"><span class="nav-number">5.</span> <span class="nav-text">说明&#x2F;提示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3"><span class="nav-number">6.</span> <span class="nav-text">题解</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">元素</p>
+  <div class="site-description" itemprop="description">只是一个臭写算法的</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/originalFactor" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;originalFactor" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://x.com/Cat09MeowX" title="Twitter → https:&#x2F;&#x2F;x.com&#x2F;Cat09MeowX" rel="noopener me" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://www.dorazhang.cn/" title="https:&#x2F;&#x2F;www.dorazhang.cn&#x2F;" rel="noopener" target="_blank">Zyx2008</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://blog.zyx-2012.cn/" title="https:&#x2F;&#x2F;blog.zyx-2012.cn&#x2F;" rel="noopener" target="_blank">Zyx2012</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.ptoe.cc/p9750.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="元素">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="元素的笔记">
+      <meta itemprop="description" content="只是一个臭写算法的">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="[C++] 一元二次方程 | 元素的笔记">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [C++] 一元二次方程
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-06-26 21:17:13" itemprop="dateCreated datePublished" datetime="2025-06-26T21:17:13+08:00">2025-06-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-07-23 22:17:16" itemprop="dateModified" datetime="2025-07-23T22:17:16+08:00">2025-07-23</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Changyan：</span>
+    
+    <a title="[C++] 一元二次方程" href="/p9750.html#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::8aedaf671d34c8b826acff9711bba5d9" class="cy_cmt_count" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P9750">洛谷 P9750</a></p>
+<p>众所周知，对一元二次方程 <span
+class="math inline"><em>a</em><em>x</em><sup>2</sup> + <em>b</em><em>x</em> + <em>c</em> = 0, (<em>a</em> ≠ 0)</span>，可以用以下方式求实数解：</p>
+<ul>
+<li>计算 <span
+class="math inline"><em>Δ</em> = <em>b</em><sup>2</sup> − 4<em>a</em><em>c</em></span>，则:
+<ol type="1">
+<li>若 <span
+class="math inline"><em>Δ</em> &lt; 0</span>，则该一元二次方程无实数解。
+2. 否则 <span
+class="math inline"><em>Δ</em> ≥ 0</span>，此时该一元二次方程有两个实数解
+<span class="math inline">$x _ {1, 2} = \frac{-b \pm \sqrt
+\Delta}{2a}$</span>。</li>
+</ol></li>
+</ul>
+<p>例如：</p>
+<ul>
+<li><span
+class="math inline"><em>x</em><sup>2</sup> + <em>x</em> + 1 = 0</span>
+无实数解，因为 <span
+class="math inline"><em>Δ</em> = 1<sup>2</sup> − 4 × 1 × 1 = −3 &lt; 0</span>。</li>
+<li><span
+class="math inline"><em>x</em><sup>2</sup> − 2<em>x</em> + 1 = 0</span>
+有两相等实数解 <span
+class="math inline"><em>x</em><sub>1, 2</sub> = 1</span>。</li>
+<li><span
+class="math inline"><em>x</em><sup>2</sup> − 3<em>x</em> + 2 = 0</span>
+有两互异实数解 <span
+class="math inline"><em>x</em><sub>1</sub> = 1, <em>x</em><sub>2</sub> = 2</span>。</li>
+</ul>
+<p>在题面描述中 <span class="math inline"><em>a</em></span> 和 <span
+class="math inline"><em>b</em></span> 的最大公因数使用 <span
+class="math inline">gcd (<em>a</em>, <em>b</em>)</span> 表示。例如 <span
+class="math inline">12</span> 和 <span class="math inline">18</span>
+的最大公因数是 <span class="math inline">6</span>，即 <span
+class="math inline">gcd (12, 18) = 6</span>。</p>
+<span id="more"></span>
+<h2 id="题目描述">题目描述</h2>
+<p>现在给定一个一元二次方程的系数 <span
+class="math inline"><em>a</em>, <em>b</em>, <em>c</em></span>，其中
+<span class="math inline"><em>a</em>, <em>b</em>, <em>c</em></span>
+<strong>均为整数且 <span
+class="math inline"><em>a</em> ≠ 0</span></strong>。你需要判断一元二次方程
+<span
+class="math inline"><em>a</em><em>x</em><sup>2</sup> + <em>b</em><em>x</em> + <em>c</em> = 0</span>
+是否有实数解，并按要求的格式输出。</p>
+<p><strong>在本题中输出有理数 <span
+class="math inline"><em>v</em></span> 时须遵循以下规则：</strong></p>
+<ul>
+<li><p>由有理数的定义，存在唯一的两个整数 <span
+class="math inline"><em>p</em></span> 和 <span
+class="math inline"><em>q</em></span>，满足 <span
+class="math inline"><em>q</em> &gt; 0</span>，<span
+class="math inline">gcd (<em>p</em>, <em>q</em>) = 1</span> 且 <span
+class="math inline">$v = \frac pq$</span>。</p></li>
+<li><p>若 <span
+class="math inline"><em>q</em> = 1</span>，<strong>则输出
+<code>&#123;p&#125;</code>，否则输出 <code>&#123;p&#125;/&#123;q&#125;</code></strong>，其中
+<code>&#123;n&#125;</code> 代表整数 <span class="math inline"><em>n</em></span>
+的值；</p></li>
+<li><p>例如：</p>
+<ul>
+<li>当 <span class="math inline"><em>v</em> = −0.5</span> 时，<span
+class="math inline"><em>p</em></span> 和 <span
+class="math inline"><em>q</em></span> 的值分别为 <span
+class="math inline">−1</span> 和 <span
+class="math inline">2</span>，则应输出 <code>-1/2</code>；</li>
+<li>当 <span class="math inline"><em>v</em> = 0</span> 时，<span
+class="math inline"><em>p</em></span> 和 <span
+class="math inline"><em>q</em></span> 的值分别为 <span
+class="math inline">0</span> 和 <span
+class="math inline">1</span>，则应输出 <code>0</code>。</li>
+</ul></li>
+</ul>
+<p><strong>对于方程的求解，分两种情况讨论：</strong></p>
+<ol type="1">
+<li><p>若 <span
+class="math inline"><em>Δ</em> = <em>b</em><sup>2</sup> − 4<em>a</em><em>c</em> &lt; 0</span>，则表明方程无实数解，此时你应当输出
+<code>NO</code>；</p></li>
+<li><p>否则 <span
+class="math inline"><em>Δ</em> ≥ 0</span>，此时方程有两解（可能相等），记其中较大者为
+<span class="math inline"><em>x</em></span>，则：</p>
+<ol type="1">
+<li><p>若 <span class="math inline"><em>x</em></span>
+为有理数，则按有理数的格式输出 <span
+class="math inline"><em>x</em></span>。</p></li>
+<li><p>否则根据上文公式，<span class="math inline"><em>x</em></span>
+可以被<strong>唯一</strong>表示为 <span class="math inline">$x = q _ 1 +
+q _ 2 \sqrt r$</span> 的形式，其中：</p>
+<pre><code>- $q _ 1, q _ 2$ 为有理数，且 $q _ 2 &gt; 0$；</code></pre>
+<ul>
+<li><span class="math inline"><em>r</em></span> 为正整数且 <span
+class="math inline"><em>r</em> &gt; 1</span>，且不存在正整数 <span
+class="math inline"><em>d</em> &gt; 1</span> 使 <span
+class="math inline"><em>d</em><sup>2</sup> ∣ <em>r</em></span>（即 <span
+class="math inline"><em>r</em></span> 不应是 <span
+class="math inline"><em>d</em><sup>2</sup></span> 的倍数）；</li>
+</ul></li>
+</ol>
+<p>此时：</p>
+<ol type="1">
+<li>若 <span
+class="math inline"><em>q</em><sub>1</sub> ≠ 0</span>，则按有理数的格式输出
+<span
+class="math inline"><em>q</em><sub>1</sub></span>，并再输出一个加号
+<code>+</code>；</li>
+<li>否则跳过这一步输出；</li>
+</ol>
+<p>随后：</p>
+<ol type="1">
+<li>若 <span
+class="math inline"><em>q</em><sub>2</sub> = 1</span>，则输出
+<code>sqrt(&#123;r&#125;)</code>；</li>
+<li>否则若 <span class="math inline"><em>q</em><sub>2</sub></span>
+为整数，则输出 <code>&#123;q2&#125;*sqrt(&#123;r&#125;)</code>；</li>
+<li>否则若 <span class="math inline">$q _ 3 = \frac 1{q _ 2}$</span>
+为整数，则输出 <code>sqrt(&#123;r&#125;)/&#123;q3&#125;</code>；</li>
+<li>否则可以证明存在唯一整数 <span
+class="math inline"><em>c</em>, <em>d</em></span> 满足 <span
+class="math inline"><em>c</em>, <em>d</em> &gt; 1, gcd (<em>c</em>, <em>d</em>) = 1</span>
+且 <span class="math inline">$q _ 2 = \frac cd$</span>，此时输出
+<code>&#123;c&#125;*sqrt(&#123;r&#125;)/&#123;d&#125;</code>；</li>
+</ol>
+<p>上述表示中 <code>&#123;n&#125;</code> 代表整数 <code>&#123;n&#125;</code>
+的值，详见样例。</p>
+<p>如果方程有实数解，则按要求的格式输出两个实数解中的较大者。否则若方程没有实数解，则输出
+<code>NO</code>。</p></li>
+</ol>
+<h2 id="输入格式">输入格式</h2>
+<p>输入的第一行包含两个正整数 <span
+class="math inline"><em>T</em>, <em>M</em></span>，分别表示方程数和系数的绝对值上限。</p>
+<p>接下来 <span class="math inline"><em>T</em></span>
+行，每行包含三个整数 <span
+class="math inline"><em>a</em>, <em>b</em>, <em>c</em></span>。</p>
+<h2 id="输出格式">输出格式</h2>
+<p>输出 <span class="math inline"><em>T</em></span>
+行，每行包含一个字符串，表示对应询问的答案，格式如题面所述。</p>
+<p><strong>每行输出的字符串中间不应包含任何空格</strong>。</p>
+<h2 id="输入输出样例-1">输入输出样例 #1</h2>
+<h3 id="输入-1">输入 #1</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">9 1000</span><br><span class="line">1 -1 0</span><br><span class="line">-1 -1 -1</span><br><span class="line">1 -2 1</span><br><span class="line">1 5 4</span><br><span class="line">4 4 1</span><br><span class="line">1 0 -432</span><br><span class="line">1 -3 1</span><br><span class="line">2 -4 1</span><br><span class="line">1 7 1</span><br></pre></td></tr></table></figure>
+<h3 id="输出-1">输出 #1</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">NO</span><br><span class="line">1</span><br><span class="line">-1</span><br><span class="line">-1/2</span><br><span class="line">12*sqrt(3)</span><br><span class="line">3/2+sqrt(5)/2</span><br><span class="line">1+sqrt(2)/2</span><br><span class="line">-7/2+3*sqrt(5)/2</span><br></pre></td></tr></table></figure>
+<h2 id="说明提示">说明/提示</h2>
+<p><strong>【样例 #2】</strong></p>
+<p>见附件中的 <code>uqe/uqe2.in</code> 与
+<code>uqe/uqe2.ans</code>。</p>
+<p><strong>【数据范围】</strong></p>
+<p>对于所有数据有：<span
+class="math inline">1 ≤ <em>T</em> ≤ 5000</span>，<span
+class="math inline">1 ≤ <em>M</em> ≤ 10<sup>3</sup></span>，<span
+class="math inline">|<em>a</em>|,|<em>b</em>|,|<em>c</em>| ≤ <em>M</em></span>，<span
+class="math inline"><em>a</em> ≠ 0</span>。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">测试点编号</th>
+<th style="text-align: center;"><span
+class="math inline"><em>M</em>≤</span></th>
+<th style="text-align: center;">特殊性质 A</th>
+<th style="text-align: center;">特殊性质 B</th>
+<th style="text-align: center;">特殊性质 C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><span class="math inline">1</span></td>
+<td style="text-align: center;"><span class="math inline">1</span></td>
+<td style="text-align: center;">是</td>
+<td style="text-align: center;">是</td>
+<td style="text-align: center;">是</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="math inline">2</span></td>
+<td style="text-align: center;"><span class="math inline">20</span></td>
+<td style="text-align: center;">否</td>
+<td style="text-align: center;">否</td>
+<td style="text-align: center;">否</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="math inline">3</span></td>
+<td style="text-align: center;"><span
+class="math inline">10<sup>3</sup></span></td>
+<td style="text-align: center;">是</td>
+<td style="text-align: center;">否</td>
+<td style="text-align: center;">是</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="math inline">4</span></td>
+<td style="text-align: center;"><span
+class="math inline">10<sup>3</sup></span></td>
+<td style="text-align: center;">是</td>
+<td style="text-align: center;">否</td>
+<td style="text-align: center;">否</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="math inline">5</span></td>
+<td style="text-align: center;"><span
+class="math inline">10<sup>3</sup></span></td>
+<td style="text-align: center;">否</td>
+<td style="text-align: center;">是</td>
+<td style="text-align: center;">是</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="math inline">6</span></td>
+<td style="text-align: center;"><span
+class="math inline">10<sup>3</sup></span></td>
+<td style="text-align: center;">否</td>
+<td style="text-align: center;">是</td>
+<td style="text-align: center;">否</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span
+class="math inline">7, 8</span></td>
+<td style="text-align: center;"><span
+class="math inline">10<sup>3</sup></span></td>
+<td style="text-align: center;">否</td>
+<td style="text-align: center;">否</td>
+<td style="text-align: center;">是</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span
+class="math inline">9, 10</span></td>
+<td style="text-align: center;"><span
+class="math inline">10<sup>3</sup></span></td>
+<td style="text-align: center;">否</td>
+<td style="text-align: center;">否</td>
+<td style="text-align: center;">否</td>
+</tr>
+</tbody>
+</table>
+<p>其中：</p>
+<ul>
+<li>特殊性质 A：保证 <span
+class="math inline"><em>b</em> = 0</span>；</li>
+<li>特殊性质 B：保证 <span
+class="math inline"><em>c</em> = 0</span>；</li>
+<li>特殊性质 C：如果方程有解，那么方程的两个解都是整数。</li>
+</ul>
+<h2 id="题解">题解</h2>
+<p>这题相当的麻烦啊，要考虑很多边缘情况，比如若求得结果为</p>
+<p><span class="math display">$$
+x = \frac {a} {b} + \frac {c \sqrt{d}} {e}
+$$</span></p>
+<p>要考虑 <span class="math inline"><em>a</em> = 0</span>、<span
+class="math inline"><em>b</em> = 1</span>、<span
+class="math inline"><em>c</em> = 0</span>、<span
+class="math inline"><em>c</em> = 1</span>、<span
+class="math inline"><em>d</em> = 1</span>、<span
+class="math inline"><em>e</em> = 1</span> 等等，都要做特判</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">const</span> <span class="type">int</span> <span class="title">gcd</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span></span>&#123;</span><br><span class="line">    a = <span class="built_in">abs</span>(a);</span><br><span class="line">    b = <span class="built_in">abs</span>(b);</span><br><span class="line">    <span class="keyword">return</span> b?<span class="built_in">gcd</span>(b, a%b):a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">const</span> pair&lt;<span class="type">const</span> <span class="type">int</span>, <span class="type">const</span> <span class="type">int</span>&gt; <span class="title">decimalSqrt</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!x) <span class="keyword">return</span> &#123;<span class="number">0</span>, <span class="number">1</span>&#125;;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">2</span>, a = x&gt;<span class="number">0</span>?<span class="number">1</span>:<span class="number">-1</span>, b = <span class="number">1</span>;</span><br><span class="line">    map&lt;<span class="type">int</span>, <span class="type">int</span>&gt; Map;</span><br><span class="line">    <span class="keyword">if</span>(x&lt;<span class="number">0</span>) x = -x;</span><br><span class="line">    <span class="keyword">while</span>(x!=<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">while</span>(!(x%i))&#123;</span><br><span class="line">            x /= i;</span><br><span class="line">            Map[i]++;</span><br><span class="line">        &#125;</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span>&amp; j : Map)&#123;</span><br><span class="line">        a *= <span class="built_in">pow</span>(j.first, j.second/<span class="number">2</span>);</span><br><span class="line">        <span class="keyword">if</span>(j.second&amp;<span class="number">1</span>) b *= j.first;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> &#123;a, b&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> t, m;</span><br><span class="line">    cin &gt;&gt; t &gt;&gt; m;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">        <span class="type">int</span> a, b, c;</span><br><span class="line">        cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> delta = b*b - <span class="number">4</span>*a*c;</span><br><span class="line">        <span class="keyword">if</span>(delta&lt;<span class="number">0</span>)&#123;</span><br><span class="line">            cout &lt;&lt; <span class="string">&quot;NO&quot;</span> &lt;&lt; endl;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        b = -b;</span><br><span class="line">        <span class="type">const</span> <span class="keyword">auto</span>&amp; sd = <span class="built_in">decimalSqrt</span>(delta);</span><br><span class="line">        <span class="keyword">if</span>(sd.second == <span class="number">1</span>)&#123;</span><br><span class="line">            b += a&lt;<span class="number">0</span>?-sd.first:sd.first;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(b)&#123;</span><br><span class="line">            <span class="keyword">if</span>(b%(<span class="number">2</span>*a))&#123;</span><br><span class="line">            <span class="type">int</span> g = <span class="built_in">gcd</span>(b, <span class="number">2</span>*a);</span><br><span class="line">            cout &lt;&lt; (((b&lt;<span class="number">0</span>)^(a&lt;<span class="number">0</span>))?<span class="string">&quot;-&quot;</span>:<span class="string">&quot;&quot;</span>) &lt;&lt; <span class="built_in">abs</span>(b/g) &lt;&lt; <span class="string">&quot;/&quot;</span> &lt;&lt; <span class="built_in">abs</span>(<span class="number">2</span>*a/g);</span><br><span class="line">            &#125;<span class="keyword">else</span> cout &lt;&lt; b/(<span class="number">2</span>*a);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(sd.second!=<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(b) cout &lt;&lt; <span class="string">&quot;+&quot;</span>;</span><br><span class="line"></span><br><span class="line">            <span class="type">int</span> h = <span class="built_in">gcd</span>(sd.first, <span class="number">2</span>*a);</span><br><span class="line">            <span class="type">int</span> i = <span class="built_in">abs</span>(sd.first/h);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(i!=<span class="number">1</span>) cout &lt;&lt; i &lt;&lt; <span class="string">&quot;*&quot;</span>;</span><br><span class="line"></span><br><span class="line">            cout &lt;&lt; <span class="string">&quot;sqrt(&quot;</span> &lt;&lt; sd.second &lt;&lt; <span class="string">&quot;)&quot;</span>;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(sd.first%(<span class="number">2</span>*a)) cout &lt;&lt; <span class="string">&quot;/&quot;</span> &lt;&lt; <span class="built_in">abs</span>(<span class="number">2</span>*a/h);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(!b &amp;&amp; sd.second==<span class="number">1</span>) cout &lt;&lt; <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        cout &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="https://x.com/Cat09MeowX">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+      </div>
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/decrypt.html" rel="prev" title="[C++] 解密">
+                  <i class="fa fa-angle-left"></i> [C++] 解密
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="SOHUCS" sid="8aedaf671d34c8b826acff9711bba5d9"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备2024278726号-1 </a>
+  </div>
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">元素</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+<script class="next-config" data-name="changyan" type="application/json">{"enable":true,"appid":"cyy1R28iX","appkey":"1a3a5c04c74e6754e5ac995737b63532","count":true}</script>
+<script src="https://fastly.jsdelivr.net/npm/hexo-theme-next@8.23.2/source/js/third-party/comments/changyan.min.js" defer></script>
+
+</body>
+</html>
