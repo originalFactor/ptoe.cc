@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>元素的笔记</title>
+  <icon>https://www.ptoe.cc/icon.png</icon>
+  <subtitle>技术创造新生</subtitle>
+  <link href="https://www.ptoe.cc/atom.xml" rel="self"/>
+  
+  <link href="https://www.ptoe.cc/"/>
+  <updated>2025-06-22T14:37:52.200Z</updated>
+  <id>https://www.ptoe.cc/</id>
+  
+  <author>
+    <name>元素</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[C++] 解密</title>
+    <link href="https://www.ptoe.cc/decrypt.html"/>
+    <id>https://www.ptoe.cc/decrypt.html</id>
+    <published>2025-06-22T12:38:57.000Z</published>
+    <updated>2025-06-22T14:37:52.200Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://www.luogu.com.cn/problem/P8814&quot;&gt;P8814 [CSP-J 2022]
+解密 - 洛谷&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;给定一个正整数 &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;k&lt;/em&gt;&lt;/span&gt;，有 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;k&lt;/em&gt;&lt;/span&gt; 次询问，每次给定三个正整数 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;n&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt;/em&gt;&lt;/sub&gt;, &lt;em&gt;e&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt;/em&gt;&lt;/sub&gt;, &lt;em&gt;d&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt;/em&gt;&lt;/sub&gt;&lt;/span&gt;，求两个正整数
+&lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;p&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt;/em&gt;&lt;/sub&gt;, &lt;em&gt;q&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt;/em&gt;&lt;/sub&gt;&lt;/span&gt;，使
+&lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;n&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt;/em&gt;&lt;/sub&gt; = &lt;em&gt;p&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt;/em&gt;&lt;/sub&gt; × &lt;em&gt;q&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt;/em&gt;&lt;/sub&gt;&lt;/span&gt;、&lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;e&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt;/em&gt;&lt;/sub&gt; × &lt;em&gt;d&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt;/em&gt;&lt;/sub&gt; = (&lt;em&gt;p&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt;/em&gt;&lt;/sub&gt; − 1)(&lt;em&gt;q&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt;/em&gt;&lt;/sub&gt; − 1) + 1&lt;/span&gt;。&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[C++] 乘方</title>
+    <link href="https://www.ptoe.cc/pow.html"/>
+    <id>https://www.ptoe.cc/pow.html</id>
+    <published>2025-06-22T12:14:37.000Z</published>
+    <updated>2025-06-22T12:30:59.584Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;[P8813 &lt;a href=&quot;https://www.luogu.com.cn/problem/P8813&quot;&gt;CSP-J 2022]
+乘方 - 洛谷&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;小文同学刚刚接触了信息学竞赛，有一天她遇到了这样一个题：给定正整数
+&lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;a&lt;/em&gt;&lt;/span&gt; 和 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;b&lt;/em&gt;&lt;/span&gt;，求 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;a&lt;/em&gt;&lt;sup&gt;&lt;em&gt;b&lt;/em&gt;&lt;/sup&gt;&lt;/span&gt;
+的值是多少。&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;a&lt;/em&gt;&lt;sup&gt;&lt;em&gt;b&lt;/em&gt;&lt;/sup&gt;&lt;/span&gt; 即
+&lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;b&lt;/em&gt;&lt;/span&gt; 个 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;a&lt;/em&gt;&lt;/span&gt; 相乘的值，例如 &lt;span
+class=&quot;math inline&quot;&gt;2&lt;sup&gt;3&lt;/sup&gt;&lt;/span&gt; 即为 &lt;span
+class=&quot;math inline&quot;&gt;3&lt;/span&gt; 个 &lt;span class=&quot;math inline&quot;&gt;2&lt;/span&gt;
+相乘，结果为 &lt;span class=&quot;math inline&quot;&gt;2 × 2 × 2 = 8&lt;/span&gt;。&lt;/p&gt;
+&lt;p&gt;“简单！”小文心想，同时很快就写出了一份程序，可是测试时却出现了错误。&lt;/p&gt;
+&lt;p&gt;小文很快意识到，她的程序里的变量都是 &lt;code&gt;int&lt;/code&gt;
+类型的。在大多数机器上，&lt;code&gt;int&lt;/code&gt; 类型能表示的最大数为 &lt;span
+class=&quot;math inline&quot;&gt;2&lt;sup&gt;31&lt;/sup&gt; − 1&lt;/span&gt;，因此只要计算结果超过这个数，她的程序就会出现错误。&lt;/p&gt;
+&lt;p&gt;由于小文刚刚学会编程，她担心使用 &lt;code&gt;int&lt;/code&gt;
+计算会出现问题。因此她希望你在 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;a&lt;/em&gt;&lt;sup&gt;&lt;em&gt;b&lt;/em&gt;&lt;/sup&gt;&lt;/span&gt; 的值超过
+&lt;span class=&quot;math inline&quot;&gt;10&lt;sup&gt;9&lt;/sup&gt;&lt;/span&gt; 时，输出一个
+&lt;code&gt;-1&lt;/code&gt; 进行警示，否则就输出正确的 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;a&lt;/em&gt;&lt;sup&gt;&lt;em&gt;b&lt;/em&gt;&lt;/sup&gt;&lt;/span&gt; 的值。&lt;/p&gt;
+&lt;p&gt;然而小文还是不知道怎么实现这份程序，因此她想请你帮忙。&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[C++] 分糖果</title>
+    <link href="https://www.ptoe.cc/p7909.html"/>
+    <id>https://www.ptoe.cc/p7909.html</id>
+    <published>2025-06-22T11:46:40.000Z</published>
+    <updated>2025-06-22T12:12:06.897Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;[P7909 &lt;a href=&quot;https://www.luogu.com.cn/problem/P7909&quot;&gt;CSP-J 2021]
+分糖果 - 洛谷&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;红太阳幼儿园有 &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;n&lt;/em&gt;&lt;/span&gt;
+个小朋友，你是其中之一。保证 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;n&lt;/em&gt; ≥ 2&lt;/span&gt;。&lt;/p&gt;
+&lt;p&gt;有一天你在幼儿园的后花园里发现无穷多颗糖果，你打算拿一些糖果回去分给幼儿园的小朋友们。&lt;/p&gt;
+&lt;p&gt;由于你只是个平平无奇的幼儿园小朋友，所以你的体力有限，至多只能拿
+&lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;R&lt;/em&gt;&lt;/span&gt; 块糖回去。&lt;/p&gt;
+&lt;p&gt;但是拿的太少不够分的，所以你至少要拿 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;L&lt;/em&gt;&lt;/span&gt; 块糖回去。保证 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;n&lt;/em&gt; ≤ &lt;em&gt;L&lt;/em&gt; ≤ &lt;em&gt;R&lt;/em&gt;&lt;/span&gt;。&lt;/p&gt;
+&lt;p&gt;也就是说，如果你拿了 &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;k&lt;/em&gt;&lt;/span&gt;
+块糖，那么你需要保证 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;L&lt;/em&gt; ≤ &lt;em&gt;k&lt;/em&gt; ≤ &lt;em&gt;R&lt;/em&gt;&lt;/span&gt;。&lt;/p&gt;
+&lt;p&gt;如果你拿了 &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;k&lt;/em&gt;&lt;/span&gt; 块糖，你将把这
+&lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;k&lt;/em&gt;&lt;/span&gt;
+块糖放到篮子里，并要求大家按照如下方案分糖果：只要篮子里有&lt;strong&gt;不少于&lt;/strong&gt;
+&lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;n&lt;/em&gt;&lt;/span&gt; 块糖果，幼儿园的所有 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;n&lt;/em&gt;&lt;/span&gt;
+个小朋友（包括你自己）都从篮子中拿走&lt;strong&gt;恰好&lt;/strong&gt;一块糖，直到篮子里的糖数量&lt;strong&gt;少于&lt;/strong&gt;
+&lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;n&lt;/em&gt;&lt;/span&gt;
+块。此时篮子里剩余的糖果均归你所有——这些糖果是&lt;strong&gt;作为你搬糖果的奖励&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;作为幼儿园高质量小朋友，你希望让&lt;strong&gt;作为你搬糖果的奖励&lt;/strong&gt;的糖果数量（&lt;strong&gt;而不是你最后获得的总糖果数量&lt;/strong&gt;！）尽可能多；因此你需要写一个程序，依次输入
+&lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;n&lt;/em&gt;, &lt;em&gt;L&lt;/em&gt;, &lt;em&gt;R&lt;/em&gt;&lt;/span&gt;，并输出你最多能获得多少&lt;strong&gt;作为你搬糖果的奖励&lt;/strong&gt;的糖果数量。&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[C++] 直播获奖</title>
+    <link href="https://www.ptoe.cc/live-warding.html"/>
+    <id>https://www.ptoe.cc/live-warding.html</id>
+    <published>2025-06-21T10:23:44.000Z</published>
+    <updated>2025-06-22T14:37:26.880Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://www.luogu.com.cn/problem/P7072&quot;&gt;直播获奖 -
+洛谷&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;NOI2130 即将举行。为了增加观赏性，CCF
+决定逐一评出每个选手的成绩，并直播即时的获奖分数线。本次竞赛的获奖率为
+&lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;w&lt;/em&gt;%&lt;/span&gt;，即当前排名前 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;w&lt;/em&gt;%&lt;/span&gt;
+的选手的最低成绩就是即时的分数线。&lt;/p&gt;
+&lt;p&gt;更具体地，若当前已评出了 &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;p&lt;/em&gt;&lt;/span&gt;
+个选手的成绩，则当前计划获奖人数为 &lt;span
+class=&quot;math inline&quot;&gt;max (1, ⌊&lt;em&gt;p&lt;/em&gt; × &lt;em&gt;w&lt;/em&gt;%⌋)&lt;/span&gt;，其中
+&lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;w&lt;/em&gt;&lt;/span&gt; 是获奖百分比，&lt;span
+class=&quot;math inline&quot;&gt;⌊&lt;em&gt;x&lt;/em&gt;⌋&lt;/span&gt; 表示对 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;x&lt;/em&gt;&lt;/span&gt; 向下取整，&lt;span
+class=&quot;math inline&quot;&gt;max (&lt;em&gt;x&lt;/em&gt;, &lt;em&gt;y&lt;/em&gt;)&lt;/span&gt; 表示 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;x&lt;/em&gt;&lt;/span&gt; 和 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;y&lt;/em&gt;&lt;/span&gt;
+中较大的数。如有选手成绩相同，则所有成绩并列的选手都能获奖，因此实际获奖人数可能比计划中多。&lt;/p&gt;
+&lt;p&gt;作为评测组的技术人员，请你帮 CCF 写一个直播程序。&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[C++] 优秀的拆分</title>
+    <link href="https://www.ptoe.cc/excellent-split.html"/>
+    <id>https://www.ptoe.cc/excellent-split.html</id>
+    <published>2025-06-20T06:54:08.000Z</published>
+    <updated>2025-06-20T07:35:37.700Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://www.luogu.com.cn/problem/P7071&quot;&gt;洛谷P7071&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;一般来说，一个正整数可以拆分成若干个正整数的和。&lt;/p&gt;
+&lt;p&gt;例如，&lt;span class=&quot;math inline&quot;&gt;1 = 1&lt;/span&gt;，&lt;span
+class=&quot;math inline&quot;&gt;10 = 1 + 2 + 3 + 4&lt;/span&gt; 等。对于正整数 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;n&lt;/em&gt;&lt;/span&gt;
+的一种特定拆分，我们称它为“优秀的”，当且仅当在这种拆分下，&lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;n&lt;/em&gt;&lt;/span&gt;
+被分解为了若干个&lt;strong&gt;不同&lt;/strong&gt;的 &lt;span
+class=&quot;math inline&quot;&gt;2&lt;/span&gt; 的&lt;strong&gt;正整数&lt;/strong&gt;次幂。注意，一个数
+&lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;x&lt;/em&gt;&lt;/span&gt; 能被表示成 &lt;span
+class=&quot;math inline&quot;&gt;2&lt;/span&gt; 的正整数次幂，当且仅当 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;x&lt;/em&gt;&lt;/span&gt; 能通过正整数个 &lt;span
+class=&quot;math inline&quot;&gt;2&lt;/span&gt; 相乘在一起得到。&lt;/p&gt;
+&lt;p&gt;例如，&lt;span
+class=&quot;math inline&quot;&gt;10 = 8 + 2 = 2&lt;sup&gt;3&lt;/sup&gt; + 2&lt;sup&gt;1&lt;/sup&gt;&lt;/span&gt;
+是一个优秀的拆分。但是，&lt;span
+class=&quot;math inline&quot;&gt;7 = 4 + 2 + 1 = 2&lt;sup&gt;2&lt;/sup&gt; + 2&lt;sup&gt;1&lt;/sup&gt; + 2&lt;sup&gt;0&lt;/sup&gt;&lt;/span&gt;
+就不是一个优秀的拆分，因为 &lt;span class=&quot;math inline&quot;&gt;1&lt;/span&gt; 不是 &lt;span
+class=&quot;math inline&quot;&gt;2&lt;/span&gt; 的正整数次幂。&lt;/p&gt;
+&lt;p&gt;现在，给定正整数 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;n&lt;/em&gt;&lt;/span&gt;，你需要判断这个数的所有拆分中，是否存在优秀的拆分。若存在，请你给出具体的拆分方案。&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[C++] 公交换乘</title>
+    <link href="https://www.ptoe.cc/transfer-bus.html"/>
+    <id>https://www.ptoe.cc/transfer-bus.html</id>
+    <published>2025-06-13T12:50:28.000Z</published>
+    <updated>2025-06-20T07:34:56.803Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://www.luogu.com.cn/problem/P5661&quot;&gt;洛谷P5661&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;著名旅游城市 B
+市为了鼓励大家采用公共交通方式出行，推出了一种地铁换乘公交车的优惠方案：&lt;/p&gt;
+&lt;ol type=&quot;1&quot;&gt;
+&lt;li&gt;&lt;p&gt;在搭乘一次地铁后可以获得一张优惠票，有效期为 45
+分钟，在有效期内可以消耗这张优惠票，免费搭乘一次票价不超过地铁票价的公交车。
+在有效期内指开始乘公交车的时间与开始乘地铁的时间之差小于等于 45
+分钟，即：&lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;t&lt;/em&gt;&lt;sub&gt;&lt;em&gt;b&lt;/em&gt;&lt;em&gt;u&lt;/em&gt;&lt;em&gt;s&lt;/em&gt;&lt;/sub&gt; − &lt;em&gt;t&lt;/em&gt;&lt;sub&gt;&lt;em&gt;s&lt;/em&gt;&lt;em&gt;u&lt;/em&gt;&lt;em&gt;b&lt;/em&gt;&lt;em&gt;w&lt;/em&gt;&lt;em&gt;a&lt;/em&gt;&lt;em&gt;y&lt;/em&gt;&lt;/sub&gt; ≤ 45&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;搭乘地铁获得的优惠票可以累积，即可以连续搭乘若干次地铁后再连续使用优惠票搭乘公交车，但每次搭乘公交车只能使用一张优惠券。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;搭乘公交车时，如果可以使用优惠票一定会使用优惠票；
+如果有多张优惠票满足条件，则优先消耗获得最早的优惠票。&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;现在你得到了小轩最近的公共交通出行记录，你能帮他算算他的花费吗?&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[C++] 全排列</title>
+    <link href="https://www.ptoe.cc/full-sorting.html"/>
+    <id>https://www.ptoe.cc/full-sorting.html</id>
+    <published>2025-06-13T12:35:16.000Z</published>
+    <updated>2025-06-13T12:46:30.054Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;有 1∼n 这 n（n&amp;lt;10）个数，现将这 n 个数组成一个 n
+位的数，每个数只能用一次，例如 n=2，则 12，21 等都是符合条件的数，但 11
+和 22 不行。&lt;/p&gt;
+&lt;p&gt;问，输入 n 后，将符合条件的所有的 n
+位数输出，且按照从小到大顺序输出。&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[C++] 数字游戏</title>
+    <link href="https://www.ptoe.cc/number-game.html"/>
+    <id>https://www.ptoe.cc/number-game.html</id>
+    <published>2025-06-13T12:26:55.000Z</published>
+    <updated>2025-06-20T06:48:19.425Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://www.luogu.com.cn/problem/P5660&quot;&gt;洛谷P5660&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;小 K 同学向小 P 同学发送了一个长度为 8 的 01 字符串 来玩数字游戏，小
+P 同学想要知道字符串中究竟有多少个 1。&lt;/p&gt;
+&lt;p&gt;注意：01 字符串为每一个字符是 0 或者 1
+的字符串，如“101”（不含双引号）为一个长度为 3 的 01 字符串。&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[C++] 找数</title>
+    <link href="https://www.ptoe.cc/find-the-number.html"/>
+    <id>https://www.ptoe.cc/find-the-number.html</id>
+    <published>2025-06-13T12:13:33.000Z</published>
+    <updated>2025-06-20T07:35:35.138Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;有两组数字，请找出第二组数中的哪些数在第一组中出现了，并从小到大输出。&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[CSP-J 2021] 网络连接</title>
+    <link href="https://www.ptoe.cc/network-connections.html"/>
+    <id>https://www.ptoe.cc/network-connections.html</id>
+    <published>2025-06-11T14:02:41.000Z</published>
+    <updated>2025-06-20T07:35:17.652Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://www.luogu.com.cn/problem/P7911&quot;&gt;洛谷P7911&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;TCP/IP 协议是网络通信领域的一项重要协议。
+今天你的任务，就是尝试利用这个协议，还原一个简化后的网络连接场景。&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[C++] 士兵排列</title>
+    <link href="https://www.ptoe.cc/soilders-sort.html"/>
+    <id>https://www.ptoe.cc/soilders-sort.html</id>
+    <published>2025-06-10T13:09:49.000Z</published>
+    <updated>2025-06-11T14:01:12.295Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;题面&quot;&gt;题面&lt;/h2&gt;
+&lt;p&gt;假如你是长官，现在有一些新兵入伍。但是他们不是同时到达军营集合。对于某一个士兵
+&lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;i&lt;/em&gt;&lt;/span&gt;（编号从 &lt;span
+class=&quot;math inline&quot;&gt;1&lt;/span&gt; 到 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;n&lt;/em&gt;&lt;/span&gt;）, 如果 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;s&lt;/em&gt;[&lt;em&gt;i&lt;/em&gt;] = 1&lt;/span&gt;，那么他从队尾入队，如果
+&lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;s&lt;/em&gt;[&lt;em&gt;i&lt;/em&gt;] = 0&lt;/span&gt;，那么他从队头入队。当所有士兵入队后，这个时候士兵就有一个排列。然后，从队头到队尾，每个士兵会说出他的能力值
+&lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;a&lt;/em&gt;[&lt;em&gt;i&lt;/em&gt;]&lt;/span&gt;，你需要按照能力值从高到低输出对应的一个排列。&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+</feed>

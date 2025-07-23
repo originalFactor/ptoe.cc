@@ -1,3 +1,6 @@
+https://www.ptoe.cc/lib/pdf/web/viewer.html
+https://www.ptoe.cc/lib/pdf/web/locale/locale.json
+https://www.ptoe.cc/lib/pdf/README.html
 https://www.ptoe.cc/decrypt.html
 https://www.ptoe.cc/live-warding.html
 https://www.ptoe.cc/pow.html

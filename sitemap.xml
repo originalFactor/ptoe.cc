@@ -2,6 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.ptoe.cc/lib/pdf/web/viewer.html</loc>
+    
+    <lastmod>2025-07-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ptoe.cc/lib/pdf/web/locale/locale.json</loc>
+    
+    <lastmod>2025-07-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.ptoe.cc/lib/pdf/README.html</loc>
+    
+    <lastmod>2025-07-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.ptoe.cc/decrypt.html</loc>
     
     <lastmod>2025-06-22</lastmod>
@@ -121,7 +148,7 @@
 
   <url>
     <loc>https://www.ptoe.cc/</loc>
-    <lastmod>2025-06-22</lastmod>
+    <lastmod>2025-07-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
