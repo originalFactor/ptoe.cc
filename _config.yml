@@ -96,6 +96,7 @@ pagination_dir: page
 # Include / Exclude file(s)
 ## include:/exclude: options only apply to the 'source/' folder
 include:
+  - ".nojekyll"
 exclude:
 ignore:
 
@@ -110,6 +111,7 @@ deploy:
   type: git
   repo: https://github.com/originalFactor/ptoe.cc
   branch: gh-pages
+  ignore_hidden: false
 
 tag-generator:
   enable_index_page: false
