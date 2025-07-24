@@ -19,16 +19,18 @@
     "hexo-generator-category": "^2.0.0",
     "hexo-generator-feed": "^3.0.0",
     "hexo-generator-index": "^3.0.0",
+    "hexo-generator-searchdb": "^1.5.0",
     "hexo-generator-sitemap": "^3.0.1",
     "hexo-generator-tag": "^2.0.0",
+    "hexo-related-posts": "^1.6.2",
     "hexo-renderer-ejs": "^2.0.0",
     "hexo-renderer-pandoc": "^0.5.0",
     "hexo-renderer-stylus": "^3.0.1",
     "hexo-server": "^3.0.0",
     "hexo-theme-next": "^8.23.1",
     "js-yaml": "^4.1.0"
-  }, 
-  "resolutions": {  
-    "stylus": "github:stylus/stylus#0.62.0"  
+  },
+  "resolutions": {
+    "stylus": "github:stylus/stylus#0.62.0"
   }
 }
