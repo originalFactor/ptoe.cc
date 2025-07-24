@@ -26,13 +26,13 @@
     <meta name="description" content="直播获奖 - 洛谷 NOI2130 即将举行。为了增加观赏性，CCF 决定逐一评出每个选手的成绩，并直播即时的获奖分数线。本次竞赛的获奖率为 w%，即当前排名前 w% 的选手的最低成绩就是即时的分数线。 更具体地，若当前已评出了 p 个选手的成绩，则当前计划获奖人数为 max (1, ⌊p × w%⌋)，其中 w 是获奖百分比，⌊x⌋ 表示对 x 向下取整，max (x, y) 表">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[C++] 直播获奖">
-<meta property="og:url" content="https://www.ptoe.cc/live-warding.html">
+<meta property="og:url" content="https://www.ptoe.cc/p7072.html">
 <meta property="og:site_name" content="元素的笔记">
 <meta property="og:description" content="直播获奖 - 洛谷 NOI2130 即将举行。为了增加观赏性，CCF 决定逐一评出每个选手的成绩，并直播即时的获奖分数线。本次竞赛的获奖率为 w%，即当前排名前 w% 的选手的最低成绩就是即时的分数线。 更具体地，若当前已评出了 p 个选手的成绩，则当前计划获奖人数为 max (1, ⌊p × w%⌋)，其中 w 是获奖百分比，⌊x⌋ 表示对 x 向下取整，max (x, y) 表">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.ptoe.cc/live-warding.assets/l453vhow.png">
 <meta property="article:published_time" content="2025-06-21T10:23:44.000Z">
-<meta property="article:modified_time" content="2025-06-22T14:37:26.880Z">
+<meta property="article:modified_time" content="2025-07-05T05:04:41.922Z">
 <meta property="article:author" content="元素">
 <meta property="article:tag" content="C++">
 <meta property="article:tag" content="算法">
@@ -41,10 +41,10 @@
 <meta name="twitter:image" content="https://www.ptoe.cc/live-warding.assets/l453vhow.png">
 
 
-<link rel="canonical" href="https://www.ptoe.cc/live-warding.html">
+<link rel="canonical" href="https://www.ptoe.cc/p7072.html">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.ptoe.cc/live-warding.html","path":"live-warding.html","title":"[C++] 直播获奖"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.ptoe.cc/p7072.html","path":"p7072.html","title":"[C++] 直播获奖"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>[C++] 直播获奖 | 元素的笔记</title>
@@ -66,9 +66,7 @@
   <script src="https://fastly.jsdelivr.net/npm/pangu@6.1.3/dist/browser/pangu.umd.js" integrity="sha256-erngBMP3zzoIM6eqQ8dmrReh2vqCRgWmORroIfVoDlE=" crossorigin="anonymous" defer></script>
 <script src="https://fastly.jsdelivr.net/npm/hexo-theme-next@8.23.2/source/js/utils.min.js" defer></script><script src="https://fastly.jsdelivr.net/npm/hexo-theme-next@8.23.2/source/js/motion.min.js" defer></script><script src="https://fastly.jsdelivr.net/npm/hexo-theme-next@8.23.2/source/js/sidebar.min.js" defer></script><script src="https://fastly.jsdelivr.net/npm/hexo-theme-next@8.23.2/source/js/next-boot.min.js" defer></script><script src="https://fastly.jsdelivr.net/npm/hexo-theme-next@8.23.2/source/js/pjax.min.js" defer></script>
 
-  <script src="https://fastly.jsdelivr.net/npm/hexo-generator-searchdb@1.5.0/dist/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
-<script src="https://fastly.jsdelivr.net/npm/hexo-theme-next@8.23.2/source/js/third-party/search/local-search.min.js" defer></script>
-
+  
   <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://fastly.jsdelivr.net/npm/pdfobject@2.3.1/pdfobject.min.js","integrity":"sha256-jI72I8ZLVflVOisZIOaLvRew3tyvzeu6aZXFm7P7dEo="},"url":"/lib/pdf/web/viewer.html"}</script>
   <script src="https://fastly.jsdelivr.net/npm/hexo-theme-next@8.23.2/source/js/third-party/tags/pdf.min.js" defer></script>
 
@@ -128,7 +126,6 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -137,37 +134,11 @@
 
 <nav class="site-nav">
   <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a></li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
-      </li>
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-      <div class="search-header">
-        <span class="search-icon">
-          <i class="fa fa-search"></i>
-        </span>
-        <div class="search-input-container">
-          <input autocomplete="off" autocapitalize="off" maxlength="80"
-                placeholder="搜索..." spellcheck="false"
-                type="search" class="search-input">
-        </div>
-        <span class="popup-btn-close" role="button">
-          <i class="fa fa-times-circle"></i>
-        </span>
-      </div>
-      <div class="search-result-container">
-        <div class="search-result-icon">
-          <i class="fa fa-spinner fa-pulse fa-5x"></i>
-        </div>
-      </div>
-    </div>
-  </div>
 
 </header>
         
@@ -200,7 +171,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -235,6 +206,8 @@
         </ul>
       </div>
     </div>
+        <div class="pjax">
+        </div>
   </aside>
 
 
@@ -251,7 +224,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.ptoe.cc/live-warding.html">
+    <link itemprop="mainEntityOfPage" href="https://www.ptoe.cc/p7072.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -287,7 +260,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-06-22 22:37:26" itemprop="dateModified" datetime="2025-06-22T22:37:26+08:00">2025-06-22</time>
+      <time title="修改时间：2025-07-05 13:04:41" itemprop="dateModified" datetime="2025-07-05T13:04:41+08:00">2025-07-05</time>
     </span>
 
   
@@ -299,8 +272,8 @@
       </span>
       <span class="post-meta-item-text">Changyan：</span>
     
-    <a title="[C++] 直播获奖" href="/live-warding.html#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::2fe3cd140ac7c9c8d94a09aa5d3ce827" class="cy_cmt_count" itemprop="commentCount"></span>
+    <a title="[C++] 直播获奖" href="/p7072.html#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::62b3e51b14afc13236e1592db0a65383" class="cy_cmt_count" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -352,7 +325,7 @@ class="math inline"><em>n</em>, <em>w</em></span>。分别代表选手总数�
 <figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">100 100 600 600 600 600 100 100 100 100</span><br></pre></td></tr></table></figure>
 <h2 id="说明提示">说明/提示</h2>
 <h3 id="样例-1-解释">样例 1 解释</h3>
-<p><img src="live-warding.assets/l453vhow.png" /></p>
+<p><img data-src="live-warding.assets/l453vhow.png" /></p>
 <h3 id="数据规模与约定">数据规模与约定</h3>
 <p>各测试点的 <span class="math inline"><em>n</em></span> 如下表：</p>
 <table>
@@ -452,7 +425,7 @@ class="math inline">2.999999</span>，向下取整后的结果不确定。因此
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/excellent-split.html" rel="prev" title="[C++] 优秀的拆分">
+                <a href="/p7071.html" rel="prev" title="[C++] 优秀的拆分">
                   <i class="fa fa-angle-left"></i> [C++] 优秀的拆分
                 </a>
             </div>
@@ -471,7 +444,7 @@ class="math inline">2.999999</span>，向下取整后的结果不确定。因此
 
 
 
-    <div class="comments" id="SOHUCS" sid="2fe3cd140ac7c9c8d94a09aa5d3ce827"></div>
+    <div class="comments" id="SOHUCS" sid="62b3e51b14afc13236e1592db0a65383"></div>
 </div>
   </main>
 

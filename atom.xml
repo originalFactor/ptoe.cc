@@ -6,7 +6,7 @@
   <link href="https://www.ptoe.cc/atom.xml" rel="self"/>
   
   <link href="https://www.ptoe.cc/"/>
-  <updated>2025-07-23T14:17:16.772Z</updated>
+  <updated>2025-07-24T14:57:15.007Z</updated>
   <id>https://www.ptoe.cc/</id>
   
   <author>
@@ -15,6 +15,111 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[C++] 二进制减法</title>
+    <link href="https://www.ptoe.cc/binary-minus.html"/>
+    <id>https://www.ptoe.cc/binary-minus.html</id>
+    <published>2025-07-24T14:34:44.000Z</published>
+    <updated>2025-07-24T14:57:15.007Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;闲着没事研究了下二进制减法。&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[C++] P1008 [NOIP 1998 普及组] 三连击</title>
+    <link href="https://www.ptoe.cc/p1008.html"/>
+    <id>https://www.ptoe.cc/p1008.html</id>
+    <published>2025-07-24T14:29:45.000Z</published>
+    <updated>2025-07-24T14:33:20.003Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;洛谷签到题（真·签到）&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[C++] P3916 图的遍历</title>
+    <link href="https://www.ptoe.cc/p3916.html"/>
+    <id>https://www.ptoe.cc/p3916.html</id>
+    <published>2025-07-24T14:11:08.000Z</published>
+    <updated>2025-07-24T14:14:02.896Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;给出 &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;N&lt;/em&gt;&lt;/span&gt; 个点，&lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;M&lt;/em&gt;&lt;/span&gt; 条边的有向图，对于每个点 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;v&lt;/em&gt;&lt;/span&gt;，令 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;A&lt;/em&gt;(&lt;em&gt;v&lt;/em&gt;)&lt;/span&gt; 表示从点 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;v&lt;/em&gt;&lt;/span&gt;
+出发，能到达的编号最大的点。现在请求出 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;A&lt;/em&gt;(1), &lt;em&gt;A&lt;/em&gt;(2), …, &lt;em&gt;A&lt;/em&gt;(&lt;em&gt;N&lt;/em&gt;)&lt;/span&gt;
+的值。&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[C++] P7910 [CSP-J 2021] 插入排序</title>
+    <link href="https://www.ptoe.cc/p7910.html"/>
+    <id>https://www.ptoe.cc/p7910.html</id>
+    <published>2025-07-24T14:07:54.000Z</published>
+    <updated>2025-07-24T14:09:39.528Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;插入排序是一种非常常见且简单的排序算法。小 Z 是一名大一的新生，今天 H
+老师刚刚在上课的时候讲了插入排序算法。&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[C++] P2782 友好城市</title>
+    <link href="https://www.ptoe.cc/p2782.html"/>
+    <id>https://www.ptoe.cc/p2782.html</id>
+    <published>2025-07-24T12:14:01.000Z</published>
+    <updated>2025-07-24T12:15:00.761Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;有一条横贯东西的大河，河有笔直的南北两岸，岸上各有位置各不相同的
+&lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;N&lt;/em&gt;&lt;/span&gt;
+个城市。北岸的每个城市有且仅有一个友好城市在南岸，而且不同城市的友好城市不相同。每对友好城市都向政府申请在河上开辟一条直线航道连接两个城市，但是由于河上雾太大，政府决定避免任意两条航道交叉，以避免事故。编程帮助政府做出一些批准和拒绝申请的决定，使得在保证任意两条航道不相交的情况下，被批准的申请尽量多。&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[C++] P2853 [USACO06DEC] Cow Picnic S</title>
+    <link href="https://www.ptoe.cc/p2853.html"/>
+    <id>https://www.ptoe.cc/p2853.html</id>
+    <published>2025-07-24T11:24:16.000Z</published>
+    <updated>2025-07-24T11:27:49.382Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;K&lt;/em&gt;(1 ≤ &lt;em&gt;K&lt;/em&gt; ≤ 100)&lt;/span&gt;
+只奶牛分散在 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;N&lt;/em&gt;(1 ≤ &lt;em&gt;N&lt;/em&gt; ≤ 1000)&lt;/span&gt;
+个牧场．现在她们要集中起来进餐。牧场之间有 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;M&lt;/em&gt;(1 ≤ &lt;em&gt;M&lt;/em&gt; ≤ 10000)&lt;/span&gt;
+条有向路连接，而且不存在起点和终点相同的有向路．她们进餐的地点必须是所有奶牛都可到达的地方。那么，有多少这样的牧场可供进食呢？&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>[C++] 一元二次方程</title>
@@ -68,8 +173,8 @@ class=&quot;math inline&quot;&gt;gcd (12, 18) = 6&lt;/span&gt;。&lt;/p&
   
   <entry>
     <title>[C++] 解密</title>
-    <link href="https://www.ptoe.cc/decrypt.html"/>
-    <id>https://www.ptoe.cc/decrypt.html</id>
+    <link href="https://www.ptoe.cc/p8814.html"/>
+    <id>https://www.ptoe.cc/p8814.html</id>
     <published>2025-06-22T12:38:57.000Z</published>
     <updated>2025-07-23T14:12:54.443Z</updated>
     
@@ -92,13 +197,13 @@ class=&quot;math inline&quot;&gt;&lt;em&gt;e&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt
   
   <entry>
     <title>[C++] 乘方</title>
-    <link href="https://www.ptoe.cc/pow.html"/>
-    <id>https://www.ptoe.cc/pow.html</id>
+    <link href="https://www.ptoe.cc/p8813.html"/>
+    <id>https://www.ptoe.cc/p8813.html</id>
     <published>2025-06-22T12:14:37.000Z</published>
-    <updated>2025-06-22T12:30:59.584Z</updated>
+    <updated>2025-07-24T14:11:34.001Z</updated>
     
     
-    <summary type="html">&lt;p&gt;[P8813 &lt;a href=&quot;https://www.luogu.com.cn/problem/P8813&quot;&gt;CSP-J 2022]
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://www.luogu.com.cn/problem/P8813&quot;&gt;P8813 [CSP-J 2022]
 乘方 - 洛谷&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;小文同学刚刚接触了信息学竞赛，有一天她遇到了这样一个题：给定正整数
 &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;a&lt;/em&gt;&lt;/span&gt; 和 &lt;span
@@ -169,10 +274,10 @@ class=&quot;math inline&quot;&gt;&lt;em&gt;n&lt;/em&gt;, &lt;em&gt;L&lt;/em&gt
   
   <entry>
     <title>[C++] 直播获奖</title>
-    <link href="https://www.ptoe.cc/live-warding.html"/>
-    <id>https://www.ptoe.cc/live-warding.html</id>
+    <link href="https://www.ptoe.cc/p7072.html"/>
+    <id>https://www.ptoe.cc/p7072.html</id>
     <published>2025-06-21T10:23:44.000Z</published>
-    <updated>2025-06-22T14:37:26.880Z</updated>
+    <updated>2025-07-05T05:04:41.922Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;a href=&quot;https://www.luogu.com.cn/problem/P7072&quot;&gt;直播获奖 -
@@ -201,8 +306,8 @@ class=&quot;math inline&quot;&gt;&lt;em&gt;y&lt;/em&gt;&lt;/span&gt;
   
   <entry>
     <title>[C++] 优秀的拆分</title>
-    <link href="https://www.ptoe.cc/excellent-split.html"/>
-    <id>https://www.ptoe.cc/excellent-split.html</id>
+    <link href="https://www.ptoe.cc/p7071.html"/>
+    <id>https://www.ptoe.cc/p7071.html</id>
     <published>2025-06-20T06:54:08.000Z</published>
     <updated>2025-06-20T07:35:37.700Z</updated>
     
@@ -236,8 +341,8 @@ class=&quot;math inline&quot;&gt;&lt;em&gt;n&lt;/em&gt;&lt;/span&gt;，你需要
   
   <entry>
     <title>[C++] 公交换乘</title>
-    <link href="https://www.ptoe.cc/transfer-bus.html"/>
-    <id>https://www.ptoe.cc/transfer-bus.html</id>
+    <link href="https://www.ptoe.cc/p5661.html"/>
+    <id>https://www.ptoe.cc/p5661.html</id>
     <published>2025-06-13T12:50:28.000Z</published>
     <updated>2025-06-20T07:34:56.803Z</updated>
     
@@ -283,8 +388,8 @@ class=&quot;math inline&quot;&gt;&lt;em&gt;t&lt;/em&gt;&lt;sub&gt;&lt;em&gt;b&lt
   
   <entry>
     <title>[C++] 数字游戏</title>
-    <link href="https://www.ptoe.cc/number-game.html"/>
-    <id>https://www.ptoe.cc/number-game.html</id>
+    <link href="https://www.ptoe.cc/p5660.html"/>
+    <id>https://www.ptoe.cc/p5660.html</id>
     <published>2025-06-13T12:26:55.000Z</published>
     <updated>2025-06-20T06:48:19.425Z</updated>
     
@@ -317,8 +422,8 @@ P 同学想要知道字符串中究竟有多少个 1。&lt;/p&gt;
   
   <entry>
     <title>[CSP-J 2021] 网络连接</title>
-    <link href="https://www.ptoe.cc/network-connections.html"/>
-    <id>https://www.ptoe.cc/network-connections.html</id>
+    <link href="https://www.ptoe.cc/p7911.html"/>
+    <id>https://www.ptoe.cc/p7911.html</id>
     <published>2025-06-11T14:02:41.000Z</published>
     <updated>2025-06-20T07:35:17.652Z</updated>
     
