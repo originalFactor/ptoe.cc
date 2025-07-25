@@ -1,7 +1,7 @@
 ---
 title: '[C++] 找数'
 date: 2025-06-13 20:13:33
-tags:
+categories: 编程
 mathjax: true
 ---
 

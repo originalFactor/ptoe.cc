@@ -1,7 +1,7 @@
 ---
 title: '[C++] 二进制减法'
 date: 2025-07-24 22:34:44
-tags:
+categories: 编程
 mathjax: true
 ---
 

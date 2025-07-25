@@ -17,7 +17,7 @@ timezone: Asia/Shanghai
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://www.ptoe.cc/
-permalink: :title.html
+permalink: :year/:month/:day/:title.html
 permalink_defaults:
 pretty_urls:
   trailing_index: false # Set to false to remove trailing 'index.html' from permalinks
@@ -35,7 +35,7 @@ skip_render:
   - '.nojekyll'
 
 # Writing
-new_post_name: :title.md # File name of new posts
+new_post_name: :year/:month/:day/:title.md # File name of new posts
 default_layout: post
 titlecase: false # Transform title into titlecase
 external_link:
@@ -71,8 +71,10 @@ index_generator:
   order_by: -date
 
 # Category & Tag
-default_category: uncategorized
+default_category: 未分类
 category_map:
+  未分类: uncategorized
+  编程: programming
 tag_map:
 
 # Metadata elements

@@ -1,7 +1,7 @@
 ---
 title: '[C++] 士兵排列'
 date: 2025-06-10 21:09:49
-tags:
+categories: 编程
 mathjax: true
 ---
 
