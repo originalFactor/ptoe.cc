@@ -23,15 +23,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.ptoe.cc","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"default"},"fold":{"enable":false,"height":500},"language":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"changyan","storage":true,"lazyload":true,"nav":null,"activeClass":"changyan"},"stickytabs":false,"motion":{"enable":true,"async":true,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="https://fastly.jsdelivr.net/npm/hexo-theme-next@8.23.2/source/js/config.min.js" defer></script>
 
-    <meta name="description" content="K(1 ≤ K ≤ 100) 只奶牛分散在 N(1 ≤ N ≤ 1000) 个牧场．现在她们要集中起来进餐。牧场之间有 M(1 ≤ M ≤ 10000) 条有向路连接，而且不存在起点和终点相同的有向路．她们进餐的地点必须是所有奶牛都可到达的地方。那么，有多少这样的牧场可供进食呢？">
+    <meta name="description" content="洛谷签到题（真·签到）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[C++] P2853 [USACO06DEC] Cow Picnic S">
-<meta property="og:url" content="https://www.ptoe.cc/p2853.html">
+<meta property="og:title" content="[C++] P1008 [NOIP 1998 普及组] 三连击">
+<meta property="og:url" content="https://www.ptoe.cc/2025/07/24/p1008.html">
 <meta property="og:site_name" content="元素的笔记">
-<meta property="og:description" content="K(1 ≤ K ≤ 100) 只奶牛分散在 N(1 ≤ N ≤ 1000) 个牧场．现在她们要集中起来进餐。牧场之间有 M(1 ≤ M ≤ 10000) 条有向路连接，而且不存在起点和终点相同的有向路．她们进餐的地点必须是所有奶牛都可到达的地方。那么，有多少这样的牧场可供进食呢？">
+<meta property="og:description" content="洛谷签到题（真·签到）">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-07-24T11:24:16.000Z">
-<meta property="article:modified_time" content="2025-07-24T11:27:49.382Z">
+<meta property="article:published_time" content="2025-07-24T14:29:45.000Z">
+<meta property="article:modified_time" content="2025-07-25T03:51:47.934Z">
 <meta property="article:author" content="元素">
 <meta property="article:tag" content="C++">
 <meta property="article:tag" content="算法">
@@ -39,13 +39,13 @@
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://www.ptoe.cc/p2853.html">
+<link rel="canonical" href="https://www.ptoe.cc/2025/07/24/p1008.html">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.ptoe.cc/p2853.html","path":"p2853.html","title":"[C++] P2853 [USACO06DEC] Cow Picnic S"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.ptoe.cc/2025/07/24/p1008.html","path":"2025/07/24/p1008.html","title":"[C++] P1008 [NOIP 1998 普及组] 三连击"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>[C++] P2853 [USACO06DEC] Cow Picnic S | 元素的笔记</title>
+<title>[C++] P1008 [NOIP 1998 普及组] 三连击 | 元素的笔记</title>
   
 
 
@@ -89,7 +89,7 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://fastly.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://fastly.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
 <script src="https://fastly.jsdelivr.net/npm/hexo-theme-next@8.23.2/source/js/third-party/math/mathjax.min.js" defer></script>
 
 
@@ -185,7 +185,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B-1"><span class="nav-number">3.</span> <span class="nav-text">输入输出样例 #1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5-1"><span class="nav-number">3.1.</span> <span class="nav-text">输入 #1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA-1"><span class="nav-number">3.2.</span> <span class="nav-text">输出 #1</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B4%E6%98%8E%E6%8F%90%E7%A4%BA"><span class="nav-number">4.</span> <span class="nav-text">说明&#x2F;提示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3"><span class="nav-number">5.</span> <span class="nav-text">题解</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B-1"><span class="nav-number">4.</span> <span class="nav-text">输入输出样例 #1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5-1"><span class="nav-number">4.1.</span> <span class="nav-text">输入 #1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA-1"><span class="nav-number">4.2.</span> <span class="nav-text">输出 #1</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B4%E6%98%8E%E6%8F%90%E7%A4%BA"><span class="nav-number">5.</span> <span class="nav-text">说明&#x2F;提示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3"><span class="nav-number">6.</span> <span class="nav-text">题解</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -198,9 +198,14 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
 </div>
@@ -251,7 +256,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.ptoe.cc/p2853.html">
+    <link itemprop="mainEntityOfPage" href="https://www.ptoe.cc/2025/07/24/p1008.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -264,12 +269,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="[C++] P2853 [USACO06DEC] Cow Picnic S | 元素的笔记">
+      <meta itemprop="name" content="[C++] P1008 [NOIP 1998 普及组] 三连击 | 元素的笔记">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          [C++] P2853 [USACO06DEC] Cow Picnic S
+          [C++] P1008 [NOIP 1998 普及组] 三连击
         </h1>
 
         <div class="post-meta-container">
@@ -279,9 +284,24 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2025-07-24 19:24:16 / 修改时间：19:27:49" itemprop="dateCreated datePublished" datetime="2025-07-24T19:24:16+08:00">2025-07-24</time>
+      <time title="创建时间：2025-07-24 22:29:45" itemprop="dateCreated datePublished" datetime="2025-07-24T22:29:45+08:00">2025-07-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-07-25 11:51:47" itemprop="dateModified" datetime="2025-07-25T11:51:47+08:00">2025-07-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+        </span>
     </span>
 
   
@@ -293,8 +313,8 @@
       </span>
       <span class="post-meta-item-text">Changyan：</span>
     
-    <a title="[C++] P2853 [USACO06DEC] Cow Picnic S" href="/p2853.html#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::a748798f15203e085eb2352826bb1bcc" class="cy_cmt_count" itemprop="commentCount"></span>
+    <a title="[C++] P1008 [NOIP 1998 普及组] 三连击" href="/2025/07/24/p1008.html#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::a3bb81de6746037f82684e9c1e53f158" class="cy_cmt_count" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -307,44 +327,31 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p><span class="math inline"><em>K</em>(1 ≤ <em>K</em> ≤ 100)</span>
-只奶牛分散在 <span
-class="math inline"><em>N</em>(1 ≤ <em>N</em> ≤ 1000)</span>
-个牧场．现在她们要集中起来进餐。牧场之间有 <span
-class="math inline"><em>M</em>(1 ≤ <em>M</em> ≤ 10000)</span>
-条有向路连接，而且不存在起点和终点相同的有向路．她们进餐的地点必须是所有奶牛都可到达的地方。那么，有多少这样的牧场可供进食呢？</p>
+    <div class="post-body" itemprop="articleBody"><p>洛谷签到题（真·签到）</p>
 <span id="more"></span>
+<p>本题为提交答案题，您可以写程序或手算在本机上算出答案后，直接提交答案文本，也可提交答案生成程序。</p>
+<h2 id="题目描述">题目描述</h2>
+<p>将 <span class="math inline">1, 2, …, 9</span> 共 <span
+class="math inline">9</span> 个数分成 <span class="math inline">3</span>
+组，分别组成 <span class="math inline">3</span> 个三位数，且使这 <span
+class="math inline">3</span> 个三位数构成 <span
+class="math inline">1 : 2 : 3</span> 的比例，试求出所有满足条件的 <span
+class="math inline">3</span> 个三位数。</p>
 <h2 id="输入格式">输入格式</h2>
-<p>第 <span class="math inline">1</span>
-行：三个以空格分隔的整数，分别为：<span
-class="math inline"><em>K</em></span>, <span
-class="math inline"><em>N</em></span>, <span
-class="math inline"><em>M</em></span>。</p>
-<p>第 <span class="math inline">2</span> 行到第 <span
-class="math inline"><em>K</em> + 1</span> 行：每行包含一个整数 <span
-class="math inline"><em>C</em><sub><em>i</em></sub></span>（<span
-class="math inline">1 ≤ <em>C</em><sub><em>i</em></sub> ≤ <em>N</em></span>），表示第
-<span class="math inline"><em>i</em></span> 头奶牛所在的牧场编号。</p>
-<p>第 <span class="math inline"><em>K</em> + 2</span> 行到第 <span
-class="math inline"><em>M</em> + <em>K</em> + 1</span>
-行：每行包含两个以空格分隔的整数 <span
-class="math inline"><em>A</em></span> 和 <span
-class="math inline"><em>B</em></span>，表示一条从牧场 <span
-class="math inline"><em>A</em></span> 到牧场 <span
-class="math inline"><em>B</em></span> 的单向路径。（<span
-class="math inline">1 ≤ <em>A</em>, <em>B</em> ≤ <em>N</em>, <em>A</em> ≠ <em>B</em></span>）</p>
+<p>无</p>
 <h2 id="输出格式">输出格式</h2>
-<p>第一行：一个整数，即所有奶牛都可以到达的牧场数量。</p>
+<p>若干行，每行 <span class="math inline">3</span> 个数字。按照每行第
+<span class="math inline">1</span> 个数字升序排列。</p>
 <h2 id="输入输出样例-1">输入输出样例 #1</h2>
 <h3 id="输入-1">输入 #1</h3>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">2 4 4</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">1 2</span><br><span class="line">1 4</span><br><span class="line">2 3</span><br><span class="line">3 4</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">无</span><br></pre></td></tr></table></figure>
 <h3 id="输出-1">输出 #1</h3>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">192 384 576</span><br><span class="line">* * *</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">* * *</span><br><span class="line">（剩余部分不予展示）</span><br></pre></td></tr></table></figure>
 <h2 id="说明提示">说明/提示</h2>
-<p>奶牛可以在 <span class="math inline">3</span> 或 <span
-class="math inline">4</span> 号牧场相遇。</p>
+<p>NOIP1998 普及组 第一题</p>
 <h2 id="题解">题解</h2>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;numeric&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> node, <span class="type">bool</span> *visited, vector&lt;<span class="type">int</span>&gt; *farms_routes, <span class="type">int</span> *farms)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//cout &lt;&lt; &quot;Visiting node: &quot; &lt;&lt; node &lt;&lt; endl; // Debug statement to track the nodes being visited. Remove in final version.</span></span><br><span class="line">    visited[node] = <span class="literal">true</span>;</span><br><span class="line">    farms[node]++;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> it : farms_routes[node])&#123;</span><br><span class="line">        <span class="keyword">if</span>(!visited[it])&#123;</span><br><span class="line">            <span class="built_in">dfs</span>(it, visited, farms_routes, farms);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> n, k, m;</span><br><span class="line">    cin &gt;&gt; k &gt;&gt; n &gt;&gt; m;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> cows[k];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; k; i++) &#123;</span><br><span class="line">        cin &gt;&gt; cows[i];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; farm_routes[n];</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;m; i++) &#123;</span><br><span class="line">        <span class="type">int</span> a, b;</span><br><span class="line">        cin &gt;&gt; a &gt;&gt; b;</span><br><span class="line">        farm_routes[a<span class="number">-1</span>].<span class="built_in">push_back</span>(b<span class="number">-1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> farms[n] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="type">bool</span> visited[n] = &#123;<span class="literal">false</span>&#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; k; i++) &#123;</span><br><span class="line">        <span class="built_in">memset</span>(visited, <span class="literal">false</span>, <span class="built_in">sizeof</span>(visited));</span><br><span class="line">        <span class="built_in">dfs</span>(cows[i]<span class="number">-1</span>, visited, farm_routes, farms);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// for (int i = 0; i &lt; n; i++)</span></span><br><span class="line">    <span class="comment">// &#123;</span></span><br><span class="line">    <span class="comment">//     cout &lt;&lt; farms[i] &lt;&lt; &quot; &quot;;</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line">    </span><br><span class="line">    cout &lt;&lt; <span class="built_in">accumulate</span>(farms, farms+n, <span class="number">0</span>, [k](<span class="type">int</span> base, <span class="type">int</span> cows)&#123;</span><br><span class="line">        <span class="keyword">return</span> cows==k?base<span class="number">+1</span>:base;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我的妈呀没啥好说的，递归就是了</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">bool</span> used[<span class="number">10</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">f</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b, <span class="type">int</span> c)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!(a/<span class="number">100</span>))&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;<span class="number">10</span>;i++) </span><br><span class="line">            <span class="keyword">if</span>(!used[i])&#123;</span><br><span class="line">                used[i] = <span class="literal">true</span>;</span><br><span class="line">                <span class="built_in">f</span>(a*<span class="number">10</span>+i, b, c);</span><br><span class="line">                used[i] = <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(!(b/<span class="number">100</span>))&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;<span class="number">10</span>;i++) </span><br><span class="line">            <span class="keyword">if</span>(!used[i])&#123;</span><br><span class="line">                used[i] = <span class="literal">true</span>;</span><br><span class="line">                <span class="built_in">f</span>(a, b*<span class="number">10</span>+i, c);</span><br><span class="line">                used[i] = <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(!(c/<span class="number">100</span>))&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;<span class="number">10</span>;i++) </span><br><span class="line">            <span class="keyword">if</span>(!used[i])&#123;</span><br><span class="line">                used[i] = <span class="literal">true</span>;</span><br><span class="line">                <span class="built_in">f</span>(a, b, c*<span class="number">10</span>+i);</span><br><span class="line">                used[i] = <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(a*<span class="number">2</span>==b &amp;&amp; a*<span class="number">3</span>==c) cout &lt;&lt; a &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; b &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; c &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">f</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -385,13 +392,13 @@ class="math inline">4</span> 号牧场相遇。</p>
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/p9750.html" rel="prev" title="[C++] 一元二次方程">
-                  <i class="fa fa-angle-left"></i> [C++] 一元二次方程
+                <a href="/2025/07/24/p3916.html" rel="prev" title="[C++] P3916 图的遍历">
+                  <i class="fa fa-angle-left"></i> [C++] P3916 图的遍历
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/p2782.html" rel="next" title="[C++] P2782 友好城市">
-                  [C++] P2782 友好城市 <i class="fa fa-angle-right"></i>
+                <a href="/2025/07/24/binary-minus.html" rel="next" title="[C++] 二进制减法">
+                  [C++] 二进制减法 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
@@ -404,7 +411,7 @@ class="math inline">4</span> 号牧场相遇。</p>
 
 
 
-    <div class="comments" id="SOHUCS" sid="a748798f15203e085eb2352826bb1bcc"></div>
+    <div class="comments" id="SOHUCS" sid="a3bb81de6746037f82684e9c1e53f158"></div>
 </div>
   </main>
 

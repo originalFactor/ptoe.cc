@@ -23,15 +23,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.ptoe.cc","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"default"},"fold":{"enable":false,"height":500},"language":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"changyan","storage":true,"lazyload":true,"nav":null,"activeClass":"changyan"},"stickytabs":false,"motion":{"enable":true,"async":true,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="https://fastly.jsdelivr.net/npm/hexo-theme-next@8.23.2/source/js/config.min.js" defer></script>
 
-    <meta name="description" content="题面 假如你是长官，现在有一些新兵入伍。但是他们不是同时到达军营集合。对于某一个士兵 i（编号从 1 到 n）, 如果 s[i] &#x3D; 1，那么他从队尾入队，如果 s[i] &#x3D; 0，那么他从队头入队。当所有士兵入队后，这个时候士兵就有一个排列。然后，从队头到队尾，每个士兵会说出他的能力值 a[i]，你需要按照能力值从高到低输出对应的一个排列。">
+    <meta name="description" content="有两组数字，请找出第二组数中的哪些数在第一组中出现了，并从小到大输出。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[C++] 士兵排列">
-<meta property="og:url" content="https://www.ptoe.cc/soilders-sort.html">
+<meta property="og:title" content="[C++] 找数">
+<meta property="og:url" content="https://www.ptoe.cc/2025/06/13/find-the-number.html">
 <meta property="og:site_name" content="元素的笔记">
-<meta property="og:description" content="题面 假如你是长官，现在有一些新兵入伍。但是他们不是同时到达军营集合。对于某一个士兵 i（编号从 1 到 n）, 如果 s[i] &#x3D; 1，那么他从队尾入队，如果 s[i] &#x3D; 0，那么他从队头入队。当所有士兵入队后，这个时候士兵就有一个排列。然后，从队头到队尾，每个士兵会说出他的能力值 a[i]，你需要按照能力值从高到低输出对应的一个排列。">
+<meta property="og:description" content="有两组数字，请找出第二组数中的哪些数在第一组中出现了，并从小到大输出。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-06-10T13:09:49.000Z">
-<meta property="article:modified_time" content="2025-06-11T14:01:12.295Z">
+<meta property="article:published_time" content="2025-06-13T12:13:33.000Z">
+<meta property="article:modified_time" content="2025-07-25T03:53:15.095Z">
 <meta property="article:author" content="元素">
 <meta property="article:tag" content="C++">
 <meta property="article:tag" content="算法">
@@ -39,13 +39,13 @@
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://www.ptoe.cc/soilders-sort.html">
+<link rel="canonical" href="https://www.ptoe.cc/2025/06/13/find-the-number.html">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.ptoe.cc/soilders-sort.html","path":"soilders-sort.html","title":"[C++] 士兵排列"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.ptoe.cc/2025/06/13/find-the-number.html","path":"2025/06/13/find-the-number.html","title":"[C++] 找数"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>[C++] 士兵排列 | 元素的笔记</title>
+<title>[C++] 找数 | 元素的笔记</title>
   
 
 
@@ -185,7 +185,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E9%9D%A2"><span class="nav-number">1.</span> <span class="nav-text">题面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#io"><span class="nav-number">2.</span> <span class="nav-text">I&#x2F;O</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5"><span class="nav-number">2.1.</span> <span class="nav-text">输入</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B"><span class="nav-number">2.1.1.</span> <span class="nav-text">样例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA"><span class="nav-number">2.2.</span> <span class="nav-text">输出</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">样例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3"><span class="nav-number">3.</span> <span class="nav-text">题解</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#io"><span class="nav-number">1.</span> <span class="nav-text">I&#x2F;O</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5"><span class="nav-number">1.1.</span> <span class="nav-text">输入</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B"><span class="nav-number">1.1.1.</span> <span class="nav-text">样例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA"><span class="nav-number">1.2.</span> <span class="nav-text">输出</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">样例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E8%8C%83%E5%9B%B4"><span class="nav-number">1.3.</span> <span class="nav-text">数据范围</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AD%94%E6%A1%88"><span class="nav-number">2.</span> <span class="nav-text">答案</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -198,9 +198,14 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
 </div>
@@ -251,7 +256,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.ptoe.cc/soilders-sort.html">
+    <link itemprop="mainEntityOfPage" href="https://www.ptoe.cc/2025/06/13/find-the-number.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -264,12 +269,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="[C++] 士兵排列 | 元素的笔记">
+      <meta itemprop="name" content="[C++] 找数 | 元素的笔记">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          [C++] 士兵排列
+          [C++] 找数
         </h1>
 
         <div class="post-meta-container">
@@ -280,14 +285,23 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2025-06-10 21:09:49" itemprop="dateCreated datePublished" datetime="2025-06-10T21:09:49+08:00">2025-06-10</time>
+      <time title="创建时间：2025-06-13 20:13:33" itemprop="dateCreated datePublished" datetime="2025-06-13T20:13:33+08:00">2025-06-13</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-06-11 22:01:12" itemprop="dateModified" datetime="2025-06-11T22:01:12+08:00">2025-06-11</time>
+      <time title="修改时间：2025-07-25 11:53:15" itemprop="dateModified" datetime="2025-07-25T11:53:15+08:00">2025-07-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+        </span>
     </span>
 
   
@@ -299,8 +313,8 @@
       </span>
       <span class="post-meta-item-text">Changyan：</span>
     
-    <a title="[C++] 士兵排列" href="/soilders-sort.html#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::530a4187f1655be36680d5ce7ea5e30c" class="cy_cmt_count" itemprop="commentCount"></span>
+    <a title="[C++] 找数" href="/2025/06/13/find-the-number.html#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::94967f4aacdabe972d3bf5970c164b52" class="cy_cmt_count" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -313,37 +327,30 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="题面">题面</h2>
-<p>假如你是长官，现在有一些新兵入伍。但是他们不是同时到达军营集合。对于某一个士兵
-<span class="math inline"><em>i</em></span>（编号从 <span
-class="math inline">1</span> 到 <span
-class="math inline"><em>n</em></span>）, 如果 <span
-class="math inline"><em>s</em>[<em>i</em>] = 1</span>，那么他从队尾入队，如果
-<span
-class="math inline"><em>s</em>[<em>i</em>] = 0</span>，那么他从队头入队。当所有士兵入队后，这个时候士兵就有一个排列。然后，从队头到队尾，每个士兵会说出他的能力值
-<span
-class="math inline"><em>a</em>[<em>i</em>]</span>，你需要按照能力值从高到低输出对应的一个排列。</p>
+    <div class="post-body" itemprop="articleBody"><p>有两组数字，请找出第二组数中的哪些数在第一组中出现了，并从小到大输出。</p>
 <span id="more"></span>
 <h2 id="io">I/O</h2>
 <h3 id="输入">输入</h3>
-<p>对于每组测试样例，</p>
-<p>第一行输入一个正整数 $ n (1 n ^5) $，表示士兵的个数。</p>
-<p>第二行输入一个字符串 $ s (1 |s| ^5) $，表示士兵入队的方式。</p>
-<p>第三行输入 <span class="math inline"><em>n</em></span> 个正整数 <span
-class="math inline"><em>a</em><sub><em>i</em></sub>(1 ≤ <em>a</em><sub><em>i</em></sub> ≤ 10<sup>9</sup>)</span>，表示入完队后每个士兵从头到尾说出他自己的能力值。
-保证每个能力值不同，即 <span
-class="math inline"><em>a</em><sub><em>i</em></sub> ≠ <em>a</em><sub><em>j</em></sub>(<em>i</em> ≠ <em>j</em>, 1 ≤ <em>i</em>, <em>j</em> ≤ <em>n</em>)</span>。</p>
+<ul>
+<li>第一行两个整数 n 和 m，分别代表 2 组数的数量。</li>
+<li>第二行 n 个正整数。</li>
+<li>第三行 m 个正整数。</li>
+</ul>
 <h4 id="样例">样例</h4>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">6</span><br><span class="line">011010</span><br><span class="line">6 1 2 4 5 3</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">7 7</span><br><span class="line">8 7 9 8 2 6 3</span><br><span class="line">9 6 8 3 3 2 10</span><br></pre></td></tr></table></figure>
 <h3 id="输出">输出</h3>
-<p>对于每组测试样例，输出一行排列，表示按上述要求排好序后的一个排列。</p>
+<p>按照要求输出满足条件的数，数与数之间用空格隔开。</p>
 <h4 id="样例-1">样例</h4>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">6 3 2 5 1 4</span><br></pre></td></tr></table></figure>
-<h2 id="题解">题解</h2>
-<p>由题意，使用STL Deque双向队列模拟，即可</p>
-<p><em>注：Wayback
-Machine的代码似乎有问题，我重写了，和之前的思路不一样;)，但是理论上没问题。另外，我找不到那题的OJ了</em></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    deque&lt; pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; &gt; soilders;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line"><span class="comment">//    cout &lt;&lt; &quot;We got n = &quot; &lt;&lt; n &lt;&lt; endl;</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="type">char</span> type;</span><br><span class="line">        cin &gt;&gt; type;</span><br><span class="line"><span class="comment">//        cout &lt;&lt; &quot;We got soilder &quot; &lt;&lt; i+1 &lt;&lt; &quot; is &quot; &lt;&lt; (type==&#x27;1&#x27;?&quot;Back&quot;:&quot;Front&quot;) &lt;&lt; &quot; inserted.&quot; &lt;&lt; endl;</span></span><br><span class="line">        <span class="keyword">switch</span> (type) &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">&#x27;1&#x27;</span>:</span><br><span class="line">            soilders.<span class="built_in">emplace_back</span>(i<span class="number">+1</span>, <span class="number">0</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">&#x27;0&#x27;</span>:</span><br><span class="line">            soilders.<span class="built_in">emplace_front</span>(i<span class="number">+1</span>, <span class="number">0</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    vector&lt; pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; &gt; soilders_listed;</span><br><span class="line">    soilders_listed.<span class="built_in">reserve</span>(n);</span><br><span class="line">    <span class="keyword">while</span>(!soilders.<span class="built_in">empty</span>())&#123;</span><br><span class="line">        <span class="type">int</span> identity = soilders.<span class="built_in">front</span>().first,</span><br><span class="line">            ability;</span><br><span class="line">        cin &gt;&gt; ability;</span><br><span class="line">        soilders_listed.<span class="built_in">emplace_back</span>(</span><br><span class="line">            identity,</span><br><span class="line">            ability</span><br><span class="line">        );</span><br><span class="line"><span class="comment">//        cout &lt;&lt; &quot;We got soilder &quot; &lt;&lt; identity &lt;&lt; &quot;&#x27;s ability is &quot; &lt;&lt; ability &lt;&lt; endl;</span></span><br><span class="line">        soilders.<span class="built_in">pop_front</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">sort</span>(soilders_listed.<span class="built_in">begin</span>(), soilders_listed.<span class="built_in">end</span>(),</span><br><span class="line">        [](<span class="type">const</span> pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt;&amp; a, <span class="type">const</span> pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt;&amp; b)&#123;</span><br><span class="line">            <span class="keyword">return</span> a.second &gt; b.second;</span><br><span class="line">        &#125;</span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> soilder : soilders_listed)&#123;</span><br><span class="line">        cout &lt;&lt; soilder.first &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2 3 3 6 8 9</span><br></pre></td></tr></table></figure>
+<h3 id="数据范围">数据范围</h3>
+<p>对于 100% 的数据 <span
+class="math inline">1 ≤ <em>n</em>, <em>m</em> ≤ 100000</span>，每个数
+<span class="math inline"> ≤ 2 × 10<sup>9</sup></span></p>
+<h2 id="答案">答案</h2>
+<p>这题我们用 map 就能很简单的做出来，输入第一组数的时候在 map
+中保存哪些数存在，再在输入第二组数的时候将 map 中标记为存在的数存进
+vector，最后用 STL 函数 sort 排序，输出即可。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line">map&lt;<span class="type">int</span>, <span class="type">bool</span>&gt; f;</span><br><span class="line">vector&lt;<span class="type">int</span>&gt; b;</span><br><span class="line"><span class="type">int</span> n, m, t;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">while</span>(n--)&#123;</span><br><span class="line">        cin &gt;&gt; t;</span><br><span class="line">        f[t] = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(m--)&#123;</span><br><span class="line">        cin &gt;&gt; t;</span><br><span class="line">        <span class="keyword">if</span>(f[t]) b.<span class="built_in">emplace_back</span>(t);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">sort</span>(b.<span class="built_in">begin</span>(), b.<span class="built_in">end</span>());</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span>&amp; a : b) cout &lt;&lt; a &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -384,10 +391,13 @@ Machine的代码似乎有问题，我重写了，和之前的思路不一样;)�
 
           <div class="post-nav">
             <div class="post-nav-item">
+                <a href="/2025/06/11/p7911.html" rel="prev" title="[CSP-J 2021] 网络连接">
+                  <i class="fa fa-angle-left"></i> [CSP-J 2021] 网络连接
+                </a>
             </div>
             <div class="post-nav-item">
-                <a href="/p7911.html" rel="next" title="[CSP-J 2021] 网络连接">
-                  [CSP-J 2021] 网络连接 <i class="fa fa-angle-right"></i>
+                <a href="/2025/06/13/p5660.html" rel="next" title="[C++] 数字游戏">
+                  [C++] 数字游戏 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
@@ -400,7 +410,7 @@ Machine的代码似乎有问题，我重写了，和之前的思路不一样;)�
 
 
 
-    <div class="comments" id="SOHUCS" sid="530a4187f1655be36680d5ce7ea5e30c"></div>
+    <div class="comments" id="SOHUCS" sid="94967f4aacdabe972d3bf5970c164b52"></div>
 </div>
   </main>
 
