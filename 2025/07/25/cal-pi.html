@@ -23,15 +23,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.ptoe.cc","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"default"},"fold":{"enable":false,"height":500},"language":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"changyan","storage":true,"lazyload":true,"nav":null,"activeClass":"changyan"},"stickytabs":false,"motion":{"enable":true,"async":true,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="https://fastly.jsdelivr.net/npm/hexo-theme-next@8.23.2/source/js/config.min.js" defer></script>
 
-    <meta name="description" content="本题是洛谷的试机题目，可以帮助了解洛谷的使用。 建议完成本题目后继续尝试 P1001、P1008。 另外强烈推荐新用户必读帖。">
+    <meta name="description" content="让 AI 写了个多线程计算 π 的程序，非常适合跑分（（（">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[C++] P1000 超级玛丽游戏">
-<meta property="og:url" content="https://www.ptoe.cc/2025/07/25/p1000.html">
+<meta property="og:title" content="[C++] 多线程计算π">
+<meta property="og:url" content="https://www.ptoe.cc/2025/07/25/cal-pi.html">
 <meta property="og:site_name" content="元素的笔记">
-<meta property="og:description" content="本题是洛谷的试机题目，可以帮助了解洛谷的使用。 建议完成本题目后继续尝试 P1001、P1008。 另外强烈推荐新用户必读帖。">
+<meta property="og:description" content="让 AI 写了个多线程计算 π 的程序，非常适合跑分（（（">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-07-25T03:59:25.000Z">
-<meta property="article:modified_time" content="2025-07-25T05:43:06.489Z">
+<meta property="article:published_time" content="2025-07-25T06:18:59.000Z">
+<meta property="article:modified_time" content="2025-07-25T06:20:17.698Z">
 <meta property="article:author" content="元素">
 <meta property="article:tag" content="C++">
 <meta property="article:tag" content="算法">
@@ -39,13 +39,13 @@
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://www.ptoe.cc/2025/07/25/p1000.html">
+<link rel="canonical" href="https://www.ptoe.cc/2025/07/25/cal-pi.html">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.ptoe.cc/2025/07/25/p1000.html","path":"2025/07/25/p1000.html","title":"[C++] P1000 超级玛丽游戏"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.ptoe.cc/2025/07/25/cal-pi.html","path":"2025/07/25/cal-pi.html","title":"[C++] 多线程计算π"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>[C++] P1000 超级玛丽游戏 | 元素的笔记</title>
+<title>[C++] 多线程计算π | 元素的笔记</title>
   
 
 
@@ -172,7 +172,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -185,7 +185,6 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B-1"><span class="nav-number">4.</span> <span class="nav-text">输入输出样例 #1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5-1"><span class="nav-number">4.1.</span> <span class="nav-text">输入 #1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA-1"><span class="nav-number">4.2.</span> <span class="nav-text">输出 #1</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B4%E6%98%8E%E6%8F%90%E7%A4%BA"><span class="nav-number">5.</span> <span class="nav-text">说明&#x2F;提示</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -254,7 +253,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.ptoe.cc/2025/07/25/p1000.html">
+    <link itemprop="mainEntityOfPage" href="https://www.ptoe.cc/2025/07/25/cal-pi.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -267,12 +266,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="[C++] P1000 超级玛丽游戏 | 元素的笔记">
+      <meta itemprop="name" content="[C++] 多线程计算π | 元素的笔记">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          [C++] P1000 超级玛丽游戏
+          [C++] 多线程计算π
         </h1>
 
         <div class="post-meta-container">
@@ -284,7 +283,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2025-07-25 11:59:25 / 修改时间：13:43:06" itemprop="dateCreated datePublished" datetime="2025-07-25T11:59:25+08:00">2025-07-25</time>
+      <time title="创建时间：2025-07-25 14:18:59 / 修改时间：14:20:17" itemprop="dateCreated datePublished" datetime="2025-07-25T14:18:59+08:00">2025-07-25</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -305,8 +304,8 @@
       </span>
       <span class="post-meta-item-text">Changyan：</span>
     
-    <a title="[C++] P1000 超级玛丽游戏" href="/2025/07/25/p1000.html#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::0d9a157b160e3d4b0fdadb9cb3978cce" class="cy_cmt_count" itemprop="commentCount"></span>
+    <a title="[C++] 多线程计算π" href="/2025/07/25/cal-pi.html#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::adb9e7a535fcc11d6d947e442ead0138" class="cy_cmt_count" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -319,31 +318,9 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>本题是洛谷的试机题目，可以帮助了解洛谷的使用。</p>
-<p>建议完成本题目后继续尝试 <a
-target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1001">P1001</a>、<a
-target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1008">P1008</a>。</p>
-<p>另外强烈推荐<a
-target="_blank" rel="noopener" href="https://www.luogu.com.cn/discuss/show/241461">新用户必读帖</a>。</p>
+    <div class="post-body" itemprop="articleBody"><p>让 AI 写了个多线程计算 π 的程序，非常适合跑分（（（</p>
 <span id="more"></span>
-<h2 id="题目描述">题目描述</h2>
-<p>超级玛丽是一个非常经典的游戏。请你用字符画的形式输出超级玛丽中的一个场景：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">                ********</span><br><span class="line">               ************</span><br><span class="line">               ####....#.</span><br><span class="line">             #..###.....##....</span><br><span class="line">             ###.......######              ###            ###</span><br><span class="line">                ...........               #...#          #...#</span><br><span class="line">               ##*#######                 #.#.#          #.#.#</span><br><span class="line">            ####*******######             #.#.#          #.#.#</span><br><span class="line">           ...#***.****.*###....          #...#          #...#</span><br><span class="line">           ....**********##.....           ###            ###</span><br><span class="line">           ....****    *****....</span><br><span class="line">             ####        ####</span><br><span class="line">           ######        ######</span><br><span class="line">##############################################################</span><br><span class="line">#...#......#.##...#......#.##...#......#.##------------------#</span><br><span class="line">###########################################------------------#</span><br><span class="line">#..#....#....##..#....#....##..#....#....#####################</span><br><span class="line">##########################################    #----------#</span><br><span class="line">#.....#......##.....#......##.....#......#    #----------#</span><br><span class="line">##########################################    #----------#</span><br><span class="line">#.#..#....#..##.#..#....#..##.#..#....#..#    #----------#</span><br><span class="line">##########################################    ############</span><br></pre></td></tr></table></figure>
-<h2 id="输入格式">输入格式</h2>
-<p>无</p>
-<h2 id="输出格式">输出格式</h2>
-<p>如描述。</p>
-<h2 id="输入输出样例-1">输入输出样例 #1</h2>
-<h3 id="输入-1">输入 #1</h3>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="输出-1">输出 #1</h3>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">********</span><br><span class="line">               ************</span><br><span class="line">               ####....#.</span><br><span class="line">             #..###.....##....</span><br><span class="line">             ###.......######              ###            ###</span><br><span class="line">                ...........               #...#          #...#</span><br><span class="line">               ##*#######                 #.#.#          #.#.#</span><br><span class="line">            ####*******######             #.#.#          #.#.#</span><br><span class="line">           ...#***.****.*###....          #...#          #...#</span><br><span class="line">           ....**********##.....           ###            ###</span><br><span class="line">           ....****    *****....</span><br><span class="line">             ####        ####</span><br><span class="line">           ######        ######</span><br><span class="line">##############################################################</span><br><span class="line">#...#......#.##...#......#.##...#......#.##------------------#</span><br><span class="line">###########################################------------------#</span><br><span class="line">#..#....#....##..#....#....##..#....#....#####################</span><br><span class="line">##########################################    #----------#</span><br><span class="line">#.....#......##.....#......##.....#......#    #----------#</span><br><span class="line">##########################################    #----------#</span><br><span class="line">#.#..#....#..##.#..#....#..##.#..#....#..#    #----------#</span><br><span class="line">##########################################    ############</span><br></pre></td></tr></table></figure>
-<h2 id="说明提示">说明/提示</h2>
-<p><strong>广告</strong></p>
-<p>洛谷出品的算法教材，帮助您更简单的学习基础算法。<a
-target="_blank" rel="noopener" href="https://item.taobao.com/item.htm?id=637730514783">【官方网店绝赞热卖中！】&gt;&gt;&gt;</a></p>
-<p><a target="_blank" rel="noopener" href="https://item.taobao.com/item.htm?id=637730514783"><img data-src="https://cdn.luogu.com.cn/upload/image_hosting/njc7dlng.png" /></a></p>
-<p>这个直接把输出复制黏贴进去（）</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> _USE_MATH_DEFINES</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;random&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;thread&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;chrono&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;atomic&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;mutex&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 全局变量</span></span><br><span class="line"><span class="function">std::atomic&lt;<span class="type">unsigned</span> <span class="type">long</span> <span class="type">long</span>&gt; <span class="title">total_in_circle</span><span class="params">(<span class="number">0</span>)</span></span>;</span><br><span class="line"><span class="type">unsigned</span> <span class="type">long</span> <span class="type">long</span> total_points = <span class="number">0</span>;</span><br><span class="line">std::mutex cout_mutex;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 每个线程的工作函数</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">monte_carlo_pi</span><span class="params">(<span class="type">unsigned</span> <span class="type">long</span> <span class="type">long</span> points_per_thread, <span class="type">int</span> thread_id)</span> </span>&#123;</span><br><span class="line">    std::random_device rd;</span><br><span class="line">    <span class="function">std::mt19937 <span class="title">gen</span><span class="params">(rd())</span></span>;</span><br><span class="line">    std::uniform_real_distribution&lt;&gt; <span class="built_in">dis</span>(<span class="number">-1.0</span>, <span class="number">1.0</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> <span class="type">long</span> in_circle = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">auto</span> start = std::chrono::high_resolution_clock::<span class="built_in">now</span>();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="type">unsigned</span> <span class="type">long</span> <span class="type">long</span> i = <span class="number">0</span>; i &lt; points_per_thread; ++i) &#123;</span><br><span class="line">        <span class="type">double</span> x = <span class="built_in">dis</span>(gen);</span><br><span class="line">        <span class="type">double</span> y = <span class="built_in">dis</span>(gen);</span><br><span class="line">        <span class="keyword">if</span> (x * x + y * y &lt;= <span class="number">1.0</span>) &#123;</span><br><span class="line">            ++in_circle;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">auto</span> end = std::chrono::high_resolution_clock::<span class="built_in">now</span>();</span><br><span class="line">    std::chrono::duration&lt;<span class="type">double</span>&gt; elapsed = end - start;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 累加到全局计数器</span></span><br><span class="line">    total_in_circle += in_circle;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 输出线程信息</span></span><br><span class="line">    <span class="function">std::lock_guard&lt;std::mutex&gt; <span class="title">lock</span><span class="params">(cout_mutex)</span></span>;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Thread &quot;</span> &lt;&lt; thread_id &lt;&lt; <span class="string">&quot; completed in &quot;</span> &lt;&lt; elapsed.<span class="built_in">count</span>() </span><br><span class="line">    &lt;&lt; <span class="string">&quot; seconds (&quot;</span> &lt;&lt; points_per_thread &lt;&lt; <span class="string">&quot; points)&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span>* argv[])</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (argc != <span class="number">3</span>) &#123;</span><br><span class="line">        std::cerr &lt;&lt; <span class="string">&quot;Usage: &quot;</span> &lt;&lt; argv[<span class="number">0</span>] &lt;&lt; <span class="string">&quot; &lt;total_points&gt; &lt;num_threads&gt;&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    total_points = std::<span class="built_in">stoull</span>(argv[<span class="number">1</span>]);</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">int</span> num_threads = std::<span class="built_in">stoi</span>(argv[<span class="number">2</span>]);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (num_threads == <span class="number">0</span>) &#123;</span><br><span class="line">        num_threads = std::thread::<span class="built_in">hardware_concurrency</span>();</span><br><span class="line">        std::cout &lt;&lt; <span class="string">&quot;Using &quot;</span> &lt;&lt; num_threads &lt;&lt; <span class="string">&quot; threads (auto-detected)&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> <span class="type">long</span> points_per_thread = total_points / num_threads;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> <span class="type">long</span> remainder = total_points % num_threads;</span><br><span class="line">    </span><br><span class="line">    std::vector&lt;std::thread&gt; threads;</span><br><span class="line">    threads.<span class="built_in">reserve</span>(num_threads);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">auto</span> program_start = std::chrono::high_resolution_clock::<span class="built_in">now</span>();</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 创建线程</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">unsigned</span> <span class="type">int</span> i = <span class="number">0</span>; i &lt; num_threads; ++i) &#123;</span><br><span class="line">        <span class="type">unsigned</span> <span class="type">long</span> <span class="type">long</span> points = points_per_thread;</span><br><span class="line">        <span class="keyword">if</span> (i &lt; remainder) &#123;</span><br><span class="line">            points += <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        threads.<span class="built_in">emplace_back</span>(monte_carlo_pi, points, i);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 等待所有线程完成</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span>&amp; thread : threads) &#123;</span><br><span class="line">        thread.<span class="built_in">join</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">auto</span> program_end = std::chrono::high_resolution_clock::<span class="built_in">now</span>();</span><br><span class="line">    std::chrono::duration&lt;<span class="type">double</span>&gt; program_elapsed = program_end - program_start;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 计算π值</span></span><br><span class="line">    <span class="type">double</span> pi_estimate = <span class="number">4.0</span> * total_in_circle.<span class="built_in">load</span>() / total_points;</span><br><span class="line">    <span class="type">double</span> error = std::<span class="built_in">abs</span>(pi_estimate - M_PI);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 输出结果</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;\nResults:&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Total points: &quot;</span> &lt;&lt; total_points &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Points in circle: &quot;</span> &lt;&lt; total_in_circle &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Estimated π: &quot;</span> &lt;&lt; pi_estimate &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Actual π: &quot;</span> &lt;&lt; M_PI &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Error: &quot;</span> &lt;&lt; error &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Total time: &quot;</span> &lt;&lt; program_elapsed.<span class="built_in">count</span>() &lt;&lt; <span class="string">&quot; seconds&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Points per second: &quot;</span> </span><br><span class="line">    &lt;&lt; total_points / program_elapsed.<span class="built_in">count</span>() &lt;&lt; std::endl;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -384,13 +361,13 @@ target="_blank" rel="noopener" href="https://item.taobao.com/item.htm?id=6377305
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2025/07/25/p1001.html" rel="prev" title="[C++] P1001 A+B Problem">
-                  <i class="fa fa-angle-left"></i> [C++] P1001 A+B Problem
+                <a href="/2025/07/25/p11378.html" rel="prev" title="[C++] P11378 [GESP202412 七级] 燃烧">
+                  <i class="fa fa-angle-left"></i> [C++] P11378 [GESP202412 七级] 燃烧
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2025/07/25/p3366.html" rel="next" title="[C++] P3366 【模板】最小生成树">
-                  [C++] P3366 【模板】最小生成树 <i class="fa fa-angle-right"></i>
+                <a href="/2025/07/25/p2114.html" rel="next" title="[C++] P2114 [NOI2014] 起床困难综合症">
+                  [C++] P2114 [NOI2014] 起床困难综合症 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
@@ -403,7 +380,7 @@ target="_blank" rel="noopener" href="https://item.taobao.com/item.htm?id=6377305
 
 
 
-    <div class="comments" id="SOHUCS" sid="0d9a157b160e3d4b0fdadb9cb3978cce"></div>
+    <div class="comments" id="SOHUCS" sid="adb9e7a535fcc11d6d947e442ead0138"></div>
 </div>
   </main>
 

@@ -195,7 +195,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">29</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -235,14 +235,944 @@
         </ul>
       </div>
     </div>
-        <div class="pjax">
-        </div>
   </aside>
 
 
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.ptoe.cc/2025/06/22/p7909.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="元素">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="元素的笔记">
+      <meta itemprop="description" content="只是一个臭写算法的">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 元素的笔记">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/06/22/p7909.html" class="post-title-link" itemprop="url">[C++] 分糖果</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-06-22 19:46:40" itemprop="dateCreated datePublished" datetime="2025-06-22T19:46:40+08:00">2025-06-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-07-25 11:52:30" itemprop="dateModified" datetime="2025-07-25T11:52:30+08:00">2025-07-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Changyan：</span>
+    
+    <a title="[C++] 分糖果" href="/2025/06/22/p7909.html#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::32dc1efa7e4fd83d5e2fa7c61618f516" class="cy_cmt_count" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>[P7909 <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P7909">CSP-J 2021]
+分糖果 - 洛谷</a></p>
+<p>红太阳幼儿园有 <span class="math inline"><em>n</em></span>
+个小朋友，你是其中之一。保证 <span
+class="math inline"><em>n</em> ≥ 2</span>。</p>
+<p>有一天你在幼儿园的后花园里发现无穷多颗糖果，你打算拿一些糖果回去分给幼儿园的小朋友们。</p>
+<p>由于你只是个平平无奇的幼儿园小朋友，所以你的体力有限，至多只能拿
+<span class="math inline"><em>R</em></span> 块糖回去。</p>
+<p>但是拿的太少不够分的，所以你至少要拿 <span
+class="math inline"><em>L</em></span> 块糖回去。保证 <span
+class="math inline"><em>n</em> ≤ <em>L</em> ≤ <em>R</em></span>。</p>
+<p>也就是说，如果你拿了 <span class="math inline"><em>k</em></span>
+块糖，那么你需要保证 <span
+class="math inline"><em>L</em> ≤ <em>k</em> ≤ <em>R</em></span>。</p>
+<p>如果你拿了 <span class="math inline"><em>k</em></span> 块糖，你将把这
+<span class="math inline"><em>k</em></span>
+块糖放到篮子里，并要求大家按照如下方案分糖果：只要篮子里有<strong>不少于</strong>
+<span class="math inline"><em>n</em></span> 块糖果，幼儿园的所有 <span
+class="math inline"><em>n</em></span>
+个小朋友（包括你自己）都从篮子中拿走<strong>恰好</strong>一块糖，直到篮子里的糖数量<strong>少于</strong>
+<span class="math inline"><em>n</em></span>
+块。此时篮子里剩余的糖果均归你所有——这些糖果是<strong>作为你搬糖果的奖励</strong>。</p>
+<p>作为幼儿园高质量小朋友，你希望让<strong>作为你搬糖果的奖励</strong>的糖果数量（<strong>而不是你最后获得的总糖果数量</strong>！）尽可能多；因此你需要写一个程序，依次输入
+<span
+class="math inline"><em>n</em>, <em>L</em>, <em>R</em></span>，并输出你最多能获得多少<strong>作为你搬糖果的奖励</strong>的糖果数量。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/06/22/p7909.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.ptoe.cc/2025/06/21/p7072.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="元素">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="元素的笔记">
+      <meta itemprop="description" content="只是一个臭写算法的">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 元素的笔记">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/06/21/p7072.html" class="post-title-link" itemprop="url">[C++] 直播获奖</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-06-21 18:23:44" itemprop="dateCreated datePublished" datetime="2025-06-21T18:23:44+08:00">2025-06-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-07-25 11:52:39" itemprop="dateModified" datetime="2025-07-25T11:52:39+08:00">2025-07-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Changyan：</span>
+    
+    <a title="[C++] 直播获奖" href="/2025/06/21/p7072.html#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::9e726e511eee8ff8d20660d32dcd6f8a" class="cy_cmt_count" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P7072">直播获奖 -
+洛谷</a></p>
+<p>NOI2130 即将举行。为了增加观赏性，CCF
+决定逐一评出每个选手的成绩，并直播即时的获奖分数线。本次竞赛的获奖率为
+<span class="math inline"><em>w</em>%</span>，即当前排名前 <span
+class="math inline"><em>w</em>%</span>
+的选手的最低成绩就是即时的分数线。</p>
+<p>更具体地，若当前已评出了 <span class="math inline"><em>p</em></span>
+个选手的成绩，则当前计划获奖人数为 <span
+class="math inline">max (1, ⌊<em>p</em> × <em>w</em>%⌋)</span>，其中
+<span class="math inline"><em>w</em></span> 是获奖百分比，<span
+class="math inline">⌊<em>x</em>⌋</span> 表示对 <span
+class="math inline"><em>x</em></span> 向下取整，<span
+class="math inline">max (<em>x</em>, <em>y</em>)</span> 表示 <span
+class="math inline"><em>x</em></span> 和 <span
+class="math inline"><em>y</em></span>
+中较大的数。如有选手成绩相同，则所有成绩并列的选手都能获奖，因此实际获奖人数可能比计划中多。</p>
+<p>作为评测组的技术人员，请你帮 CCF 写一个直播程序。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/06/21/p7072.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.ptoe.cc/2025/06/20/p7071.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="元素">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="元素的笔记">
+      <meta itemprop="description" content="只是一个臭写算法的">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 元素的笔记">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/06/20/p7071.html" class="post-title-link" itemprop="url">[C++] 优秀的拆分</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-06-20 14:54:08" itemprop="dateCreated datePublished" datetime="2025-06-20T14:54:08+08:00">2025-06-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-07-25 11:52:44" itemprop="dateModified" datetime="2025-07-25T11:52:44+08:00">2025-07-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Changyan：</span>
+    
+    <a title="[C++] 优秀的拆分" href="/2025/06/20/p7071.html#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::99d18915d16d6c0433f0497ee7042e20" class="cy_cmt_count" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P7071">洛谷P7071</a></p>
+<p>一般来说，一个正整数可以拆分成若干个正整数的和。</p>
+<p>例如，<span class="math inline">1 = 1</span>，<span
+class="math inline">10 = 1 + 2 + 3 + 4</span> 等。对于正整数 <span
+class="math inline"><em>n</em></span>
+的一种特定拆分，我们称它为“优秀的”，当且仅当在这种拆分下，<span
+class="math inline"><em>n</em></span>
+被分解为了若干个<strong>不同</strong>的 <span
+class="math inline">2</span> 的<strong>正整数</strong>次幂。注意，一个数
+<span class="math inline"><em>x</em></span> 能被表示成 <span
+class="math inline">2</span> 的正整数次幂，当且仅当 <span
+class="math inline"><em>x</em></span> 能通过正整数个 <span
+class="math inline">2</span> 相乘在一起得到。</p>
+<p>例如，<span
+class="math inline">10 = 8 + 2 = 2<sup>3</sup> + 2<sup>1</sup></span>
+是一个优秀的拆分。但是，<span
+class="math inline">7 = 4 + 2 + 1 = 2<sup>2</sup> + 2<sup>1</sup> + 2<sup>0</sup></span>
+就不是一个优秀的拆分，因为 <span class="math inline">1</span> 不是 <span
+class="math inline">2</span> 的正整数次幂。</p>
+<p>现在，给定正整数 <span
+class="math inline"><em>n</em></span>，你需要判断这个数的所有拆分中，是否存在优秀的拆分。若存在，请你给出具体的拆分方案。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/06/20/p7071.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.ptoe.cc/2025/06/13/p5661.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="元素">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="元素的笔记">
+      <meta itemprop="description" content="只是一个臭写算法的">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 元素的笔记">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/06/13/p5661.html" class="post-title-link" itemprop="url">[C++] 公交换乘</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-06-13 20:50:28" itemprop="dateCreated datePublished" datetime="2025-06-13T20:50:28+08:00">2025-06-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-07-25 11:52:49" itemprop="dateModified" datetime="2025-07-25T11:52:49+08:00">2025-07-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Changyan：</span>
+    
+    <a title="[C++] 公交换乘" href="/2025/06/13/p5661.html#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::9f111ce537166e38e586dfc3c0da0651" class="cy_cmt_count" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P5661">洛谷P5661</a></p>
+<p>著名旅游城市 B
+市为了鼓励大家采用公共交通方式出行，推出了一种地铁换乘公交车的优惠方案：</p>
+<ol type="1">
+<li><p>在搭乘一次地铁后可以获得一张优惠票，有效期为 45
+分钟，在有效期内可以消耗这张优惠票，免费搭乘一次票价不超过地铁票价的公交车。
+在有效期内指开始乘公交车的时间与开始乘地铁的时间之差小于等于 45
+分钟，即：<span
+class="math inline"><em>t</em><sub><em>b</em><em>u</em><em>s</em></sub> − <em>t</em><sub><em>s</em><em>u</em><em>b</em><em>w</em><em>a</em><em>y</em></sub> ≤ 45</span></p></li>
+<li><p>搭乘地铁获得的优惠票可以累积，即可以连续搭乘若干次地铁后再连续使用优惠票搭乘公交车，但每次搭乘公交车只能使用一张优惠券。</p></li>
+<li><p>搭乘公交车时，如果可以使用优惠票一定会使用优惠票；
+如果有多张优惠票满足条件，则优先消耗获得最早的优惠票。</p></li>
+</ol>
+<p>现在你得到了小轩最近的公共交通出行记录，你能帮他算算他的花费吗?</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/06/13/p5661.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.ptoe.cc/2025/06/13/full-sorting.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="元素">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="元素的笔记">
+      <meta itemprop="description" content="只是一个臭写算法的">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 元素的笔记">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/06/13/full-sorting.html" class="post-title-link" itemprop="url">[C++] 全排列</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-06-13 20:35:16" itemprop="dateCreated datePublished" datetime="2025-06-13T20:35:16+08:00">2025-06-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-07-25 11:53:11" itemprop="dateModified" datetime="2025-07-25T11:53:11+08:00">2025-07-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Changyan：</span>
+    
+    <a title="[C++] 全排列" href="/2025/06/13/full-sorting.html#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::826244220726abb643294ad83ade370e" class="cy_cmt_count" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>有 1∼n 这 n（n&lt;10）个数，现将这 n 个数组成一个 n
+位的数，每个数只能用一次，例如 n=2，则 12，21 等都是符合条件的数，但 11
+和 22 不行。</p>
+<p>问，输入 n 后，将符合条件的所有的 n
+位数输出，且按照从小到大顺序输出。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/06/13/full-sorting.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.ptoe.cc/2025/06/13/p5660.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="元素">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="元素的笔记">
+      <meta itemprop="description" content="只是一个臭写算法的">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 元素的笔记">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/06/13/p5660.html" class="post-title-link" itemprop="url">[C++] 数字游戏</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-06-13 20:26:55" itemprop="dateCreated datePublished" datetime="2025-06-13T20:26:55+08:00">2025-06-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-07-25 11:53:00" itemprop="dateModified" datetime="2025-07-25T11:53:00+08:00">2025-07-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Changyan：</span>
+    
+    <a title="[C++] 数字游戏" href="/2025/06/13/p5660.html#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::f7405d727cb195285ec8f8e6f75120ea" class="cy_cmt_count" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P5660">洛谷P5660</a></p>
+<p>小 K 同学向小 P 同学发送了一个长度为 8 的 01 字符串 来玩数字游戏，小
+P 同学想要知道字符串中究竟有多少个 1。</p>
+<p>注意：01 字符串为每一个字符是 0 或者 1
+的字符串，如“101”（不含双引号）为一个长度为 3 的 01 字符串。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/06/13/p5660.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.ptoe.cc/2025/06/13/find-the-number.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="元素">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="元素的笔记">
+      <meta itemprop="description" content="只是一个臭写算法的">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 元素的笔记">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/06/13/find-the-number.html" class="post-title-link" itemprop="url">[C++] 找数</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-06-13 20:13:33" itemprop="dateCreated datePublished" datetime="2025-06-13T20:13:33+08:00">2025-06-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-07-25 11:53:15" itemprop="dateModified" datetime="2025-07-25T11:53:15+08:00">2025-07-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Changyan：</span>
+    
+    <a title="[C++] 找数" href="/2025/06/13/find-the-number.html#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::94967f4aacdabe972d3bf5970c164b52" class="cy_cmt_count" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>有两组数字，请找出第二组数中的哪些数在第一组中出现了，并从小到大输出。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/06/13/find-the-number.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.ptoe.cc/2025/06/11/p7911.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="元素">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="元素的笔记">
+      <meta itemprop="description" content="只是一个臭写算法的">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 元素的笔记">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/06/11/p7911.html" class="post-title-link" itemprop="url">[CSP-J 2021] 网络连接</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-06-11 22:02:41" itemprop="dateCreated datePublished" datetime="2025-06-11T22:02:41+08:00">2025-06-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-07-25 11:53:24" itemprop="dateModified" datetime="2025-07-25T11:53:24+08:00">2025-07-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Changyan：</span>
+    
+    <a title="[CSP-J 2021] 网络连接" href="/2025/06/11/p7911.html#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::064a1bf58e996fe214975177971c1481" class="cy_cmt_count" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P7911">洛谷P7911</a></p>
+<p>TCP/IP 协议是网络通信领域的一项重要协议。
+今天你的任务，就是尝试利用这个协议，还原一个简化后的网络连接场景。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/06/11/p7911.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 

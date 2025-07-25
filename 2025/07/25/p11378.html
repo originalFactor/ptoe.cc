@@ -23,15 +23,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.ptoe.cc","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"default"},"fold":{"enable":false,"height":500},"language":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"changyan","storage":true,"lazyload":true,"nav":null,"activeClass":"changyan"},"stickytabs":false,"motion":{"enable":true,"async":true,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="https://fastly.jsdelivr.net/npm/hexo-theme-next@8.23.2/source/js/config.min.js" defer></script>
 
-    <meta name="description" content="[P7909 CSP-J 2021] 分糖果 - 洛谷 红太阳幼儿园有 n 个小朋友，你是其中之一。保证 n ≥ 2。 有一天你在幼儿园的后花园里发现无穷多颗糖果，你打算拿一些糖果回去分给幼儿园的小朋友们。 由于你只是个平平无奇的幼儿园小朋友，所以你的体力有限，至多只能拿 R 块糖回去。 但是拿的太少不够分的，所以你至少要拿 L 块糖回去。保证 n ≤ L ≤ R。 也就是说，如果">
+    <meta name="description" content="小杨有一棵包含 n 个节点的树，其中节点的编号从 1 到 n。节点 i 的权值为 ai。 小杨可以选择一个初始节点引燃，每个燃烧的节点会将其相邻节点中权值严格小于自身权值的在节点间扩散直到不会有新的节点被引燃。 小杨想知道在合理选择初始节点的情况下，最多可以燃烧多少个节点。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[C++] 分糖果">
-<meta property="og:url" content="https://www.ptoe.cc/2025/06/22/p7909.html">
+<meta property="og:title" content="[C++] P11378 [GESP202412 七级] 燃烧">
+<meta property="og:url" content="https://www.ptoe.cc/2025/07/25/p11378.html">
 <meta property="og:site_name" content="元素的笔记">
-<meta property="og:description" content="[P7909 CSP-J 2021] 分糖果 - 洛谷 红太阳幼儿园有 n 个小朋友，你是其中之一。保证 n ≥ 2。 有一天你在幼儿园的后花园里发现无穷多颗糖果，你打算拿一些糖果回去分给幼儿园的小朋友们。 由于你只是个平平无奇的幼儿园小朋友，所以你的体力有限，至多只能拿 R 块糖回去。 但是拿的太少不够分的，所以你至少要拿 L 块糖回去。保证 n ≤ L ≤ R。 也就是说，如果">
+<meta property="og:description" content="小杨有一棵包含 n 个节点的树，其中节点的编号从 1 到 n。节点 i 的权值为 ai。 小杨可以选择一个初始节点引燃，每个燃烧的节点会将其相邻节点中权值严格小于自身权值的在节点间扩散直到不会有新的节点被引燃。 小杨想知道在合理选择初始节点的情况下，最多可以燃烧多少个节点。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-06-22T11:46:40.000Z">
-<meta property="article:modified_time" content="2025-07-25T03:52:30.424Z">
+<meta property="article:published_time" content="2025-07-25T06:11:41.000Z">
+<meta property="article:modified_time" content="2025-07-25T07:06:44.173Z">
 <meta property="article:author" content="元素">
 <meta property="article:tag" content="C++">
 <meta property="article:tag" content="算法">
@@ -39,13 +39,13 @@
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://www.ptoe.cc/2025/06/22/p7909.html">
+<link rel="canonical" href="https://www.ptoe.cc/2025/07/25/p11378.html">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.ptoe.cc/2025/06/22/p7909.html","path":"2025/06/22/p7909.html","title":"[C++] 分糖果"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.ptoe.cc/2025/07/25/p11378.html","path":"2025/07/25/p11378.html","title":"[C++] P11378 [GESP202412 七级] 燃烧"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>[C++] 分糖果 | 元素的笔记</title>
+<title>[C++] P11378 [GESP202412 七级] 燃烧 | 元素的笔记</title>
   
 
 
@@ -185,7 +185,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B-1"><span class="nav-number">3.</span> <span class="nav-text">输入输出样例 #1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5-1"><span class="nav-number">3.1.</span> <span class="nav-text">输入 #1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA-1"><span class="nav-number">3.2.</span> <span class="nav-text">输出 #1</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B-2"><span class="nav-number">4.</span> <span class="nav-text">输入输出样例 #2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5-2"><span class="nav-number">4.1.</span> <span class="nav-text">输入 #2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA-2"><span class="nav-number">4.2.</span> <span class="nav-text">输出 #2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B-3"><span class="nav-number">5.</span> <span class="nav-text">输入输出样例 #3</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5-3"><span class="nav-number">5.1.</span> <span class="nav-text">输入 #3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA-3"><span class="nav-number">5.2.</span> <span class="nav-text">输出 #3</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B4%E6%98%8E%E6%8F%90%E7%A4%BA"><span class="nav-number">6.</span> <span class="nav-text">说明&#x2F;提示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3"><span class="nav-number">7.</span> <span class="nav-text">题解</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B-1"><span class="nav-number">3.</span> <span class="nav-text">输入输出样例 #1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5-1"><span class="nav-number">3.1.</span> <span class="nav-text">输入 #1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA-1"><span class="nav-number">3.2.</span> <span class="nav-text">输出 #1</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B4%E6%98%8E%E6%8F%90%E7%A4%BA"><span class="nav-number">4.</span> <span class="nav-text">说明&#x2F;提示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3"><span class="nav-number">5.</span> <span class="nav-text">题解</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -254,7 +254,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.ptoe.cc/2025/06/22/p7909.html">
+    <link itemprop="mainEntityOfPage" href="https://www.ptoe.cc/2025/07/25/p11378.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -267,12 +267,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="[C++] 分糖果 | 元素的笔记">
+      <meta itemprop="name" content="[C++] P11378 [GESP202412 七级] 燃烧 | 元素的笔记">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          [C++] 分糖果
+          [C++] P11378 [GESP202412 七级] 燃烧
         </h1>
 
         <div class="post-meta-container">
@@ -282,15 +282,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2025-06-22 19:46:40" itemprop="dateCreated datePublished" datetime="2025-06-22T19:46:40+08:00">2025-06-22</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-07-25 11:52:30" itemprop="dateModified" datetime="2025-07-25T11:52:30+08:00">2025-07-25</time>
+      <time title="创建时间：2025-07-25 14:11:41 / 修改时间：15:06:44" itemprop="dateCreated datePublished" datetime="2025-07-25T14:11:41+08:00">2025-07-25</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -311,8 +305,8 @@
       </span>
       <span class="post-meta-item-text">Changyan：</span>
     
-    <a title="[C++] 分糖果" href="/2025/06/22/p7909.html#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::32dc1efa7e4fd83d5e2fa7c61618f516" class="cy_cmt_count" itemprop="commentCount"></span>
+    <a title="[C++] P11378 [GESP202412 七级] 燃烧" href="/2025/07/25/p11378.html#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::ea2bc146a1db258d604b860f387df3e4" class="cy_cmt_count" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -325,185 +319,72 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>[P7909 <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P7909">CSP-J 2021]
-分糖果 - 洛谷</a></p>
-<p>红太阳幼儿园有 <span class="math inline"><em>n</em></span>
-个小朋友，你是其中之一。保证 <span
-class="math inline"><em>n</em> ≥ 2</span>。</p>
-<p>有一天你在幼儿园的后花园里发现无穷多颗糖果，你打算拿一些糖果回去分给幼儿园的小朋友们。</p>
-<p>由于你只是个平平无奇的幼儿园小朋友，所以你的体力有限，至多只能拿
-<span class="math inline"><em>R</em></span> 块糖回去。</p>
-<p>但是拿的太少不够分的，所以你至少要拿 <span
-class="math inline"><em>L</em></span> 块糖回去。保证 <span
-class="math inline"><em>n</em> ≤ <em>L</em> ≤ <em>R</em></span>。</p>
-<p>也就是说，如果你拿了 <span class="math inline"><em>k</em></span>
-块糖，那么你需要保证 <span
-class="math inline"><em>L</em> ≤ <em>k</em> ≤ <em>R</em></span>。</p>
-<p>如果你拿了 <span class="math inline"><em>k</em></span> 块糖，你将把这
-<span class="math inline"><em>k</em></span>
-块糖放到篮子里，并要求大家按照如下方案分糖果：只要篮子里有<strong>不少于</strong>
-<span class="math inline"><em>n</em></span> 块糖果，幼儿园的所有 <span
-class="math inline"><em>n</em></span>
-个小朋友（包括你自己）都从篮子中拿走<strong>恰好</strong>一块糖，直到篮子里的糖数量<strong>少于</strong>
-<span class="math inline"><em>n</em></span>
-块。此时篮子里剩余的糖果均归你所有——这些糖果是<strong>作为你搬糖果的奖励</strong>。</p>
-<p>作为幼儿园高质量小朋友，你希望让<strong>作为你搬糖果的奖励</strong>的糖果数量（<strong>而不是你最后获得的总糖果数量</strong>！）尽可能多；因此你需要写一个程序，依次输入
-<span
-class="math inline"><em>n</em>, <em>L</em>, <em>R</em></span>，并输出你最多能获得多少<strong>作为你搬糖果的奖励</strong>的糖果数量。</p>
+    <div class="post-body" itemprop="articleBody"><p>小杨有一棵包含 <span class="math inline"><em>n</em></span>
+个节点的树，其中节点的编号从 <span class="math inline">1</span> 到 <span
+class="math inline"><em>n</em></span>。节点 <span
+class="math inline"><em>i</em></span> 的权值为 <span
+class="math inline"><em>a</em><sub><em>i</em></sub></span>。</p>
+<p>小杨可以选择一个初始节点引燃，每个燃烧的节点会将其相邻节点中权值<strong>严格小于</strong>自身权值的在节点间扩散直到不会有新的节点被引燃。</p>
+<p>小杨想知道在合理选择初始节点的情况下，最多可以燃烧多少个节点。</p>
 <span id="more"></span>
 <h2 id="输入格式">输入格式</h2>
-<p>输入一行，包含三个正整数 <span
-class="math inline"><em>n</em>, <em>L</em>, <em>R</em></span>，分别表示小朋友的个数、糖果数量的下界和上界。</p>
+<p>第一行包含一个正整数 <span
+class="math inline"><em>n</em></span>，表示节点数量。</p>
+<p>第二行包含 <span class="math inline"><em>n</em></span> 个正整数 <span
+class="math inline"><em>a</em><sub>1</sub>, <em>a</em><sub>2</sub>, …, <em>a</em><sub><em>n</em></sub></span>，代表节点权值。</p>
+<p>之后 <span class="math inline"><em>n</em> − 1</span>
+行，每行包含两个正整数 <span
+class="math inline"><em>u</em><sub><em>i</em></sub>, <em>v</em><sub><em>i</em></sub></span>，代表存在一条连接节点
+<span class="math inline"><em>u</em><sub><em>i</em></sub></span> 和
+<span class="math inline"><em>v</em><sub><em>i</em></sub></span>
+的边。</p>
 <h2 id="输出格式">输出格式</h2>
-<p>输出一行一个整数，表示你最多能获得的<strong>作为你搬糖果的奖励</strong>的糖果数量。</p>
+<p>输出一个正整数，代表最多燃烧的节点个数。</p>
 <h2 id="输入输出样例-1">输入输出样例 #1</h2>
 <h3 id="输入-1">输入 #1</h3>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">7 16 23</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">5</span><br><span class="line">6 2 3 4 5</span><br><span class="line">1 2</span><br><span class="line">2 3</span><br><span class="line">2 5</span><br><span class="line">1 4</span><br></pre></td></tr></table></figure>
 <h3 id="输出-1">输出 #1</h3>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">6</span><br></pre></td></tr></table></figure>
-<h2 id="输入输出样例-2">输入输出样例 #2</h2>
-<h3 id="输入-2">输入 #2</h3>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">10 14 18</span><br></pre></td></tr></table></figure>
-<h3 id="输出-2">输出 #2</h3>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">8</span><br></pre></td></tr></table></figure>
-<h2 id="输入输出样例-3">输入输出样例 #3</h2>
-<h3 id="输入-3">输入 #3</h3>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">见附件中的 candy/candy3.in。</span><br></pre></td></tr></table></figure>
-<h3 id="输出-3">输出 #3</h3>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">见附件中的 candy/candy3.ans。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3</span><br></pre></td></tr></table></figure>
 <h2 id="说明提示">说明/提示</h2>
-<p><strong>【样例解释 #1】</strong></p>
-<p>拿 <span class="math inline"><em>k</em> = 20</span>
-块糖放入篮子里。</p>
-<p>篮子里现在糖果数 <span
-class="math inline">20 ≥ <em>n</em> = 7</span>，因此所有小朋友获得一块糖；</p>
-<p>篮子里现在糖果数变成 <span
-class="math inline">13 ≥ <em>n</em> = 7</span>，因此所有小朋友获得一块糖；</p>
-<p>篮子里现在糖果数变成 <span
-class="math inline">6 &lt; <em>n</em> = 7</span>，因此这 <span
-class="math inline">6</span>
-块糖是<strong>作为你搬糖果的奖励</strong>。</p>
-<p>容易发现，你获得的<strong>作为你搬糖果的奖励</strong>的糖果数量不可能超过
-<span class="math inline">6</span>
-块（不然，篮子里的糖果数量最后仍然不少于 <span
-class="math inline"><em>n</em></span>，需要继续每个小朋友拿一块），因此答案是
-<span class="math inline">6</span>。</p>
-<p><strong>【样例解释 #2】</strong></p>
-<p>容易发现，当你拿的糖数量 <span class="math inline"><em>k</em></span>
-满足 <span
-class="math inline">14 = <em>L</em> ≤ <em>k</em> ≤ <em>R</em> = 18</span>
-时，所有小朋友获得一块糖后，剩下的 <span
-class="math inline"><em>k</em> − 10</span>
-块糖总是<strong>作为你搬糖果的奖励</strong>的糖果数量，因此拿 <span
-class="math inline"><em>k</em> = 18</span> 块是最优解，答案是 <span
-class="math inline">8</span>。</p>
-<p><strong>【数据范围】</strong></p>
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">测试点</th>
+<th style="text-align: center;">子任务编号</th>
+<th style="text-align: center;">数据点占比</th>
 <th style="text-align: center;"><span
-class="math inline"><em>n</em>≤</span></th>
-<th style="text-align: center;"><span
-class="math inline"><em>R</em>≤</span></th>
-<th style="text-align: center;"><span
-class="math inline"><em>R</em> − <em>L</em>≤</span></th>
+class="math inline"><em>n</em></span></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align: center;"><span class="math inline">1</span></td>
-<td style="text-align: center;"><span class="math inline">2</span></td>
-<td style="text-align: center;"><span class="math inline">5</span></td>
-<td style="text-align: center;"><span class="math inline">5</span></td>
+<td style="text-align: center;"><span
+class="math inline">20%</span></td>
+<td style="text-align: center;"><span
+class="math inline"> ≤ 10</span></td>
 </tr>
 <tr>
 <td style="text-align: center;"><span class="math inline">2</span></td>
-<td style="text-align: center;"><span class="math inline">5</span></td>
-<td style="text-align: center;"><span class="math inline">10</span></td>
-<td style="text-align: center;"><span class="math inline">10</span></td>
+<td style="text-align: center;"><span
+class="math inline">20%</span></td>
+<td style="text-align: center;"><span
+class="math inline"> ≤ 100</span></td>
 </tr>
 <tr>
 <td style="text-align: center;"><span class="math inline">3</span></td>
 <td style="text-align: center;"><span
-class="math inline">10<sup>3</sup></span></td>
+class="math inline">60%</span></td>
 <td style="text-align: center;"><span
-class="math inline">10<sup>3</sup></span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>3</sup></span></td>
-</tr>
-<tr>
-<td style="text-align: center;"><span class="math inline">4</span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>5</sup></span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>5</sup></span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>5</sup></span></td>
-</tr>
-<tr>
-<td style="text-align: center;"><span class="math inline">5</span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>3</sup></span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>9</sup></span></td>
-<td style="text-align: center;"><span class="math inline">0</span></td>
-</tr>
-<tr>
-<td style="text-align: center;"><span class="math inline">6</span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>3</sup></span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>9</sup></span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>3</sup></span></td>
-</tr>
-<tr>
-<td style="text-align: center;"><span class="math inline">7</span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>5</sup></span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>9</sup></span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>5</sup></span></td>
-</tr>
-<tr>
-<td style="text-align: center;"><span class="math inline">8</span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>9</sup></span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>9</sup></span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>9</sup></span></td>
-</tr>
-<tr>
-<td style="text-align: center;"><span class="math inline">9</span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>9</sup></span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>9</sup></span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>9</sup></span></td>
-</tr>
-<tr>
-<td style="text-align: center;"><span class="math inline">10</span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>9</sup></span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>9</sup></span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>9</sup></span></td>
+class="math inline"> ≤ 10<sup>5</sup></span></td>
 </tr>
 </tbody>
 </table>
-<p>对于所有数据，保证 <span
-class="math inline">2 ≤ <em>n</em> ≤ <em>L</em> ≤ <em>R</em> ≤ 10<sup>9</sup></span>。</p>
-<p>【感谢 hack 数据提供】<br />
-<a href="/user/387009">wangbinfeng</a></p>
+<p>对于全部数据，保证有 <span
+class="math inline">1 ≤ <em>n</em> ≤ 10<sup>5</sup></span>，<span
+class="math inline">1 ≤ <em>a</em><sub><em>i</em></sub> ≤ 10<sup>6</sup></span>。</p>
 <h2 id="题解">题解</h2>
-<p>这题其实就是n进制求区间内个位数最大值。</p>
-<p>若区间内包含进位则一定能取到<code>n-1</code>，否则右边界即为最大值。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n, l, r;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; l &gt;&gt; r;</span><br><span class="line">    <span class="keyword">if</span>(r/n-l/n) cout &lt;&lt; n<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">else</span> cout &lt;&lt; r%n;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>带条件的图遍历而已，甚至因为严格小都不需要标记了</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">f</span><span class="params">(vector&lt;<span class="type">int</span>&gt; m[], <span class="type">int</span> c, <span class="type">int</span> p[], <span class="type">int</span> a[])</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(a[c]) <span class="keyword">return</span> a[c];</span><br><span class="line">    a[c] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> t : m[c])</span><br><span class="line">        <span class="keyword">if</span>(p[t]&lt;p[c])</span><br><span class="line">            a[c] += <span class="built_in">f</span>(m, t, p, a);</span><br><span class="line">    <span class="keyword">return</span> a[c];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> *p = <span class="keyword">new</span> <span class="type">int</span>[n];</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++) cin &gt;&gt; p[i];</span><br><span class="line"></span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; *m = <span class="keyword">new</span> vector&lt;<span class="type">int</span>&gt;[n];</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="type">int</span> u, v;</span><br><span class="line">        cin &gt;&gt; u &gt;&gt; v;</span><br><span class="line">        u--; v--;</span><br><span class="line">        m[u].<span class="built_in">push_back</span>(v);</span><br><span class="line">        m[v].<span class="built_in">push_back</span>(u);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> *a = <span class="keyword">new</span> <span class="type">int</span>[n];</span><br><span class="line">    <span class="built_in">memset</span>(a, <span class="number">0</span>, <span class="built_in">sizeof</span>(<span class="type">int</span>)*n);</span><br><span class="line">    <span class="type">int</span> x = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++) x = <span class="built_in">max</span>(x, <span class="built_in">f</span>(m, i, p, a));</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; x;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -544,13 +425,13 @@ class="math inline">2 ≤ <em>n</em> ≤ <em>L</em> ≤ <em>R</em>�
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2025/06/21/p7072.html" rel="prev" title="[C++] 直播获奖">
-                  <i class="fa fa-angle-left"></i> [C++] 直播获奖
+                <a href="/2025/07/25/b3874.html" rel="prev" title="[C++] B3874 [GESP202309 六级] 小杨的握手问题">
+                  <i class="fa fa-angle-left"></i> [C++] B3874 [GESP202309 六级] 小杨的握手问题
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2025/06/22/p8813.html" rel="next" title="[C++] 乘方">
-                  [C++] 乘方 <i class="fa fa-angle-right"></i>
+                <a href="/2025/07/25/cal-pi.html" rel="next" title="[C++] 多线程计算π">
+                  [C++] 多线程计算π <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
@@ -563,7 +444,7 @@ class="math inline">2 ≤ <em>n</em> ≤ <em>L</em> ≤ <em>R</em>�
 
 
 
-    <div class="comments" id="SOHUCS" sid="32dc1efa7e4fd83d5e2fa7c61618f516"></div>
+    <div class="comments" id="SOHUCS" sid="ea2bc146a1db258d604b860f387df3e4"></div>
 </div>
   </main>
 

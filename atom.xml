@@ -6,7 +6,7 @@
   <link href="https://www.ptoe.cc/atom.xml" rel="self"/>
   
   <link href="https://www.ptoe.cc/"/>
-  <updated>2025-07-25T04:22:10.049Z</updated>
+  <updated>2025-07-25T07:19:38.525Z</updated>
   <id>https://www.ptoe.cc/</id>
   
   <author>
@@ -15,6 +15,271 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[C++] P3372 【模板】线段树 1</title>
+    <link href="https://www.ptoe.cc/2025/07/25/p3372.html"/>
+    <id>https://www.ptoe.cc/2025/07/25/p3372.html</id>
+    <published>2025-07-25T07:10:27.000Z</published>
+    <updated>2025-07-25T07:19:38.525Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;如题，已知一个数列 &lt;span
+class=&quot;math inline&quot;&gt;{&lt;em&gt;a&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt;/em&gt;&lt;/sub&gt;}&lt;/span&gt;，你需要进行下面两种操作：&lt;/p&gt;
+&lt;ol type=&quot;1&quot;&gt;
+&lt;li&gt;将某区间每一个数加上 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;k&lt;/em&gt;&lt;/span&gt;。&lt;/li&gt;
+&lt;li&gt;求出某区间每一个数的和。&lt;/li&gt;
+&lt;/ol&gt;</summary>
+    
+    
+    
+    <category term="编程" scheme="https://www.ptoe.cc/categories/programming/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[Python] P2866 [USACO06NOV] Bad Hair Day S</title>
+    <link href="https://www.ptoe.cc/2025/07/25/p2866.html"/>
+    <id>https://www.ptoe.cc/2025/07/25/p2866.html</id>
+    <published>2025-07-25T07:06:16.000Z</published>
+    <updated>2025-07-25T07:10:05.437Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;农夫约翰有 &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;N&lt;/em&gt;&lt;/span&gt;
+头奶牛正在过乱头发节。&lt;/p&gt;
+&lt;p&gt;每一头牛都站在同一排面朝右，它们被从左到右依次编号为 &lt;span
+class=&quot;math inline&quot;&gt;1, 2, ⋯, &lt;em&gt;N&lt;/em&gt;&lt;/span&gt;。编号为 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;i&lt;/em&gt;&lt;/span&gt; 的牛身高为 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;h&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt;/em&gt;&lt;/sub&gt;&lt;/span&gt;。第 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;N&lt;/em&gt;&lt;/span&gt; 头牛在最前面，而第 &lt;span
+class=&quot;math inline&quot;&gt;1&lt;/span&gt; 头牛在最后面。&lt;/p&gt;
+&lt;p&gt;对于第 &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;i&lt;/em&gt;&lt;/span&gt;
+头牛&lt;strong&gt;前面&lt;/strong&gt;的第 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;j&lt;/em&gt;&lt;/span&gt; 头牛，如果 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;h&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt;/em&gt;&lt;/sub&gt; &amp;gt; &lt;em&gt;h&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt;/em&gt; + 1&lt;/sub&gt;, &lt;em&gt;h&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt;/em&gt;&lt;/sub&gt; &amp;gt; &lt;em&gt;h&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt;/em&gt; + 2&lt;/sub&gt;, ⋯, &lt;em&gt;h&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt;/em&gt;&lt;/sub&gt; &amp;gt; &lt;em&gt;h&lt;/em&gt;&lt;sub&gt;&lt;em&gt;j&lt;/em&gt;&lt;/sub&gt;&lt;/span&gt;，那么认为第
+&lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;i&lt;/em&gt;&lt;/span&gt; 头牛可以看到第 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;i&lt;/em&gt; + 1&lt;/span&gt; 到第 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;j&lt;/em&gt;&lt;/span&gt; 头牛。&lt;/p&gt;
+&lt;p&gt;定义 &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;C&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt;/em&gt;&lt;/sub&gt;&lt;/span&gt;
+为第 &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;i&lt;/em&gt;&lt;/span&gt;
+头牛所能看到的牛的数量。请帮助农夫约翰求出 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;C&lt;/em&gt;&lt;sub&gt;1&lt;/sub&gt; + &lt;em&gt;C&lt;/em&gt;&lt;sub&gt;2&lt;/sub&gt; + ⋯ + &lt;em&gt;C&lt;/em&gt;&lt;sub&gt;&lt;em&gt;N&lt;/em&gt;&lt;/sub&gt;&lt;/span&gt;。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="编程" scheme="https://www.ptoe.cc/categories/programming/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[Python] P6503 [COCI 2010/2011 #3] DIFERENCIJA</title>
+    <link href="https://www.ptoe.cc/2025/07/25/p6503.html"/>
+    <id>https://www.ptoe.cc/2025/07/25/p6503.html</id>
+    <published>2025-07-25T07:03:48.000Z</published>
+    <updated>2025-07-25T07:06:35.351Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;给出一个长度为 &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;n&lt;/em&gt;&lt;/span&gt; 的序列
+&lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;a&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt;/em&gt;&lt;/sub&gt;&lt;/span&gt;，求出下列式子的值：&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;math display&quot;&gt;$$&#92;sum_{i=1}^{n} &#92;sum_{j=i}^{n}
+(&#92;max_{i&#92;le k&#92;le j} a_k-&#92;min_{i&#92;le k&#92;le j} a_k)$$&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;即定义一个子序列的权值为序列内最大值与最小值的差。求出所有连续子序列的权值和。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="编程" scheme="https://www.ptoe.cc/categories/programming/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[C++] P1099 [NOIP 2007 提高组] 树网的核</title>
+    <link href="https://www.ptoe.cc/2025/07/25/p1099.html"/>
+    <id>https://www.ptoe.cc/2025/07/25/p1099.html</id>
+    <published>2025-07-25T06:35:31.000Z</published>
+    <updated>2025-07-25T07:01:39.986Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;设 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;T&lt;/em&gt; = (&lt;em&gt;V&lt;/em&gt;, &lt;em&gt;E&lt;/em&gt;, &lt;em&gt;W&lt;/em&gt;)&lt;/span&gt;
+是一个无圈且连通的无向图（也称为无根树），每条边都有正整数的权，我们称
+&lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;T&lt;/em&gt;&lt;/span&gt;
+为树网（&lt;code&gt;treenetwork&lt;/code&gt;），其中 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;V&lt;/em&gt;&lt;/span&gt;，&lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;E&lt;/em&gt;&lt;/span&gt; 分别表示结点与边的集合，&lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;W&lt;/em&gt;&lt;/span&gt; 表示各边长度的集合，并设 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;T&lt;/em&gt;&lt;/span&gt; 有 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;n&lt;/em&gt;&lt;/span&gt; 个结点。&lt;/p&gt;
+&lt;p&gt;路径：树网中任何两结点 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;a&lt;/em&gt;&lt;/span&gt;，&lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;b&lt;/em&gt;&lt;/span&gt; 都存在唯一的一条简单路径，用 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;d&lt;/em&gt;(&lt;em&gt;a&lt;/em&gt;, &lt;em&gt;b&lt;/em&gt;)&lt;/span&gt; 表示以
+&lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;a&lt;/em&gt;, &lt;em&gt;b&lt;/em&gt;&lt;/span&gt;
+为端点的路径的长度，它是该路径上各边长度之和。我们称 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;d&lt;/em&gt;(&lt;em&gt;a&lt;/em&gt;, &lt;em&gt;b&lt;/em&gt;)&lt;/span&gt; 为 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;a&lt;/em&gt;, &lt;em&gt;b&lt;/em&gt;&lt;/span&gt; 两结点间的距离。&lt;/p&gt;
+&lt;p&gt;&lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;D&lt;/em&gt;(&lt;em&gt;v&lt;/em&gt;, &lt;em&gt;P&lt;/em&gt;) = min {&lt;em&gt;d&lt;/em&gt;(&lt;em&gt;v&lt;/em&gt;, &lt;em&gt;u&lt;/em&gt;)}&lt;/span&gt;,
+&lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;u&lt;/em&gt;&lt;/span&gt; 为路径 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;P&lt;/em&gt;&lt;/span&gt; 上的结点。&lt;/p&gt;
+&lt;p&gt;树网的直径：树网中最长的路径称为树网的直径。对于给定的树网 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;T&lt;/em&gt;&lt;/span&gt;，直径不一定是唯一的，但可以证明：各直径的中点（不一定恰好是某个结点，可能在某条边的内部）是唯一的，我们称该点为树网的中心。&lt;/p&gt;
+&lt;p&gt;偏心距 &lt;span class=&quot;math inline&quot;&gt;ECC(&lt;em&gt;F&lt;/em&gt;)&lt;/span&gt;：树网 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;T&lt;/em&gt;&lt;/span&gt; 中距路径 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;F&lt;/em&gt;&lt;/span&gt; 最远的结点到路径 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;F&lt;/em&gt;&lt;/span&gt; 的距离，即&lt;/p&gt;
+&lt;p&gt;&lt;span
+class=&quot;math display&quot;&gt;ECC(&lt;em&gt;F&lt;/em&gt;) = max {&lt;em&gt;D&lt;/em&gt;(&lt;em&gt;v&lt;/em&gt;, &lt;em&gt;F&lt;/em&gt;), &lt;em&gt;v&lt;/em&gt; ∈ &lt;em&gt;V&lt;/em&gt;}&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;任务：对于给定的树网 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;T&lt;/em&gt; = (&lt;em&gt;V&lt;/em&gt;, &lt;em&gt;E&lt;/em&gt;, &lt;em&gt;W&lt;/em&gt;)&lt;/span&gt;
+和非负整数 &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;s&lt;/em&gt;&lt;/span&gt;，求一个路径 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;F&lt;/em&gt;&lt;/span&gt;，他是某直径上的一段路径（该路径两端均为树网中的结点），其长度不超过
+&lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;s&lt;/em&gt;&lt;/span&gt;（可以等于 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;s&lt;/em&gt;&lt;/span&gt;），使偏心距 &lt;span
+class=&quot;math inline&quot;&gt;ECC(&lt;em&gt;F&lt;/em&gt;)&lt;/span&gt; 最小。我们称这个路径为树网
+&lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;T&lt;/em&gt; = (&lt;em&gt;V&lt;/em&gt;, &lt;em&gt;E&lt;/em&gt;, &lt;em&gt;W&lt;/em&gt;)&lt;/span&gt;
+的核（&lt;code&gt;Core&lt;/code&gt;）。必要时，&lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;F&lt;/em&gt;&lt;/span&gt;
+可以退化为某个结点。一般来说，在上述定义下，核不一定只有一个，但最小偏心距是唯一的。&lt;/p&gt;
+&lt;p&gt;下面的图给出了树网的一个实例。图中，&lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;A&lt;/em&gt; − &lt;em&gt;B&lt;/em&gt;&lt;/span&gt; 与 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;A&lt;/em&gt; − &lt;em&gt;C&lt;/em&gt;&lt;/span&gt; 是两条直径，长度均为
+&lt;span class=&quot;math inline&quot;&gt;20&lt;/span&gt;。点 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;W&lt;/em&gt;&lt;/span&gt; 是树网的中心，&lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;E&lt;/em&gt;&lt;em&gt;F&lt;/em&gt;&lt;/span&gt; 边的长度为 &lt;span
+class=&quot;math inline&quot;&gt;5&lt;/span&gt;。如果指定 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;s&lt;/em&gt; = 11&lt;/span&gt;，则树网的核为路径&lt;code&gt;DEFG&lt;/code&gt;（也可以取为路径&lt;code&gt;DEF&lt;/code&gt;），偏心距为
+&lt;span class=&quot;math inline&quot;&gt;8&lt;/span&gt;。如果指定 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;s&lt;/em&gt; = 0&lt;/span&gt;（或 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;s&lt;/em&gt; = 1&lt;/span&gt;、&lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;s&lt;/em&gt; = 2&lt;/span&gt;），则树网的核为结点 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;F&lt;/em&gt;&lt;/span&gt;，偏心距为 &lt;span
+class=&quot;math inline&quot;&gt;12&lt;/span&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&quot;https://cdn.luogu.com.cn/upload/image_hosting/oms5c6rq.png&quot; /&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="编程" scheme="https://www.ptoe.cc/categories/programming/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[C++] P2114 [NOI2014] 起床困难综合症</title>
+    <link href="https://www.ptoe.cc/2025/07/25/p2114.html"/>
+    <id>https://www.ptoe.cc/2025/07/25/p2114.html</id>
+    <published>2025-07-25T06:21:22.000Z</published>
+    <updated>2025-07-25T07:07:16.557Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;span class=&quot;math inline&quot;&gt;21&lt;/span&gt;
+世纪，许多人得了一种奇怪的病：起床困难综合症，其临床表现为：起床难，起床后精神不佳。作为一名青春阳光好少年，atm
+一直坚持与起床困难综合症作斗争。通过研究相关文献，他找到了该病的发病原因：在深邃的太平洋海底中，出现了一条名为
+drd 的巨龙，它掌握着睡眠之精髓，能随意延长大家的睡眠时间。正是由于 drd
+的活动，起床困难综合症愈演愈烈，以惊人的速度在世界上传播。为了彻底消灭这种病，atm
+决定前往海底，消灭这条恶龙。历经千辛万苦，atm 终于来到了 drd
+所在的地方，准备与其展开艰苦卓绝的战斗。drd
+有着十分特殊的技能，他的防御战线能够使用一定的运算来改变他受到的伤害。具体说来，drd
+的防御战线由 &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;n&lt;/em&gt;&lt;/span&gt;
+扇防御门组成。每扇防御门包括一个运算 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;o&lt;/em&gt;&lt;em&gt;p&lt;/em&gt;&lt;/span&gt; 和一个参数 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;t&lt;/em&gt;&lt;/span&gt;，其中运算一定是 &lt;span
+class=&quot;math inline&quot;&gt;OR, XOR, AND&lt;/span&gt;
+中的一种，参数则一定为非负整数。如果还未通过防御门时攻击力为 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;x&lt;/em&gt;&lt;/span&gt;，则其通过这扇防御门后攻击力将变为
+&lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;x&lt;/em&gt; &lt;em&gt;o&lt;/em&gt;&lt;em&gt;p&lt;/em&gt; &lt;em&gt;t&lt;/em&gt;&lt;/span&gt;。最终
+drd 受到的伤害为对方初始攻击力 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;x&lt;/em&gt;&lt;/span&gt; 依次经过所有 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;n&lt;/em&gt;&lt;/span&gt; 扇防御门后转变得到的攻击力。&lt;/p&gt;
+&lt;p&gt;由于 atm 水平有限，他的初始攻击力只能为 &lt;span
+class=&quot;math inline&quot;&gt;0&lt;/span&gt; 到 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;m&lt;/em&gt;&lt;/span&gt;
+之间的一个整数（即他的初始攻击力只能在 &lt;span
+class=&quot;math inline&quot;&gt;0, 1, …, &lt;em&gt;m&lt;/em&gt;&lt;/span&gt;
+中任选，但在通过防御门之后的攻击力不受 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;m&lt;/em&gt;&lt;/span&gt;
+的限制）。为了节省体力，他希望通过选择合适的初始攻击力使得他的攻击能让
+drd 受到最大的伤害，请你帮他计算一下，他的一次攻击最多能使 drd
+受到多少伤害。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="编程" scheme="https://www.ptoe.cc/categories/programming/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[C++] 多线程计算π</title>
+    <link href="https://www.ptoe.cc/2025/07/25/cal-pi.html"/>
+    <id>https://www.ptoe.cc/2025/07/25/cal-pi.html</id>
+    <published>2025-07-25T06:18:59.000Z</published>
+    <updated>2025-07-25T06:20:17.698Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;让 AI 写了个多线程计算 π 的程序，非常适合跑分（（（&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="编程" scheme="https://www.ptoe.cc/categories/programming/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[C++] P11378 [GESP202412 七级] 燃烧</title>
+    <link href="https://www.ptoe.cc/2025/07/25/p11378.html"/>
+    <id>https://www.ptoe.cc/2025/07/25/p11378.html</id>
+    <published>2025-07-25T06:11:41.000Z</published>
+    <updated>2025-07-25T07:06:44.173Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;小杨有一棵包含 &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;n&lt;/em&gt;&lt;/span&gt;
+个节点的树，其中节点的编号从 &lt;span class=&quot;math inline&quot;&gt;1&lt;/span&gt; 到 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;n&lt;/em&gt;&lt;/span&gt;。节点 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;i&lt;/em&gt;&lt;/span&gt; 的权值为 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;a&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt;/em&gt;&lt;/sub&gt;&lt;/span&gt;。&lt;/p&gt;
+&lt;p&gt;小杨可以选择一个初始节点引燃，每个燃烧的节点会将其相邻节点中权值&lt;strong&gt;严格小于&lt;/strong&gt;自身权值的在节点间扩散直到不会有新的节点被引燃。&lt;/p&gt;
+&lt;p&gt;小杨想知道在合理选择初始节点的情况下，最多可以燃烧多少个节点。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="编程" scheme="https://www.ptoe.cc/categories/programming/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[C++] B3874 [GESP202309 六级] 小杨的握手问题</title>
+    <link href="https://www.ptoe.cc/2025/07/25/b3874.html"/>
+    <id>https://www.ptoe.cc/2025/07/25/b3874.html</id>
+    <published>2025-07-25T05:44:10.000Z</published>
+    <updated>2025-07-25T06:01:33.392Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;小杨的班级里共有 &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;N&lt;/em&gt;&lt;/span&gt;
+名同学，学号从 &lt;span class=&quot;math inline&quot;&gt;0&lt;/span&gt; 至 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;N&lt;/em&gt; − 1&lt;/span&gt;。&lt;/p&gt;
+&lt;p&gt;某节课上，老师安排全班同学进行一次握手游戏，具体规则如下：老师安排了一个顺序，让全班
+&lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;N&lt;/em&gt;&lt;/span&gt;
+名同学依次进入教室。每位同学进入教室时，需要和
+&lt;strong&gt;已经在教室内&lt;/strong&gt; 且 &lt;strong&gt;学号小于自己&lt;/strong&gt;
+的同学握手。&lt;/p&gt;
+&lt;p&gt;现在，小杨想知道，整个班级总共会进行多少次握手。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;提示：可以考虑使用归并排序进行降序排序，并在此过程中求解。&lt;/strong&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="编程" scheme="https://www.ptoe.cc/categories/programming/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>[C++] P3366 【模板】最小生成树</title>
@@ -35,23 +300,19 @@
   </entry>
   
   <entry>
-    <title>p1000</title>
+    <title>[C++] P1000 超级玛丽游戏</title>
     <link href="https://www.ptoe.cc/2025/07/25/p1000.html"/>
     <id>https://www.ptoe.cc/2025/07/25/p1000.html</id>
     <published>2025-07-25T03:59:25.000Z</published>
-    <updated>2025-07-25T04:00:02.472Z</updated>
+    <updated>2025-07-25T05:43:06.489Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;p1000-超级玛丽游戏&quot;&gt;P1000 超级玛丽游戏&lt;/h1&gt;
-&lt;h2 id=&quot;题目背景&quot;&gt;题目背景&lt;/h2&gt;
-&lt;p&gt;本题是洛谷的试机题目，可以帮助了解洛谷的使用。&lt;/p&gt;
-&lt;p&gt;建议完成本题目后继续尝试 &lt;a</summary>
-        
-      
+    <summary type="html">&lt;p&gt;本题是洛谷的试机题目，可以帮助了解洛谷的使用。&lt;/p&gt;
+&lt;p&gt;建议完成本题目后继续尝试 &lt;a
+href=&quot;https://www.luogu.com.cn/problem/P1001&quot;&gt;P1001&lt;/a&gt;、&lt;a
+href=&quot;https://www.luogu.com.cn/problem/P1008&quot;&gt;P1008&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;另外强烈推荐&lt;a
+href=&quot;https://www.luogu.com.cn/discuss/show/241461&quot;&gt;新用户必读帖&lt;/a&gt;。&lt;/p&gt;</summary>
     
     
     
@@ -306,226 +567,6 @@ class=&quot;math inline&quot;&gt;&lt;em&gt;a&lt;/em&gt;&lt;sup&gt;&lt;em&gt;b&lt
 &lt;code&gt;-1&lt;/code&gt; 进行警示，否则就输出正确的 &lt;span
 class=&quot;math inline&quot;&gt;&lt;em&gt;a&lt;/em&gt;&lt;sup&gt;&lt;em&gt;b&lt;/em&gt;&lt;/sup&gt;&lt;/span&gt; 的值。&lt;/p&gt;
 &lt;p&gt;然而小文还是不知道怎么实现这份程序，因此她想请你帮忙。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="编程" scheme="https://www.ptoe.cc/categories/programming/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>[C++] 分糖果</title>
-    <link href="https://www.ptoe.cc/2025/06/22/p7909.html"/>
-    <id>https://www.ptoe.cc/2025/06/22/p7909.html</id>
-    <published>2025-06-22T11:46:40.000Z</published>
-    <updated>2025-07-25T03:52:30.424Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;[P7909 &lt;a href=&quot;https://www.luogu.com.cn/problem/P7909&quot;&gt;CSP-J 2021]
-分糖果 - 洛谷&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;红太阳幼儿园有 &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;n&lt;/em&gt;&lt;/span&gt;
-个小朋友，你是其中之一。保证 &lt;span
-class=&quot;math inline&quot;&gt;&lt;em&gt;n&lt;/em&gt; ≥ 2&lt;/span&gt;。&lt;/p&gt;
-&lt;p&gt;有一天你在幼儿园的后花园里发现无穷多颗糖果，你打算拿一些糖果回去分给幼儿园的小朋友们。&lt;/p&gt;
-&lt;p&gt;由于你只是个平平无奇的幼儿园小朋友，所以你的体力有限，至多只能拿
-&lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;R&lt;/em&gt;&lt;/span&gt; 块糖回去。&lt;/p&gt;
-&lt;p&gt;但是拿的太少不够分的，所以你至少要拿 &lt;span
-class=&quot;math inline&quot;&gt;&lt;em&gt;L&lt;/em&gt;&lt;/span&gt; 块糖回去。保证 &lt;span
-class=&quot;math inline&quot;&gt;&lt;em&gt;n&lt;/em&gt; ≤ &lt;em&gt;L&lt;/em&gt; ≤ &lt;em&gt;R&lt;/em&gt;&lt;/span&gt;。&lt;/p&gt;
-&lt;p&gt;也就是说，如果你拿了 &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;k&lt;/em&gt;&lt;/span&gt;
-块糖，那么你需要保证 &lt;span
-class=&quot;math inline&quot;&gt;&lt;em&gt;L&lt;/em&gt; ≤ &lt;em&gt;k&lt;/em&gt; ≤ &lt;em&gt;R&lt;/em&gt;&lt;/span&gt;。&lt;/p&gt;
-&lt;p&gt;如果你拿了 &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;k&lt;/em&gt;&lt;/span&gt; 块糖，你将把这
-&lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;k&lt;/em&gt;&lt;/span&gt;
-块糖放到篮子里，并要求大家按照如下方案分糖果：只要篮子里有&lt;strong&gt;不少于&lt;/strong&gt;
-&lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;n&lt;/em&gt;&lt;/span&gt; 块糖果，幼儿园的所有 &lt;span
-class=&quot;math inline&quot;&gt;&lt;em&gt;n&lt;/em&gt;&lt;/span&gt;
-个小朋友（包括你自己）都从篮子中拿走&lt;strong&gt;恰好&lt;/strong&gt;一块糖，直到篮子里的糖数量&lt;strong&gt;少于&lt;/strong&gt;
-&lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;n&lt;/em&gt;&lt;/span&gt;
-块。此时篮子里剩余的糖果均归你所有——这些糖果是&lt;strong&gt;作为你搬糖果的奖励&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;作为幼儿园高质量小朋友，你希望让&lt;strong&gt;作为你搬糖果的奖励&lt;/strong&gt;的糖果数量（&lt;strong&gt;而不是你最后获得的总糖果数量&lt;/strong&gt;！）尽可能多；因此你需要写一个程序，依次输入
-&lt;span
-class=&quot;math inline&quot;&gt;&lt;em&gt;n&lt;/em&gt;, &lt;em&gt;L&lt;/em&gt;, &lt;em&gt;R&lt;/em&gt;&lt;/span&gt;，并输出你最多能获得多少&lt;strong&gt;作为你搬糖果的奖励&lt;/strong&gt;的糖果数量。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="编程" scheme="https://www.ptoe.cc/categories/programming/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>[C++] 直播获奖</title>
-    <link href="https://www.ptoe.cc/2025/06/21/p7072.html"/>
-    <id>https://www.ptoe.cc/2025/06/21/p7072.html</id>
-    <published>2025-06-21T10:23:44.000Z</published>
-    <updated>2025-07-25T03:52:39.479Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://www.luogu.com.cn/problem/P7072&quot;&gt;直播获奖 -
-洛谷&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;NOI2130 即将举行。为了增加观赏性，CCF
-决定逐一评出每个选手的成绩，并直播即时的获奖分数线。本次竞赛的获奖率为
-&lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;w&lt;/em&gt;%&lt;/span&gt;，即当前排名前 &lt;span
-class=&quot;math inline&quot;&gt;&lt;em&gt;w&lt;/em&gt;%&lt;/span&gt;
-的选手的最低成绩就是即时的分数线。&lt;/p&gt;
-&lt;p&gt;更具体地，若当前已评出了 &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;p&lt;/em&gt;&lt;/span&gt;
-个选手的成绩，则当前计划获奖人数为 &lt;span
-class=&quot;math inline&quot;&gt;max (1, ⌊&lt;em&gt;p&lt;/em&gt; × &lt;em&gt;w&lt;/em&gt;%⌋)&lt;/span&gt;，其中
-&lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;w&lt;/em&gt;&lt;/span&gt; 是获奖百分比，&lt;span
-class=&quot;math inline&quot;&gt;⌊&lt;em&gt;x&lt;/em&gt;⌋&lt;/span&gt; 表示对 &lt;span
-class=&quot;math inline&quot;&gt;&lt;em&gt;x&lt;/em&gt;&lt;/span&gt; 向下取整，&lt;span
-class=&quot;math inline&quot;&gt;max (&lt;em&gt;x&lt;/em&gt;, &lt;em&gt;y&lt;/em&gt;)&lt;/span&gt; 表示 &lt;span
-class=&quot;math inline&quot;&gt;&lt;em&gt;x&lt;/em&gt;&lt;/span&gt; 和 &lt;span
-class=&quot;math inline&quot;&gt;&lt;em&gt;y&lt;/em&gt;&lt;/span&gt;
-中较大的数。如有选手成绩相同，则所有成绩并列的选手都能获奖，因此实际获奖人数可能比计划中多。&lt;/p&gt;
-&lt;p&gt;作为评测组的技术人员，请你帮 CCF 写一个直播程序。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="编程" scheme="https://www.ptoe.cc/categories/programming/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>[C++] 优秀的拆分</title>
-    <link href="https://www.ptoe.cc/2025/06/20/p7071.html"/>
-    <id>https://www.ptoe.cc/2025/06/20/p7071.html</id>
-    <published>2025-06-20T06:54:08.000Z</published>
-    <updated>2025-07-25T03:52:44.404Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://www.luogu.com.cn/problem/P7071&quot;&gt;洛谷P7071&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;一般来说，一个正整数可以拆分成若干个正整数的和。&lt;/p&gt;
-&lt;p&gt;例如，&lt;span class=&quot;math inline&quot;&gt;1 = 1&lt;/span&gt;，&lt;span
-class=&quot;math inline&quot;&gt;10 = 1 + 2 + 3 + 4&lt;/span&gt; 等。对于正整数 &lt;span
-class=&quot;math inline&quot;&gt;&lt;em&gt;n&lt;/em&gt;&lt;/span&gt;
-的一种特定拆分，我们称它为“优秀的”，当且仅当在这种拆分下，&lt;span
-class=&quot;math inline&quot;&gt;&lt;em&gt;n&lt;/em&gt;&lt;/span&gt;
-被分解为了若干个&lt;strong&gt;不同&lt;/strong&gt;的 &lt;span
-class=&quot;math inline&quot;&gt;2&lt;/span&gt; 的&lt;strong&gt;正整数&lt;/strong&gt;次幂。注意，一个数
-&lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;x&lt;/em&gt;&lt;/span&gt; 能被表示成 &lt;span
-class=&quot;math inline&quot;&gt;2&lt;/span&gt; 的正整数次幂，当且仅当 &lt;span
-class=&quot;math inline&quot;&gt;&lt;em&gt;x&lt;/em&gt;&lt;/span&gt; 能通过正整数个 &lt;span
-class=&quot;math inline&quot;&gt;2&lt;/span&gt; 相乘在一起得到。&lt;/p&gt;
-&lt;p&gt;例如，&lt;span
-class=&quot;math inline&quot;&gt;10 = 8 + 2 = 2&lt;sup&gt;3&lt;/sup&gt; + 2&lt;sup&gt;1&lt;/sup&gt;&lt;/span&gt;
-是一个优秀的拆分。但是，&lt;span
-class=&quot;math inline&quot;&gt;7 = 4 + 2 + 1 = 2&lt;sup&gt;2&lt;/sup&gt; + 2&lt;sup&gt;1&lt;/sup&gt; + 2&lt;sup&gt;0&lt;/sup&gt;&lt;/span&gt;
-就不是一个优秀的拆分，因为 &lt;span class=&quot;math inline&quot;&gt;1&lt;/span&gt; 不是 &lt;span
-class=&quot;math inline&quot;&gt;2&lt;/span&gt; 的正整数次幂。&lt;/p&gt;
-&lt;p&gt;现在，给定正整数 &lt;span
-class=&quot;math inline&quot;&gt;&lt;em&gt;n&lt;/em&gt;&lt;/span&gt;，你需要判断这个数的所有拆分中，是否存在优秀的拆分。若存在，请你给出具体的拆分方案。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="编程" scheme="https://www.ptoe.cc/categories/programming/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>[C++] 公交换乘</title>
-    <link href="https://www.ptoe.cc/2025/06/13/p5661.html"/>
-    <id>https://www.ptoe.cc/2025/06/13/p5661.html</id>
-    <published>2025-06-13T12:50:28.000Z</published>
-    <updated>2025-07-25T03:52:49.713Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://www.luogu.com.cn/problem/P5661&quot;&gt;洛谷P5661&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;著名旅游城市 B
-市为了鼓励大家采用公共交通方式出行，推出了一种地铁换乘公交车的优惠方案：&lt;/p&gt;
-&lt;ol type=&quot;1&quot;&gt;
-&lt;li&gt;&lt;p&gt;在搭乘一次地铁后可以获得一张优惠票，有效期为 45
-分钟，在有效期内可以消耗这张优惠票，免费搭乘一次票价不超过地铁票价的公交车。
-在有效期内指开始乘公交车的时间与开始乘地铁的时间之差小于等于 45
-分钟，即：&lt;span
-class=&quot;math inline&quot;&gt;&lt;em&gt;t&lt;/em&gt;&lt;sub&gt;&lt;em&gt;b&lt;/em&gt;&lt;em&gt;u&lt;/em&gt;&lt;em&gt;s&lt;/em&gt;&lt;/sub&gt; − &lt;em&gt;t&lt;/em&gt;&lt;sub&gt;&lt;em&gt;s&lt;/em&gt;&lt;em&gt;u&lt;/em&gt;&lt;em&gt;b&lt;/em&gt;&lt;em&gt;w&lt;/em&gt;&lt;em&gt;a&lt;/em&gt;&lt;em&gt;y&lt;/em&gt;&lt;/sub&gt; ≤ 45&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;搭乘地铁获得的优惠票可以累积，即可以连续搭乘若干次地铁后再连续使用优惠票搭乘公交车，但每次搭乘公交车只能使用一张优惠券。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;搭乘公交车时，如果可以使用优惠票一定会使用优惠票；
-如果有多张优惠票满足条件，则优先消耗获得最早的优惠票。&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;现在你得到了小轩最近的公共交通出行记录，你能帮他算算他的花费吗?&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="编程" scheme="https://www.ptoe.cc/categories/programming/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>[C++] 全排列</title>
-    <link href="https://www.ptoe.cc/2025/06/13/full-sorting.html"/>
-    <id>https://www.ptoe.cc/2025/06/13/full-sorting.html</id>
-    <published>2025-06-13T12:35:16.000Z</published>
-    <updated>2025-07-25T03:53:11.031Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;有 1∼n 这 n（n&amp;lt;10）个数，现将这 n 个数组成一个 n
-位的数，每个数只能用一次，例如 n=2，则 12，21 等都是符合条件的数，但 11
-和 22 不行。&lt;/p&gt;
-&lt;p&gt;问，输入 n 后，将符合条件的所有的 n
-位数输出，且按照从小到大顺序输出。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="编程" scheme="https://www.ptoe.cc/categories/programming/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>[C++] 数字游戏</title>
-    <link href="https://www.ptoe.cc/2025/06/13/p5660.html"/>
-    <id>https://www.ptoe.cc/2025/06/13/p5660.html</id>
-    <published>2025-06-13T12:26:55.000Z</published>
-    <updated>2025-07-25T03:53:00.368Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://www.luogu.com.cn/problem/P5660&quot;&gt;洛谷P5660&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;小 K 同学向小 P 同学发送了一个长度为 8 的 01 字符串 来玩数字游戏，小
-P 同学想要知道字符串中究竟有多少个 1。&lt;/p&gt;
-&lt;p&gt;注意：01 字符串为每一个字符是 0 或者 1
-的字符串，如“101”（不含双引号）为一个长度为 3 的 01 字符串。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="编程" scheme="https://www.ptoe.cc/categories/programming/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>[C++] 找数</title>
-    <link href="https://www.ptoe.cc/2025/06/13/find-the-number.html"/>
-    <id>https://www.ptoe.cc/2025/06/13/find-the-number.html</id>
-    <published>2025-06-13T12:13:33.000Z</published>
-    <updated>2025-07-25T03:53:15.095Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;有两组数字，请找出第二组数中的哪些数在第一组中出现了，并从小到大输出。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="编程" scheme="https://www.ptoe.cc/categories/programming/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>[CSP-J 2021] 网络连接</title>
-    <link href="https://www.ptoe.cc/2025/06/11/p7911.html"/>
-    <id>https://www.ptoe.cc/2025/06/11/p7911.html</id>
-    <published>2025-06-11T14:02:41.000Z</published>
-    <updated>2025-07-25T03:53:24.793Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://www.luogu.com.cn/problem/P7911&quot;&gt;洛谷P7911&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;TCP/IP 协议是网络通信领域的一项重要协议。
-今天你的任务，就是尝试利用这个协议，还原一个简化后的网络连接场景。&lt;/p&gt;</summary>
     
     
     
