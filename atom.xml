@@ -6,7 +6,7 @@
   <link href="https://www.ptoe.cc/atom.xml" rel="self"/>
   
   <link href="https://www.ptoe.cc/"/>
-  <updated>2025-08-08T13:26:24.341Z</updated>
+  <updated>2025-10-04T07:38:27.270Z</updated>
   <id>https://www.ptoe.cc/</id>
   
   <author>
@@ -17,11 +17,35 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>P1668 [USACO04DEC] Cleaning Shifts S</title>
+    <link href="https://www.ptoe.cc/2025/10/04/p1668.html"/>
+    <id>https://www.ptoe.cc/2025/10/04/p1668.html</id>
+    <published>2025-10-04T07:34:44.000Z</published>
+    <updated>2025-10-04T07:38:27.270Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;一天有 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;T&lt;/em&gt;(1 ≤ &lt;em&gt;T&lt;/em&gt; ≤ 10&lt;sup&gt;6&lt;/sup&gt;)&lt;/span&gt;
+个时段。约翰正打算安排他的 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;N&lt;/em&gt;(1 ≤ &lt;em&gt;N&lt;/em&gt; ≤ 2.5 × 10&lt;sup&gt;4&lt;/sup&gt;)&lt;/span&gt;
+只奶牛来值班，打扫打扫牛棚卫生。每只奶牛都有自己的空闲时间段 $ &lt;a
+href=&quot;1&#92;le%20S_i&#92;le%20E_i&#92;le%20T&quot;&gt;S_i,E_i&lt;/a&gt;$，只能把空闲的奶牛安排出来值班。而且，每个时间段必需有奶牛在值班。&lt;/p&gt;
+&lt;p&gt;那么，最少需要动用多少奶牛参与值班呢？如果没有办法安排出合理的方案，就输出
+&lt;span class=&quot;math inline&quot;&gt;−1&lt;/span&gt;。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="编程" scheme="https://www.ptoe.cc/categories/programming/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>[C++] P3372 【模板】线段树 1</title>
     <link href="https://www.ptoe.cc/2025/07/25/p3372.html"/>
     <id>https://www.ptoe.cc/2025/07/25/p3372.html</id>
     <published>2025-07-25T07:10:27.000Z</published>
-    <updated>2025-08-08T13:26:24.341Z</updated>
+    <updated>2025-08-08T14:52:39.872Z</updated>
     
     
     <summary type="html">&lt;p&gt;如题，已知一个数列 &lt;span
@@ -527,46 +551,6 @@ class=&quot;math inline&quot;&gt;&lt;em&gt;p&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt
 &lt;span
 class=&quot;math inline&quot;&gt;&lt;em&gt;n&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt;/em&gt;&lt;/sub&gt; = &lt;em&gt;p&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt;/em&gt;&lt;/sub&gt; × &lt;em&gt;q&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt;/em&gt;&lt;/sub&gt;&lt;/span&gt;、&lt;span
 class=&quot;math inline&quot;&gt;&lt;em&gt;e&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt;/em&gt;&lt;/sub&gt; × &lt;em&gt;d&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt;/em&gt;&lt;/sub&gt; = (&lt;em&gt;p&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt;/em&gt;&lt;/sub&gt; − 1)(&lt;em&gt;q&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt;/em&gt;&lt;/sub&gt; − 1) + 1&lt;/span&gt;。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="编程" scheme="https://www.ptoe.cc/categories/programming/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>[C++] 乘方</title>
-    <link href="https://www.ptoe.cc/2025/06/22/p8813.html"/>
-    <id>https://www.ptoe.cc/2025/06/22/p8813.html</id>
-    <published>2025-06-22T12:14:37.000Z</published>
-    <updated>2025-07-25T03:52:26.295Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://www.luogu.com.cn/problem/P8813&quot;&gt;P8813 [CSP-J 2022]
-乘方 - 洛谷&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;小文同学刚刚接触了信息学竞赛，有一天她遇到了这样一个题：给定正整数
-&lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;a&lt;/em&gt;&lt;/span&gt; 和 &lt;span
-class=&quot;math inline&quot;&gt;&lt;em&gt;b&lt;/em&gt;&lt;/span&gt;，求 &lt;span
-class=&quot;math inline&quot;&gt;&lt;em&gt;a&lt;/em&gt;&lt;sup&gt;&lt;em&gt;b&lt;/em&gt;&lt;/sup&gt;&lt;/span&gt;
-的值是多少。&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;a&lt;/em&gt;&lt;sup&gt;&lt;em&gt;b&lt;/em&gt;&lt;/sup&gt;&lt;/span&gt; 即
-&lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;b&lt;/em&gt;&lt;/span&gt; 个 &lt;span
-class=&quot;math inline&quot;&gt;&lt;em&gt;a&lt;/em&gt;&lt;/span&gt; 相乘的值，例如 &lt;span
-class=&quot;math inline&quot;&gt;2&lt;sup&gt;3&lt;/sup&gt;&lt;/span&gt; 即为 &lt;span
-class=&quot;math inline&quot;&gt;3&lt;/span&gt; 个 &lt;span class=&quot;math inline&quot;&gt;2&lt;/span&gt;
-相乘，结果为 &lt;span class=&quot;math inline&quot;&gt;2 × 2 × 2 = 8&lt;/span&gt;。&lt;/p&gt;
-&lt;p&gt;“简单！”小文心想，同时很快就写出了一份程序，可是测试时却出现了错误。&lt;/p&gt;
-&lt;p&gt;小文很快意识到，她的程序里的变量都是 &lt;code&gt;int&lt;/code&gt;
-类型的。在大多数机器上，&lt;code&gt;int&lt;/code&gt; 类型能表示的最大数为 &lt;span
-class=&quot;math inline&quot;&gt;2&lt;sup&gt;31&lt;/sup&gt; − 1&lt;/span&gt;，因此只要计算结果超过这个数，她的程序就会出现错误。&lt;/p&gt;
-&lt;p&gt;由于小文刚刚学会编程，她担心使用 &lt;code&gt;int&lt;/code&gt;
-计算会出现问题。因此她希望你在 &lt;span
-class=&quot;math inline&quot;&gt;&lt;em&gt;a&lt;/em&gt;&lt;sup&gt;&lt;em&gt;b&lt;/em&gt;&lt;/sup&gt;&lt;/span&gt; 的值超过
-&lt;span class=&quot;math inline&quot;&gt;10&lt;sup&gt;9&lt;/sup&gt;&lt;/span&gt; 时，输出一个
-&lt;code&gt;-1&lt;/code&gt; 进行警示，否则就输出正确的 &lt;span
-class=&quot;math inline&quot;&gt;&lt;em&gt;a&lt;/em&gt;&lt;sup&gt;&lt;em&gt;b&lt;/em&gt;&lt;/sup&gt;&lt;/span&gt; 的值。&lt;/p&gt;
-&lt;p&gt;然而小文还是不知道怎么实现这份程序，因此她想请你帮忙。&lt;/p&gt;</summary>
     
     
     
