@@ -23,15 +23,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.ptoe.cc","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"default"},"fold":{"enable":false,"height":500},"language":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="https://fastly.jsdelivr.net/npm/hexo-theme-next@8.23.2/source/js/config.min.js" defer></script>
 
-    <meta name="description" content="闲着没事研究了下二进制减法。">
+    <meta name="description" content="闲着没事写的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[C++] 二进制减法">
-<meta property="og:url" content="https://www.ptoe.cc/2025/07/24/binary-minus.html">
+<meta property="og:title" content="[C++] 菜鸟驿站模拟">
+<meta property="og:url" content="https://www.ptoe.cc/2025/12/25/cainiaosim.html">
 <meta property="og:site_name" content="元素的笔记">
-<meta property="og:description" content="闲着没事研究了下二进制减法。">
+<meta property="og:description" content="闲着没事写的">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-07-24T14:34:44.000Z">
-<meta property="article:modified_time" content="2025-07-25T03:50:17.375Z">
+<meta property="article:published_time" content="2025-12-25T03:19:17.000Z">
+<meta property="article:modified_time" content="2025-12-25T03:20:13.888Z">
 <meta property="article:author" content="元素">
 <meta property="article:tag" content="C++">
 <meta property="article:tag" content="算法">
@@ -39,13 +39,13 @@
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://www.ptoe.cc/2025/07/24/binary-minus.html">
+<link rel="canonical" href="https://www.ptoe.cc/2025/12/25/cainiaosim.html">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.ptoe.cc/2025/07/24/binary-minus.html","path":"2025/07/24/binary-minus.html","title":"[C++] 二进制减法"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.ptoe.cc/2025/12/25/cainiaosim.html","path":"2025/12/25/cainiaosim.html","title":"[C++] 菜鸟驿站模拟"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>[C++] 二进制减法 | 元素的笔记</title>
+<title>[C++] 菜鸟驿站模拟 | 元素的笔记</title>
   
 
 
@@ -85,7 +85,7 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://fastly.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://fastly.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
 <script src="https://fastly.jsdelivr.net/npm/hexo-theme-next@8.23.2/source/js/third-party/math/mathjax.min.js" defer></script>
 
 
@@ -141,7 +141,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -154,7 +154,6 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#c-%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.</span> <span class="nav-text">C++ 实现</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -229,7 +228,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.ptoe.cc/2025/07/24/binary-minus.html">
+    <link itemprop="mainEntityOfPage" href="https://www.ptoe.cc/2025/12/25/cainiaosim.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -242,12 +241,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="[C++] 二进制减法 | 元素的笔记">
+      <meta itemprop="name" content="[C++] 菜鸟驿站模拟 | 元素的笔记">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          [C++] 二进制减法
+          [C++] 菜鸟驿站模拟
         </h1>
 
         <div class="post-meta-container">
@@ -257,15 +256,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2025-07-24 22:34:44" itemprop="dateCreated datePublished" datetime="2025-07-24T22:34:44+08:00">2025-07-24</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-07-25 11:50:17" itemprop="dateModified" datetime="2025-07-25T11:50:17+08:00">2025-07-25</time>
+      <time title="创建时间：2025-12-25 11:19:17 / 修改时间：11:20:13" itemprop="dateCreated datePublished" datetime="2025-12-25T11:19:17+08:00">2025-12-25</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -286,32 +279,9 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>闲着没事研究了下二进制减法。</p>
+    <div class="post-body" itemprop="articleBody"><p>闲着没事写的</p>
 <span id="more"></span>
-<p>二进制加法都知道吧，就是异或+进位。</p>
-<p><span class="math display">$$
-\text{binaryAdd}(a, b) =
-\begin{cases}
-a &amp; \text{if } b = 0, \\
-\text{binaryAdd}(a \oplus b,\ (a \land b) \ll 1) &amp; \text{otherwise.}
-\end{cases}
-$$</span></p>
-<p>那么同理可得</p>
-<p><span class="math display">$$
-\text{binarySub}(a, b) =
-\begin{cases}
-a &amp; \text{if } b = 0, \\
-\text{binarySub}(a \oplus b,\ (\neg a \land b) \ll 1) &amp;
-\text{otherwise.}
-\end{cases}
-$$</span></p>
-<p>大夫真是妙手回春啊！</p>
-<p>虽然真正计算机中是用补码+加法器直接实现的（）</p>
-<p>注： - $ $ 代表 <code>^</code>，按位异或 - $ $ 代表
-<code>&amp;</code>，按位与 - $ $ 代表 <code>~</code>，按位非 - $ $ 代表
-<code>&lt;&lt;</code>，左移</p>
-<h2 id="c-实现">C++ 实现</h2>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">showBinary</span><span class="params">(<span class="type">const</span> std::string&amp; _, <span class="type">int</span> x, <span class="type">const</span> <span class="type">size_t</span>&amp; digits)</span></span>&#123;</span><br><span class="line">    std::string b;</span><br><span class="line">    <span class="keyword">while</span>(x)&#123;</span><br><span class="line">        b += <span class="string">&#x27;0&#x27;</span>+(x&amp;<span class="number">1</span>);</span><br><span class="line">        x &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(b.<span class="built_in">length</span>()&lt;digits) b += <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">size_t</span> i=<span class="number">0</span>; i&lt;(b.<span class="built_in">length</span>() / <span class="number">2</span>);i++)&#123;</span><br><span class="line">        std::<span class="built_in">swap</span>(b[i], b[b.<span class="built_in">length</span>()-i<span class="number">-1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    std::cout &lt;&lt; _ &lt;&lt; <span class="string">&quot; = &quot;</span> &lt;&lt; b &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    std::ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    std::cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    std::cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Binary Minus</span></span><br><span class="line">    <span class="type">int</span> a, b, c;</span><br><span class="line">    std::cin &gt;&gt; a &gt;&gt; b;</span><br><span class="line">    </span><br><span class="line">    <span class="type">size_t</span> s = std::<span class="built_in">max</span>((<span class="type">int</span>)<span class="built_in">log2</span>(a)<span class="number">+1</span>, (<span class="type">int</span>)<span class="built_in">log2</span>(b)<span class="number">+1</span>);</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;s = &quot;</span> &lt;&lt; s &lt;&lt; std::endl;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">showBinary</span>(<span class="string">&quot;a&quot;</span>, a, s);</span><br><span class="line">    <span class="built_in">showBinary</span>(<span class="string">&quot;b&quot;</span>, b, s);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(b)&#123;</span><br><span class="line">        c = a^b;</span><br><span class="line">        <span class="built_in">showBinary</span>(<span class="string">&quot;a&quot;</span>, c, s);</span><br><span class="line">        b = ((~a)&amp;b) &lt;&lt; <span class="number">1</span>;</span><br><span class="line">        <span class="built_in">showBinary</span>(<span class="string">&quot;b&quot;</span>, b, s);</span><br><span class="line">        a = c;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    std::cout &lt;&lt; a;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> chrono;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 随机数</span></span><br><span class="line">random_device rd;</span><br><span class="line"><span class="function">mt19937 <span class="title">gen</span><span class="params">(rd())</span></span>;</span><br><span class="line"><span class="function">uniform_int_distribution <span class="title">dist</span><span class="params">(<span class="number">0</span>, <span class="number">999999</span>)</span></span>;</span><br><span class="line">bitset&lt;1000000&gt; conflict;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 驿站模拟</span></span><br><span class="line">array&lt;array&lt;vector&lt;<span class="type">int</span>&gt;, 10&gt;, 10&gt; post;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">getItem</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> x;</span><br><span class="line">    <span class="keyword">do</span>&#123;</span><br><span class="line">        x = <span class="built_in">dist</span>(gen);</span><br><span class="line">    &#125;<span class="keyword">while</span>(conflict[x]);</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">putItem</span><span class="params">(<span class="type">int</span> item)</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> col = item / <span class="number">100000</span>, <span class="comment">// 货架号</span></span><br><span class="line">        row = item / <span class="number">010000</span> % <span class="number">10</span>; <span class="comment">// 层数</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">auto</span>&amp; r = post[col][row];</span><br><span class="line">    r.<span class="built_in">insert</span>(<span class="built_in">lower_bound</span>(r.<span class="built_in">begin</span>(), r.<span class="built_in">end</span>(), item), item);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">findItem</span><span class="params">(<span class="type">int</span> item)</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> col = item / <span class="number">100000</span>, <span class="comment">// 货架号</span></span><br><span class="line">        row = item / <span class="number">010000</span> % <span class="number">10</span>; <span class="comment">// 层</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">auto</span>&amp; r = post[col][row];</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">distance</span>(r.<span class="built_in">begin</span>(), <span class="built_in">lower_bound</span>(r.<span class="built_in">begin</span>(), r.<span class="built_in">end</span>(), item));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;How much item you want to insert? &quot;</span>;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">auto</span> b = high_resolution_clock::<span class="built_in">now</span>();</span><br><span class="line">    <span class="keyword">while</span>(n--)&#123;</span><br><span class="line">        <span class="type">int</span> item = <span class="built_in">getItem</span>();</span><br><span class="line">        cout &lt;&lt; item &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">        <span class="built_in">putItem</span>(item);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">auto</span> e = high_resolution_clock::<span class="built_in">now</span>();</span><br><span class="line">    <span class="keyword">auto</span> d = <span class="built_in">duration_cast</span>&lt;milliseconds&gt;(e-b);</span><br><span class="line">    cout &lt;&lt; endl &lt;&lt; <span class="string">&quot;Cost &quot;</span> &lt;&lt; d.<span class="built_in">count</span>() &lt;&lt; <span class="string">&quot;ms&quot;</span> &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">        <span class="type">int</span> i;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;What item you want to find? &quot;</span>;</span><br><span class="line">        cin &gt;&gt; i;</span><br><span class="line"></span><br><span class="line">        b = high_resolution_clock::<span class="built_in">now</span>();</span><br><span class="line">        cout &lt;&lt; i/<span class="number">100000</span> &lt;&lt; <span class="string">&quot;-&quot;</span> &lt;&lt; i/<span class="number">10000</span>%<span class="number">10</span> &lt;&lt; <span class="string">&quot;-&quot;</span> &lt;&lt; <span class="built_in">findItem</span>(i) &lt;&lt; endl;</span><br><span class="line">        e = high_resolution_clock::<span class="built_in">now</span>();</span><br><span class="line">        d = <span class="built_in">duration_cast</span>&lt;milliseconds&gt;(e-b);</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Cost &quot;</span> &lt;&lt; d.<span class="built_in">count</span>() &lt;&lt; <span class="string">&quot;ms&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -362,13 +332,13 @@ $$</span></p>
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2025/07/24/p1008.html" rel="prev" title="[C++] P1008 [NOIP 1998 普及组] 三连击">
-                  <i class="fa fa-angle-left"></i> [C++] P1008 [NOIP 1998 普及组] 三连击
+                <a href="/2025/10/04/p1668.html" rel="prev" title="P1668 [USACO04DEC] Cleaning Shifts S">
+                  <i class="fa fa-angle-left"></i> P1668 [USACO04DEC] Cleaning Shifts S
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2025/07/25/p1001.html" rel="next" title="[C++] P1001 A+B Problem">
-                  [C++] P1001 A+B Problem <i class="fa fa-angle-right"></i>
+                <a href="/2025/12/25/p11380.html" rel="next" title="P11380 [GESP202412 八级] 排队">
+                  P11380 [GESP202412 八级] 排队 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
