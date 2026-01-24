@@ -6,7 +6,7 @@
   <link href="https://www.ptoe.cc/atom.xml" rel="self"/>
   
   <link href="https://www.ptoe.cc/"/>
-  <updated>2026-01-24T18:06:57.245Z</updated>
+  <updated>2026-01-24T18:17:03.976Z</updated>
   <id>https://www.ptoe.cc/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.ptoe.cc/2026/01/24/p1962.html"/>
     <id>https://www.ptoe.cc/2026/01/24/p1962.html</id>
     <published>2026-01-24T14:42:35.000Z</published>
-    <updated>2026-01-24T18:06:57.245Z</updated>
+    <updated>2026-01-24T18:17:03.976Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;题目描述&quot;&gt;题目描述&lt;/h2&gt;
@@ -35,6 +35,22 @@ class=&quot;math inline&quot;&gt;&lt;em&gt;F&lt;/em&gt;&lt;sub&gt;&lt;em&gt;n&lt
     
     
     
+    <category term="编程" scheme="https://www.ptoe.cc/categories/programming/"/>
+    
+    <category term="算法" scheme="https://www.ptoe.cc/categories/programming/algorithm/"/>
+    
+    
+    <category term="C++" scheme="https://www.ptoe.cc/tags/cpp/"/>
+    
+    <category term="数据结构" scheme="https://www.ptoe.cc/tags/data-structure/"/>
+    
+    <category term="算法" scheme="https://www.ptoe.cc/tags/algorithm/"/>
+    
+    <category term="数学" scheme="https://www.ptoe.cc/tags/mathematics/"/>
+    
+    <category term="动态规划" scheme="https://www.ptoe.cc/tags/dynamic-programming/"/>
+    
+    <category term="递归" scheme="https://www.ptoe.cc/tags/recursion/"/>
     
   </entry>
   
