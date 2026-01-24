@@ -31,11 +31,18 @@
 <meta property="og:description" content="题目描述 小杨所在班级共有 n 位同学，依次以 1, 2, …, n 标号。这 n 位同学想排成一行队伍，其中有些同学之间关系非常好，在队伍里需要排在相邻的位置。具体来说，有 m 对这样的关系（m 是一个非负整数）。当 m ≥ 1 时，第 i 对关系（1 ≤ i ≤ m）给出 ai, bi，表示排队时编号为 ai 的同学需要排在编号为 bi 的同学前面，并且两人在队伍中相邻。 现">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-12-25T10:53:57.000Z">
-<meta property="article:modified_time" content="2025-12-25T11:04:06.241Z">
+<meta property="article:modified_time" content="2026-01-24T18:06:26.079Z">
 <meta property="article:author" content="元素">
 <meta property="article:tag" content="C++">
+<meta property="article:tag" content="GESP">
+<meta property="article:tag" content="图论">
+<meta property="article:tag" content="数据结构">
 <meta property="article:tag" content="算法">
-<meta property="article:tag" content="Python">
+<meta property="article:tag" content="数学">
+<meta property="article:tag" content="动态规划">
+<meta property="article:tag" content="排序算法">
+<meta property="article:tag" content="递归">
+<meta property="article:tag" content="模拟">
 <meta name="twitter:card" content="summary">
 
 
@@ -167,14 +174,19 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
@@ -257,9 +269,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2025-12-25 18:53:57 / 修改时间：19:04:06" itemprop="dateCreated datePublished" datetime="2025-12-25T18:53:57+08:00">2025-12-25</time>
+      <time title="创建时间：2025-12-25 18:53:57" itemprop="dateCreated datePublished" datetime="2025-12-25T18:53:57+08:00">2025-12-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2026-01-25 02:06:26" itemprop="dateModified" datetime="2026-01-25T02:06:26+08:00">2026-01-25</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -268,6 +286,14 @@
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
           <a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/programming/algorithm/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/programming/algorithm/data-structure/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
         </span>
     </span>
 
@@ -388,6 +414,18 @@ class="math inline">0 ≤ <em>m</em> ≤ 2 × 10<sup>5</sup></span>�
   </div>
 </div>
 
+          <div class="post-tags">
+              <a href="/tags/cpp/" rel="tag"># C++</a>
+              <a href="/tags/gesp/" rel="tag"># GESP</a>
+              <a href="/tags/graph-theory/" rel="tag"># 图论</a>
+              <a href="/tags/data-structure/" rel="tag"># 数据结构</a>
+              <a href="/tags/algorithm/" rel="tag"># 算法</a>
+              <a href="/tags/mathematics/" rel="tag"># 数学</a>
+              <a href="/tags/dynamic-programming/" rel="tag"># 动态规划</a>
+              <a href="/tags/sorting-algorithm/" rel="tag"># 排序算法</a>
+              <a href="/tags/recursion/" rel="tag"># 递归</a>
+              <a href="/tags/simulation/" rel="tag"># 模拟</a>
+          </div>
 
         
 
@@ -398,6 +436,9 @@ class="math inline">0 ≤ <em>m</em> ≤ 2 × 10<sup>5</sup></span>�
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2026/01/18/p14923.html" rel="next" title="P14923 [GESP202512 八级] 猫和老鼠">
+                  P14923 [GESP202512 八级] 猫和老鼠 <i class="fa fa-angle-right"></i>
+                </a>
             </div>
           </div>
     </footer>
@@ -419,7 +460,7 @@ class="math inline">0 ≤ <em>m</em> ≤ 2 × 10<sup>5</sup></span>�
   </div>
   <div class="copyright">
     &copy; 
-    <span itemprop="copyrightYear">2025</span>
+    <span itemprop="copyrightYear">2026</span>
     <span class="with-love">
       <i class="fa fa-heart"></i>
     </span>

@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico">
+  <link rel="mask-icon" href="/favicon.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fancyapps/ui@6.0.5/dist/fancybox/fancybox.css" integrity="sha256-uTcjoMD6rPt4OyV3Rs02Slxl0BJGMNVKAm/1eYPt2go=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://fastly.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous" defer></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.ptoe.cc","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"default"},"fold":{"enable":false,"height":500},"language":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="https://fastly.jsdelivr.net/npm/hexo-theme-next@8.23.2/source/js/config.min.js" defer></script>
+
+    <meta name="description" content="猫和老鼠所在的庄园可以视为一张由 n 个点和 m 条带权无向边构成的连通图。结点依次以 1, 2, …, n 编号，结点 i（1 ≤ i ≤ n）有价值为 ci 的奶酪。在 m 条带权无向边中，第 i（1 ≤ i ≤ m）条无向边连接结点 ui 与结点 vi，边权 wi 表示猫和老鼠通过这条边所需的时间。 猫窝位于结点 a，老鼠洞位于结点 b。对于老鼠而言，结点 u 是安全的当且仅">
+<meta property="og:type" content="article">
+<meta property="og:title" content="P14923 [GESP202512 八级] 猫和老鼠">
+<meta property="og:url" content="https://www.ptoe.cc/2026/01/18/p14923.html">
+<meta property="og:site_name" content="元素的笔记">
+<meta property="og:description" content="猫和老鼠所在的庄园可以视为一张由 n 个点和 m 条带权无向边构成的连通图。结点依次以 1, 2, …, n 编号，结点 i（1 ≤ i ≤ n）有价值为 ci 的奶酪。在 m 条带权无向边中，第 i（1 ≤ i ≤ m）条无向边连接结点 ui 与结点 vi，边权 wi 表示猫和老鼠通过这条边所需的时间。 猫窝位于结点 a，老鼠洞位于结点 b。对于老鼠而言，结点 u 是安全的当且仅">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-01-18T07:06:19.000Z">
+<meta property="article:modified_time" content="2026-01-24T18:06:26.081Z">
+<meta property="article:author" content="元素">
+<meta property="article:tag" content="C++">
+<meta property="article:tag" content="GESP">
+<meta property="article:tag" content="图论">
+<meta property="article:tag" content="最短路">
+<meta property="article:tag" content="最大瓶颈路">
+<meta property="article:tag" content="数据结构">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="数学">
+<meta property="article:tag" content="深度优先搜索">
+<meta property="article:tag" content="动态规划">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://www.ptoe.cc/2026/01/18/p14923.html">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.ptoe.cc/2026/01/18/p14923.html","path":"2026/01/18/p14923.html","title":"P14923 [GESP202512 八级] 猫和老鼠"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>P14923 [GESP202512 八级] 猫和老鼠 | 元素的笔记</title>
+  
+
+
+
+  <script data-pjax defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{&quot;token&quot;: &quot;011652329aa64beba87754b2f741fa14&quot;}'></script>
+
+
+
+
+
+  
+  <script src="https://fastly.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://fastly.jsdelivr.net/npm/@next-theme/pjax@0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous" defer></script>
+  <script src="https://fastly.jsdelivr.net/npm/@fancyapps/ui@6.0.5/dist/fancybox/fancybox.umd.js" integrity="sha256-UiSieVaV/DXce2LW7QH+o77w+AIoAvSCPBkezriZ2DQ=" crossorigin="anonymous" defer></script>
+  <script src="https://fastly.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous" defer></script>
+  <script src="https://fastly.jsdelivr.net/npm/pangu@6.1.3/dist/browser/pangu.umd.js" integrity="sha256-erngBMP3zzoIM6eqQ8dmrReh2vqCRgWmORroIfVoDlE=" crossorigin="anonymous" defer></script>
+<script src="https://fastly.jsdelivr.net/npm/hexo-theme-next@8.23.2/source/js/utils.min.js" defer></script><script src="https://fastly.jsdelivr.net/npm/hexo-theme-next@8.23.2/source/js/motion.min.js" defer></script><script src="https://fastly.jsdelivr.net/npm/hexo-theme-next@8.23.2/source/js/sidebar.min.js" defer></script><script src="https://fastly.jsdelivr.net/npm/hexo-theme-next@8.23.2/source/js/next-boot.min.js" defer></script><script src="https://fastly.jsdelivr.net/npm/hexo-theme-next@8.23.2/source/js/pjax.min.js" defer></script>
+
+  
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://fastly.jsdelivr.net/npm/mermaid@11.7.0/dist/mermaid.min.js","integrity":"sha256-4+IKDqhZ/sXjc8Wtl2/MsxI4e0s1KpEVdbEP7V/Lz8U="}}</script>
+  <script src="https://fastly.jsdelivr.net/npm/hexo-theme-next@8.23.2/source/js/third-party/tags/mermaid.min.js" defer></script>
+
+  <script class="next-config" data-name="wavedrom" type="application/json">{"enable":true,"js":{"url":"https://fastly.jsdelivr.net/npm/wavedrom@3.5.0/wavedrom.min.js","integrity":"sha256-INLAoJc6quTNfiMWkGZniYO2cxE8mHpddnLow1m6RFs="}}</script>
+  <script class="next-config" data-name="wavedrom_skin" type="application/json">{"enable":true,"js":{"url":"https://fastly.jsdelivr.net/npm/wavedrom@3.5.0/skins/default.js","integrity":"sha256-fduc/Zszk5ezWws2uInY/ALWVmIrmV6VTgXbsYSReFI="}}</script>
+  <script src="https://fastly.jsdelivr.net/npm/hexo-theme-next@8.23.2/source/js/third-party/tags/wavedrom.min.js" defer></script>
+
+  <script src="https://fastly.jsdelivr.net/npm/hexo-theme-next@8.23.2/source/js/third-party/fancybox.min.js" defer></script>
+
+  <script src="https://fastly.jsdelivr.net/npm/hexo-theme-next@8.23.2/source/js/third-party/pace.min.js" defer></script>
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://fastly.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="https://fastly.jsdelivr.net/npm/hexo-theme-next@8.23.2/source/js/third-party/math/mathjax.min.js" defer></script>
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="元素的笔记" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">元素的笔记</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">技术创造新生</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="https://about.ptoe.cc/" rel="section" target="_blank"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B-1"><span class="nav-number">3.</span> <span class="nav-text">输入输出样例 #1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5-1"><span class="nav-number">3.1.</span> <span class="nav-text">输入 #1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA-1"><span class="nav-number">3.2.</span> <span class="nav-text">输出 #1</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B-2"><span class="nav-number">4.</span> <span class="nav-text">输入输出样例 #2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5-2"><span class="nav-number">4.1.</span> <span class="nav-text">输入 #2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA-2"><span class="nav-number">4.2.</span> <span class="nav-text">输出 #2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B4%E6%98%8E%E6%8F%90%E7%A4%BA"><span class="nav-number">5.</span> <span class="nav-text">说明&#x2F;提示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3"><span class="nav-number">6.</span> <span class="nav-text">题解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E6%80%9D%E8%B7%AF%E8%A7%A3%E6%9E%90"><span class="nav-number">6.1.</span> <span class="nav-text">核心思路解析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%86%E5%90%91%E6%80%9D%E7%BB%B4%E6%8E%A8%E5%AF%BC"><span class="nav-number">6.1.1.</span> <span class="nav-text">逆向思维推导</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E6%AD%A5%E9%AA%A4"><span class="nav-number">6.2.</span> <span class="nav-text">算法步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#c-%E7%A4%BA%E8%8C%83%E4%BB%A3%E7%A0%81"><span class="nav-number">6.3.</span> <span class="nav-text">C++ 示范代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%AF%B4%E6%98%8E"><span class="nav-number">6.4.</span> <span class="nav-text">样例说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%A0%B7%E4%BE%8B"><span class="nav-number">6.4.1.</span> <span class="nav-text">输入样例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%A7%A3%E9%87%8A"><span class="nav-number">6.4.2.</span> <span class="nav-text">样例解释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BE%93%E5%87%BA"><span class="nav-number">6.4.3.</span> <span class="nav-text">输出</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">元素</p>
+  <div class="site-description" itemprop="description">只是一个臭写算法的</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/originalFactor" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;originalFactor" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:originalfactor@qq.com" title="E-Mail → mailto:originalfactor@qq.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://x.com/Cat09MeowX" title="Twitter → https:&#x2F;&#x2F;x.com&#x2F;Cat09MeowX" rel="noopener me" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://www.dorazhang.cn/" title="https:&#x2F;&#x2F;www.dorazhang.cn&#x2F;" rel="noopener" target="_blank">Zyx2008</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://blog.zyx-2012.cn/" title="https:&#x2F;&#x2F;blog.zyx-2012.cn&#x2F;" rel="noopener" target="_blank">Zyx2012</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://www.milobo.cn/" title="https:&#x2F;&#x2F;www.milobo.cn&#x2F;" rel="noopener" target="_blank">Milobo</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.ptoe.cc/2026/01/18/p14923.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="元素">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="元素的笔记">
+      <meta itemprop="description" content="只是一个臭写算法的">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="P14923 [GESP202512 八级] 猫和老鼠 | 元素的笔记">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          P14923 [GESP202512 八级] 猫和老鼠
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2026-01-18 15:06:19" itemprop="dateCreated datePublished" datetime="2026-01-18T15:06:19+08:00">2026-01-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2026-01-25 02:06:26" itemprop="dateModified" datetime="2026-01-25T02:06:26+08:00">2026-01-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/programming/algorithm/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/programming/algorithm/data-structure/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>猫和老鼠所在的庄园可以视为一张由 <span
+class="math inline"><em>n</em></span> 个点和 <span
+class="math inline"><em>m</em></span>
+条带权无向边构成的连通图。结点依次以 <span
+class="math inline">1, 2, …, <em>n</em></span> 编号，结点 <span
+class="math inline"><em>i</em></span>（<span
+class="math inline">1 ≤ <em>i</em> ≤ <em>n</em></span>）有价值为 <span
+class="math inline"><em>c</em><sub><em>i</em></sub></span> 的奶酪。在
+<span class="math inline"><em>m</em></span> 条带权无向边中，第 <span
+class="math inline"><em>i</em></span>（<span
+class="math inline">1 ≤ <em>i</em> ≤ <em>m</em></span>）条无向边连接结点
+<span class="math inline"><em>u</em><sub><em>i</em></sub></span> 与结点
+<span class="math inline"><em>v</em><sub><em>i</em></sub></span>，边权
+<span class="math inline"><em>w</em><sub><em>i</em></sub></span>
+表示猫和老鼠通过这条边所需的时间。</p>
+<p>猫窝位于结点 <span
+class="math inline"><em>a</em></span>，老鼠洞位于结点 <span
+class="math inline"><em>b</em></span>。对于老鼠而言，结点 <span
+class="math inline"><em>u</em></span>
+是<strong>安全的</strong>当且仅当：</p>
+<ul>
+<li>老鼠能规划一条从结点 <span class="math inline"><em>u</em></span>
+出发逃往老鼠洞的路径，使得对于路径上任意结点 <span
+class="math inline"><em>x</em></span>（包括结点 <span
+class="math inline"><em>u</em></span> 与老鼠洞）都有：猫从猫窝出发到结点
+<span class="math inline"><em>x</em></span>
+的最短时间<strong>严格大于</strong>老鼠从结点 <span
+class="math inline"><em>u</em></span>
+<strong>沿这条路径</strong>前往结点 <span
+class="math inline"><em>x</em></span> 所需的时间。</li>
+</ul>
+<p>老鼠在拿取安全结点的奶酪时不存在被猫抓住的可能，但在拿取不是安全结点的奶酪时则不一定。为了确保万无一失，老鼠决定只拿取安全结点放置的奶酪。请你计算老鼠所能拿到的奶酪价值之和。</p>
+<span id="more"></span>
+<h2 id="输入格式">输入格式</h2>
+<p>第一行，两个正整数 <span
+class="math inline"><em>n</em>, <em>m</em></span>，分别表示图的结点数与边数。</p>
+<p>第二行，两个正整数 <span
+class="math inline"><em>a</em>, <em>b</em></span>，分别表示猫窝的结点编号，以及老鼠洞的结点编号。</p>
+<p>第三行，<span class="math inline"><em>n</em></span> 个正整数 <span
+class="math inline"><em>c</em><sub>1</sub>, <em>c</em><sub>2</sub>, …, <em>c</em><sub><em>n</em></sub></span>，表示各个结点的奶酪价值。</p>
+<p>接下来 <span class="math inline"><em>m</em></span> 行中的第 <span
+class="math inline"><em>i</em></span> 行（<span
+class="math inline">1 ≤ <em>i</em> ≤ <em>m</em></span>）包含三个正整数
+<span
+class="math inline"><em>u</em><sub><em>i</em></sub>, <em>v</em><sub><em>i</em></sub>, <em>w</em><sub><em>i</em></sub></span>，表示图中连接结点
+<span class="math inline"><em>u</em><sub><em>i</em></sub></span> 与结点
+<span class="math inline"><em>v</em><sub><em>i</em></sub></span>
+的边，边权为 <span
+class="math inline"><em>w</em><sub><em>i</em></sub></span>。</p>
+<h2 id="输出格式">输出格式</h2>
+<p>输出一行，一个整数，表示老鼠所能拿到的奶酪价值之和。</p>
+<h2 id="输入输出样例-1">输入输出样例 #1</h2>
+<h3 id="输入-1">输入 #1</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">5 5</span><br><span class="line">1 2</span><br><span class="line">1 2 4 8 16</span><br><span class="line">1 2 4</span><br><span class="line">2 3 3</span><br><span class="line">3 4 1</span><br><span class="line">2 5 2</span><br><span class="line">3 1 8</span><br></pre></td></tr></table></figure>
+<h3 id="输出-1">输出 #1</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">22</span><br></pre></td></tr></table></figure>
+<h2 id="输入输出样例-2">输入输出样例 #2</h2>
+<h3 id="输入-2">输入 #2</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">6 10</span><br><span class="line">3 4</span><br><span class="line">1 1 1 1 1 1</span><br><span class="line">1 2 6</span><br><span class="line">2 3 3</span><br><span class="line">3 1 4</span><br><span class="line">3 4 5</span><br><span class="line">4 5 8</span><br><span class="line">5 6 2</span><br><span class="line">6 4 1</span><br><span class="line">3 2 4</span><br><span class="line">5 4 4</span><br><span class="line">3 3 6</span><br></pre></td></tr></table></figure>
+<h3 id="输出-2">输出 #2</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3</span><br></pre></td></tr></table></figure>
+<h2 id="说明提示">说明/提示</h2>
+<p>对于 <span class="math inline">40%</span> 的测试点，保证 <span
+class="math inline">1 ≤ <em>n</em> ≤ 500</span>，<span
+class="math inline">1 ≤ <em>m</em> ≤ 500</span>。</p>
+<p>对于所有测试点，保证 <span
+class="math inline">1 ≤ <em>n</em> ≤ 10<sup>5</sup></span>，<span
+class="math inline">1 ≤ <em>m</em> ≤ 10<sup>5</sup></span>，<span
+class="math inline">1 ≤ <em>a</em>, <em>b</em> ≤ <em>n</em></span> 且
+<span class="math inline"><em>a</em> ≠ <em>b</em></span>，<span
+class="math inline">1 ≤ <em>u</em><sub><em>i</em></sub>, <em>v</em><sub><em>i</em></sub> ≤ <em>n</em></span>，<span
+class="math inline">1 ≤ <em>w</em><sub><em>i</em></sub> ≤ 10<sup>9</sup></span>。</p>
+<p>注：GESP 原题缺失 <span
+class="math inline"><em>c</em><sub><em>i</em></sub></span> 范围，可按
+<span
+class="math inline">1 ≤ <em>c</em><sub><em>i</em></sub> ≤ 10<sup>9</sup></span>
+计算。</p>
+<h2 id="题解">题解</h2>
+<p>这是一个经典的图论问题，可以转化为<strong>最短路问题</strong>的变种。我们需要计算每个节点是否满足特定的“安全条件”。</p>
+<h3 id="核心思路解析">核心思路解析</h3>
+<p>这个问题包含两个核心部分：</p>
+<ol type="1">
+<li><strong>猫的行动</strong>：猫从 <span
+class="math inline"><em>a</em></span> 点出发，到任意点 <span
+class="math inline"><em>x</em></span> 的最短时间是固定的。我们可以用
+Dijkstra 算法求出猫到所有点 <span class="math inline"><em>x</em></span>
+的最短时间，记为 <span
+class="math inline"><em>D</em><sub><em>c</em><em>a</em><em>t</em></sub>[<em>x</em>]</span>。</li>
+<li><strong>Jerry 的规划</strong>：Jerry 需要寻找一条从 <span
+class="math inline"><em>u</em></span> 到 <span
+class="math inline"><em>b</em></span>（老鼠洞）的路径，使得路径上任意一点
+<span class="math inline"><em>x</em></span>，满足 <span
+class="math inline"><em>D</em><sub><em>c</em><em>a</em><em>t</em></sub>[<em>x</em>] &gt; <em>T</em><em>i</em><em>m</em><em>e</em><sub><em>J</em><em>e</em><em>r</em><em>r</em><em>y</em></sub>(<em>u</em> → <em>x</em>)</span>。</li>
+</ol>
+<h4 id="逆向思维推导">逆向思维推导</h4>
+<p>与其思考“Jerry 从 <span class="math inline"><em>u</em></span> 走到
+<span class="math inline"><em>b</em></span>”，不如从老鼠洞 <span
+class="math inline"><em>b</em></span> 反向推导回到 <span
+class="math inline"><em>u</em></span>。</p>
+<p>定义 <span class="math inline"><em>S</em>[<em>u</em>]</span>
+为：Jerry 在节点 <span class="math inline"><em>u</em></span>
+时，相对于猫到达该点的时间，他拥有的最大“时间富余量”（Slack）。或者更准确地说，这是
+Jerry 在 <span class="math inline"><em>u</em></span>
+点可以“可以延迟多久出发”还能安全到达洞口的安全阈值。</p>
+<p>根据题目定义，对于路径上的点 <span
+class="math inline"><em>x</em></span>（从 <span
+class="math inline"><em>u</em></span> 到 <span
+class="math inline"><em>b</em></span>），必须满足：</p>
+<p><span
+class="math display"><em>T</em><em>i</em><em>m</em><em>e</em><sub><em>J</em><em>e</em><em>r</em><em>r</em><em>y</em></sub>(<em>u</em> → <em>x</em>) &lt; <em>D</em><sub><em>c</em><em>a</em><em>t</em></sub>[<em>x</em>]</span></p>
+<p>假设 Jerry 在 <span class="math inline"><em>u</em></span> 点耗费了
+<span class="math inline"><em>t</em></span> 时间出发（虽然题目是从 0
+开始，但为了递推，我们引入这个相对量），则到达 <span
+class="math inline"><em>x</em></span> 点的时间为 <span
+class="math inline"><em>t</em> + <em>d</em><em>i</em><em>s</em><em>t</em>(<em>u</em>, <em>x</em>)</span>。</p>
+<p>安全条件变为：</p>
+<p><span
+class="math display"><em>t</em> + <em>d</em><em>i</em><em>s</em><em>t</em>(<em>u</em>, <em>x</em>) &lt; <em>D</em><sub><em>c</em><em>a</em><em>t</em></sub>[<em>x</em>] ⟹ <em>t</em> &lt; <em>D</em><sub><em>c</em><em>a</em><em>t</em></sub>[<em>x</em>] − <em>d</em><em>i</em><em>s</em><em>t</em>(<em>u</em>, <em>x</em>)</span></p>
+<p>这意味着，为了保证路径后续所有点都安全，Jerry 在 <span
+class="math inline"><em>u</em></span> 点的“最大容忍时间” <span
+class="math inline"><em>S</em>[<em>u</em>]</span>
+受限于路径上所有点的瓶颈。</p>
+<p>递推公式（状态转移）：</p>
+<p>我们从老鼠洞 <span class="math inline"><em>b</em></span>
+开始倒推。</p>
+<ul>
+<li><p><strong>基准情况</strong>：在老鼠洞 <span
+class="math inline"><em>b</em></span>，只要猫还没抓到他就是安全的。所以
+<span
+class="math inline"><em>S</em>[<em>b</em>] = <em>D</em><sub><em>c</em><em>a</em><em>t</em></sub>[<em>b</em>]</span>。</p></li>
+<li><p>递推：假设我们已经知道节点 <span
+class="math inline"><em>v</em></span> 的安全余量 <span
+class="math inline"><em>S</em>[<em>v</em>]</span>，现在有一条边 <span
+class="math inline">(<em>u</em>, <em>v</em>)</span> 权重为 <span
+class="math inline"><em>w</em></span>（Jerry 实际上是 <span
+class="math inline"><em>u</em> → <em>v</em></span>）。</p>
+<p>Jerry 在 <span class="math inline"><em>u</em></span>
+点的安全受到两个限制：</p>
+<ol type="1">
+<li><span class="math inline"><em>u</em></span>
+点本身必须安全：时间必须小于 <span
+class="math inline"><em>D</em><sub><em>c</em><em>a</em><em>t</em></sub>[<em>u</em>]</span>。</li>
+<li>通过 <span class="math inline"><em>v</em></span>
+后续的路径必须安全：Jerry 从 <span class="math inline"><em>u</em></span>
+到 <span class="math inline"><em>v</em></span> 走了 <span
+class="math inline"><em>w</em></span> 时间，到达 <span
+class="math inline"><em>v</em></span> 后，他剩余的“时间余额”变成了 <span
+class="math inline"><em>S</em>[<em>v</em>]</span>。所以在 <span
+class="math inline"><em>u</em></span> 点，他相对于 <span
+class="math inline"><em>v</em></span> 的限制是 <span
+class="math inline"><em>S</em>[<em>v</em>] − <em>w</em></span>。</li>
+</ol>
+<p>综上，从 <span class="math inline"><em>v</em></span> 推导到 <span
+class="math inline"><em>u</em></span> 的状态转移方程为：</p>
+<p><span
+class="math display"><em>S</em>[<em>u</em>] = max (<em>S</em>[<em>u</em>], min (<em>D</em><sub><em>c</em><em>a</em><em>t</em></sub>[<em>u</em>], <em>S</em>[<em>v</em>] − <em>w</em>))</span></p></li>
+</ul>
+<p>我们需要求出每个点的最大 <span
+class="math inline"><em>S</em>[<em>u</em>]</span>。这本质上是一个<strong>最大瓶颈路（Maximum
+Bottleneck Path）</strong>问题，可以使用类似 Dijkstra
+的贪心算法（使用大顶堆）来解决。</p>
+<p>判定标准：</p>
+<p>如果计算出的 <span
+class="math inline"><em>S</em>[<em>u</em>] &gt; 0</span>，说明 Jerry 在
+<span class="math inline"><em>t</em> = 0</span>
+时刻出发是满足严格小于猫的时间的，该节点安全。</p>
+<hr />
+<h3 id="算法步骤">算法步骤</h3>
+<ol type="1">
+<li><strong>计算猫的最短路</strong>：以 <span
+class="math inline"><em>a</em></span> 为起点运行标准
+Dijkstra，求出所有点的 <span
+class="math inline"><em>D</em><sub><em>c</em><em>a</em><em>t</em></sub>[<em>i</em>]</span>。</li>
+<li><strong>计算安全余量</strong>：
+<ul>
+<li>初始化所有点的 <span
+class="math inline"><em>S</em>[<em>i</em>] = −1</span>。</li>
+<li>设 <span
+class="math inline"><em>S</em>[<em>b</em>] = <em>D</em><sub><em>c</em><em>a</em><em>t</em></sub>[<em>b</em>]</span>，将
+<span class="math inline">(<em>S</em>[<em>b</em>], <em>b</em>)</span>
+加入大顶堆优先队列。</li>
+<li>运行“最大瓶颈路”算法：
+<ul>
+<li>每次取出当前 <span class="math inline"><em>S</em></span> 值最大的点
+<span class="math inline"><em>v</em></span>。</li>
+<li>遍历邻居 <span class="math inline"><em>u</em></span>（边权 <span
+class="math inline"><em>w</em></span>）：</li>
+<li>计算通过 <span class="math inline"><em>v</em></span> 能够给 <span
+class="math inline"><em>u</em></span> 带来的余量：<span
+class="math inline"><em>l</em><em>i</em><em>m</em><em>i</em><em>t</em> = min (<em>D</em><sub><em>c</em><em>a</em><em>t</em></sub>[<em>u</em>], <em>S</em>[<em>v</em>] − <em>w</em>)</span>。</li>
+<li>如果 <span
+class="math inline"><em>l</em><em>i</em><em>m</em><em>i</em><em>t</em> &gt; <em>S</em>[<em>u</em>]</span>，则更新
+<span
+class="math inline"><em>S</em>[<em>u</em>] = <em>l</em><em>i</em><em>m</em><em>i</em><em>t</em></span>，并将
+<span class="math inline"><em>u</em></span> 入队。</li>
+</ul></li>
+</ul></li>
+<li><strong>统计结果</strong>：遍历所有节点 <span
+class="math inline"><em>i</em></span>，如果 <span
+class="math inline"><em>S</em>[<em>i</em>] &gt; 0</span>，则将 <span
+class="math inline"><em>c</em><sub><em>i</em></sub></span>
+加入总奶酪数。</li>
+</ol>
+<hr />
+<h3 id="c-示范代码">C++ 示范代码</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">long</span> <span class="type">long</span> INF = <span class="number">1e18</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Edge</span> &#123;</span><br><span class="line">    <span class="type">int</span> to;</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> w;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Node</span> &#123;</span><br><span class="line">    <span class="type">int</span> id;</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> val;</span><br><span class="line">    <span class="comment">// 重载小于号用于优先队列</span></span><br><span class="line">    <span class="type">bool</span> <span class="keyword">operator</span>&gt;(<span class="type">const</span> Node&amp; other) <span class="type">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> val &gt; other.val; <span class="comment">// 小顶堆用</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">bool</span> <span class="keyword">operator</span>&lt;(<span class="type">const</span> Node&amp; other) <span class="type">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> val &lt; other.val; <span class="comment">// 大顶堆用</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n, m, a, b;</span><br><span class="line">vector&lt;<span class="type">long</span> <span class="type">long</span>&gt; cheese;</span><br><span class="line">vector&lt;vector&lt;Edge&gt;&gt; adj;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 标准 Dijkstra 计算猫的最短路</span></span><br><span class="line"><span class="function">vector&lt;<span class="type">long</span> <span class="type">long</span>&gt; <span class="title">get_cat_distances</span><span class="params">(<span class="type">int</span> start_node)</span> </span>&#123;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">long</span> <span class="type">long</span>&gt; <span class="title">dist</span><span class="params">(n + <span class="number">1</span>, INF)</span></span>;</span><br><span class="line">    dist[start_node] = <span class="number">0</span>;</span><br><span class="line">    priority_queue&lt;Node, vector&lt;Node&gt;, greater&lt;Node&gt;&gt; pq; <span class="comment">// 小顶堆</span></span><br><span class="line">    pq.<span class="built_in">push</span>(&#123;start_node, <span class="number">0</span>&#125;);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (!pq.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">        Node current = pq.<span class="built_in">top</span>();</span><br><span class="line">        pq.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="type">int</span> u = current.id;</span><br><span class="line">        <span class="type">long</span> <span class="type">long</span> d = current.val;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (d &gt; dist[u]) <span class="keyword">continue</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span>&amp; edge : adj[u]) &#123;</span><br><span class="line">            <span class="keyword">if</span> (dist[u] + edge.w &lt; dist[edge.to]) &#123;</span><br><span class="line">                dist[edge.to] = dist[u] + edge.w;</span><br><span class="line">                pq.<span class="built_in">push</span>(&#123;edge.to, dist[edge.to]&#125;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dist;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 类似 Dijkstra 的贪心算法计算 Jerry 的安全余量 (Slack)</span></span><br><span class="line"><span class="function">vector&lt;<span class="type">long</span> <span class="type">long</span>&gt; <span class="title">get_safe_slack</span><span class="params">(<span class="type">int</span> start_node, <span class="type">const</span> vector&lt;<span class="type">long</span> <span class="type">long</span>&gt;&amp; cat_dist)</span> </span>&#123;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">long</span> <span class="type">long</span>&gt; <span class="title">slack</span><span class="params">(n + <span class="number">1</span>, <span class="number">-1</span>)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 如果猫就在老鼠洞，余量直接为0（不安全，因为题目要求严格大于）</span></span><br><span class="line">    <span class="comment">// 但根据算法逻辑，初始 slack 设为 cat_dist[b] 即可</span></span><br><span class="line">    slack[start_node] = cat_dist[start_node];</span><br><span class="line"></span><br><span class="line">    priority_queue&lt;Node&gt; pq; <span class="comment">// 大顶堆，优先处理余量大的路径</span></span><br><span class="line">    pq.<span class="built_in">push</span>(&#123;start_node, slack[start_node]&#125;);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (!pq.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">        Node current = pq.<span class="built_in">top</span>();</span><br><span class="line">        pq.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="type">int</span> u = current.id;     <span class="comment">// 当前节点 (推导方向是从 洞 -&gt; u -&gt; ... -&gt; 奶酪点)</span></span><br><span class="line">        <span class="type">long</span> <span class="type">long</span> s = current.val;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (s &lt; slack[u]) <span class="keyword">continue</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span>&amp; edge : adj[u]) &#123;</span><br><span class="line">            <span class="type">int</span> v = edge.to; <span class="comment">// v 是 u 的邻居 (推导方向 u -&gt; v)</span></span><br><span class="line">            <span class="type">long</span> <span class="type">long</span> w = edge.w;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 核心推导公式:</span></span><br><span class="line">            <span class="comment">// 我们从 u (靠近洞) 扩展到 v (远离洞)</span></span><br><span class="line">            <span class="comment">// v 的安全余量受限于：</span></span><br><span class="line">            <span class="comment">// 1. v 自身离猫的距离 (cat_dist[v])</span></span><br><span class="line">            <span class="comment">// 2. 从 u 传递过来的余量减去路程耗时 (slack[u] - w)</span></span><br><span class="line">            <span class="type">long</span> <span class="type">long</span> next_slack = <span class="built_in">min</span>(cat_dist[v], slack[u] - w);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (next_slack &gt; slack[v]) &#123;</span><br><span class="line">                slack[v] = next_slack;</span><br><span class="line">                pq.<span class="built_in">push</span>(&#123;v, slack[v]&#125;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> slack;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 优化 I/O 速度</span></span><br><span class="line">    ios_base::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">NULL</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!(cin &gt;&gt; n &gt;&gt; m &gt;&gt; a &gt;&gt; b)) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    cheese.<span class="built_in">resize</span>(n + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        cin &gt;&gt; cheese[i];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    adj.<span class="built_in">resize</span>(n + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; m; ++i) &#123;</span><br><span class="line">        <span class="type">int</span> u, v;</span><br><span class="line">        <span class="type">long</span> <span class="type">long</span> w;</span><br><span class="line">        cin &gt;&gt; u &gt;&gt; v &gt;&gt; w;</span><br><span class="line">        adj[u].<span class="built_in">push_back</span>(&#123;v, w&#125;);</span><br><span class="line">        adj[v].<span class="built_in">push_back</span>(&#123;u, w&#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 1. 计算猫到所有点的最短时间</span></span><br><span class="line">    vector&lt;<span class="type">long</span> <span class="type">long</span>&gt; cat_dist = <span class="built_in">get_cat_distances</span>(a);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 2. 计算 Jerry 从老鼠洞反向推导的安全余量</span></span><br><span class="line">    vector&lt;<span class="type">long</span> <span class="type">long</span>&gt; slack = <span class="built_in">get_safe_slack</span>(b, cat_dist);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 3. 统计结果</span></span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> total_cheese = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        <span class="comment">// 安全条件: 能够规划路线，且任意点猫到达时间 &gt; Jerry到达时间</span></span><br><span class="line">        <span class="comment">// 这等价于我们在 t=0 时刻出发，拥有 &gt; 0 的余量</span></span><br><span class="line">        <span class="keyword">if</span> (slack[i] &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            total_cheese += cheese[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; total_cheese &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr />
+<h3 id="样例说明">样例说明</h3>
+<h4 id="输入样例">输入样例</h4>
+<p>Plaintext</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">5 5 1 5</span><br><span class="line">10 20 30 40 50</span><br><span class="line">1 2 10</span><br><span class="line">2 3 10</span><br><span class="line">3 4 10</span><br><span class="line">4 5 10</span><br><span class="line">2 5 35</span><br></pre></td></tr></table></figure>
+<h4 id="样例解释">样例解释</h4>
+<ul>
+<li><strong>图结构</strong>：一条链 <span
+class="math inline">1 − 2 − 3 − 4 − 5</span>，加上一条边 <span
+class="math inline">2 − 5</span>。</li>
+<li><strong>位置</strong>：猫在 1，老鼠洞在 5。</li>
+<li><strong>奶酪</strong>：<span
+class="math inline"><em>c</em><sub>1</sub> = 10, <em>c</em><sub>2</sub> = 20, <em>c</em><sub>3</sub> = 30, <em>c</em><sub>4</sub> = 40, <em>c</em><sub>5</sub> = 50</span>。</li>
+<li><strong>猫的到达时间 (<span
+class="math inline"><em>D</em><sub><em>c</em><em>a</em><em>t</em></sub></span>)</strong>：
+<ul>
+<li>1: 0 (起点)</li>
+<li>2: 10</li>
+<li>3: 20</li>
+<li>4: 30</li>
+<li>5: 40 (路径 1-2-3-4-5) 或 45 (路径 1-2-5)。最短是 40。</li>
+</ul></li>
+<li><strong>Jerry 的安全余量 (<span
+class="math inline"><em>S</em><em>l</em><em>a</em><em>c</em><em>k</em></span>)
+计算（从 5 号点倒推）</strong>：
+<ul>
+<li><strong>Node 5</strong>: <span
+class="math inline"><em>S</em><em>l</em><em>a</em><em>c</em><em>k</em>[5] = <em>D</em><sub><em>c</em><em>a</em><em>t</em></sub>[5] = 40</span>。</li>
+<li><strong>推导 Node 4</strong> (边权 10): <span
+class="math inline">min (<em>D</em><sub><em>c</em><em>a</em><em>t</em></sub>[4], <em>S</em><em>l</em><em>a</em><em>c</em><em>k</em>[5] − 10) = min (30, 30) = 30</span>。</li>
+<li><strong>推导 Node 3</strong> (边权 10): <span
+class="math inline">min (<em>D</em><sub><em>c</em><em>a</em><em>t</em></sub>[3], <em>S</em><em>l</em><em>a</em><em>c</em><em>k</em>[4] − 10) = min (20, 20) = 20</span>。</li>
+<li><strong>推导 Node 2</strong> (来自 3, 边权 10): <span
+class="math inline">min (<em>D</em><sub><em>c</em><em>a</em><em>t</em></sub>[2], <em>S</em><em>l</em><em>a</em><em>c</em><em>k</em>[3] − 10) = min (10, 10) = 10</span>。</li>
+<li><strong>推导 Node 2</strong> (来自 5, 边权 35): <span
+class="math inline">min (10, 40 − 35) = 5</span>。最大值取 10。</li>
+<li><strong>推导 Node 1</strong> (边权 10): <span
+class="math inline">min (<em>D</em><sub><em>c</em><em>a</em><em>t</em></sub>[1], <em>S</em><em>l</em><em>a</em><em>c</em><em>k</em>[2] − 10) = min (0, 0) = 0</span>。</li>
+</ul></li>
+<li><strong>判定</strong>：
+<ul>
+<li>Node 5: <span
+class="math inline"><em>S</em><em>l</em><em>a</em><em>c</em><em>k</em> = 40 &gt; 0</span>
+(安全)</li>
+<li>Node 4: <span
+class="math inline"><em>S</em><em>l</em><em>a</em><em>c</em><em>k</em> = 30 &gt; 0</span>
+(安全)</li>
+<li>Node 3: <span
+class="math inline"><em>S</em><em>l</em><em>a</em><em>c</em><em>k</em> = 20 &gt; 0</span>
+(安全)</li>
+<li>Node 2: <span
+class="math inline"><em>S</em><em>l</em><em>a</em><em>c</em><em>k</em> = 10 &gt; 0</span>
+(安全)</li>
+<li>Node 1: <span
+class="math inline"><em>S</em><em>l</em><em>a</em><em>c</em><em>k</em> = 0</span>
+(不安全，必须严格大于)</li>
+</ul></li>
+<li><strong>结果</strong>：<span
+class="math inline">20 + 30 + 40 + 50 = 140</span>。</li>
+</ul>
+<h4 id="输出">输出</h4>
+<p>Plaintext</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">140</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="https://x.com/Cat09MeowX">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+      </div>
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="https://t.me/MeowChannrl">
+            <span class="icon">
+              <i class="fab fa-telegram"></i>
+            </span>
+
+            <span class="label">Telegram</span>
+          </a>
+      </div>
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/cpp/" rel="tag"># C++</a>
+              <a href="/tags/gesp/" rel="tag"># GESP</a>
+              <a href="/tags/graph-theory/" rel="tag"># 图论</a>
+              <a href="/tags/shortest-path/" rel="tag"># 最短路</a>
+              <a href="/tags/maximum-bottleneck-path/" rel="tag"># 最大瓶颈路</a>
+              <a href="/tags/data-structure/" rel="tag"># 数据结构</a>
+              <a href="/tags/algorithm/" rel="tag"># 算法</a>
+              <a href="/tags/mathematics/" rel="tag"># 数学</a>
+              <a href="/tags/depth-first-search/" rel="tag"># 深度优先搜索</a>
+              <a href="/tags/dynamic-programming/" rel="tag"># 动态规划</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/12/25/p11380.html" rel="prev" title="P11380 [GESP202412 八级] 排队">
+                  <i class="fa fa-angle-left"></i> P11380 [GESP202412 八级] 排队
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2026/01/24/p1962.html" rel="next" title="P1962 斐波那契数列">
+                  P1962 斐波那契数列 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备2024278726号-1 </a>
+  </div>
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">元素</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>

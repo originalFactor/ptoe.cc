@@ -31,11 +31,13 @@
 <meta property="og:description" content="P8814 [CSP-J 2022] 解密 - 洛谷 给定一个正整数 k，有 k 次询问，每次给定三个正整数 ni, ei, di，求两个正整数 pi, qi，使 ni &#x3D; pi × qi、ei × di &#x3D; (pi − 1)(qi − 1) + 1。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-06-22T12:38:57.000Z">
-<meta property="article:modified_time" content="2025-07-25T03:52:21.697Z">
+<meta property="article:modified_time" content="2026-01-24T18:06:26.049Z">
 <meta property="article:author" content="元素">
 <meta property="article:tag" content="C++">
 <meta property="article:tag" content="算法">
-<meta property="article:tag" content="Python">
+<meta property="article:tag" content="编程">
+<meta property="article:tag" content="数学">
+<meta property="article:tag" content="CSP-J">
 <meta name="twitter:card" content="summary">
 
 
@@ -167,14 +169,19 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
@@ -265,7 +272,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-07-25 11:52:21" itemprop="dateModified" datetime="2025-07-25T11:52:21+08:00">2025-07-25</time>
+      <time title="修改时间：2026-01-25 02:06:26" itemprop="dateModified" datetime="2026-01-25T02:06:26+08:00">2026-01-25</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -273,7 +280,15 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+          <a href="/categories/mathematics/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/mathematics/programming/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/mathematics/programming/algorithm/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
         </span>
     </span>
 
@@ -335,164 +350,93 @@ class="math inline">1 ≤ <em>k</em> ≤ 10<sup>5</sup></span>，对于�
 class="math inline">1 ≤ <em>n</em><sub><em>i</em></sub> ≤ 10<sup>18</sup></span>，<span
 class="math inline">1 ≤ <em>e</em><sub><em>i</em></sub> × <em>d</em><sub><em>i</em></sub> ≤ 10<sup>18</sup></span>
 ，<span class="math inline">1 ≤ <em>m</em> ≤ 10<sup>9</sup></span>。</p>
-<table>
-<colgroup>
-<col style="width: 16%" />
-<col style="width: 13%" />
-<col style="width: 15%" />
-<col style="width: 23%" />
-<col style="width: 30%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: center;">测试点编号</th>
-<th style="text-align: center;"><span
-class="math inline"><em>k</em>≤</span></th>
-<th style="text-align: center;"><span
-class="math inline"><em>n</em>≤</span></th>
-<th style="text-align: center;"><span
-class="math inline"><em>m</em>≤</span></th>
-<th style="text-align: center;">特殊性质</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;"><span class="math inline">1</span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>3</sup></span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>3</sup></span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>3</sup></span></td>
-<td style="text-align: center;">保证有解</td>
-</tr>
-<tr>
-<td style="text-align: center;"><span class="math inline">2</span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>3</sup></span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>3</sup></span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>3</sup></span></td>
-<td style="text-align: center;">无</td>
-</tr>
-<tr>
-<td style="text-align: center;"><span class="math inline">3</span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>3</sup></span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>9</sup></span></td>
-<td style="text-align: center;"><span
-class="math inline">6 × 10<sup>4</sup></span></td>
-<td style="text-align: center;">保证有解</td>
-</tr>
-<tr>
-<td style="text-align: center;"><span class="math inline">4</span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>3</sup></span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>9</sup></span></td>
-<td style="text-align: center;"><span
-class="math inline">6 × 10<sup>4</sup></span></td>
-<td style="text-align: center;">无</td>
-</tr>
-<tr>
-<td style="text-align: center;"><span class="math inline">5</span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>3</sup></span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>9</sup></span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>9</sup></span></td>
-<td style="text-align: center;">保证有解</td>
-</tr>
-<tr>
-<td style="text-align: center;"><span class="math inline">6</span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>3</sup></span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>9</sup></span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>9</sup></span></td>
-<td style="text-align: center;">无</td>
-</tr>
-<tr>
-<td style="text-align: center;"><span class="math inline">7</span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>5</sup></span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>18</sup></span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>9</sup></span></td>
-<td style="text-align: center;">保证若有解则 <span
-class="math inline"><em>p</em> = <em>q</em></span></td>
-</tr>
-<tr>
-<td style="text-align: center;"><span class="math inline">8</span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>5</sup></span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>18</sup></span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>9</sup></span></td>
-<td style="text-align: center;">保证有解</td>
-</tr>
-<tr>
-<td style="text-align: center;"><span class="math inline">9</span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>5</sup></span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>18</sup></span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>9</sup></span></td>
-<td style="text-align: center;">无</td>
-</tr>
-<tr>
-<td style="text-align: center;"><span class="math inline">10</span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>5</sup></span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>18</sup></span></td>
-<td style="text-align: center;"><span
-class="math inline">10<sup>9</sup></span></td>
-<td style="text-align: center;">无</td>
-</tr>
-</tbody>
-</table>
+<div class="line-block">测试点编号 | <span
+class="math inline"><em>k</em>≤</span> | <span
+class="math inline"><em>n</em>≤</span> | <span
+class="math inline"><em>m</em>≤</span> | 特殊性质 |<br />
+:——## –: | :—## : | :—## -: | :———## : | :————-: |<br />
+<span class="math inline">1</span> | <span
+class="math inline">10<sup>3</sup></span> | <span
+class="math inline">10<sup>3</sup></span> | <span
+class="math inline">10<sup>3</sup></span> | 保证有解 |<br />
+<span class="math inline">2</span> | <span
+class="math inline">10<sup>3</sup></span> | <span
+class="math inline">10<sup>3</sup></span> | <span
+class="math inline">10<sup>3</sup></span> | 无 |<br />
+<span class="math inline">3</span> | <span
+class="math inline">10<sup>3</sup></span> | <span
+class="math inline">10<sup>9</sup></span> | <span
+class="math inline">6 × 10<sup>4</sup></span> | 保证有解 |<br />
+<span class="math inline">4</span> | <span
+class="math inline">10<sup>3</sup></span> | <span
+class="math inline">10<sup>9</sup></span> | <span
+class="math inline">6 × 10<sup>4</sup></span> | 无 |<br />
+<span class="math inline">5</span> | <span
+class="math inline">10<sup>3</sup></span> | <span
+class="math inline">10<sup>9</sup></span> | <span
+class="math inline">10<sup>9</sup></span> | 保证有解 |<br />
+<span class="math inline">6</span> | <span
+class="math inline">10<sup>3</sup></span> | <span
+class="math inline">10<sup>9</sup></span> | <span
+class="math inline">10<sup>9</sup></span> | 无 |<br />
+<span class="math inline">7</span> | <span
+class="math inline">10<sup>5</sup></span> | <span
+class="math inline">10<sup>18</sup></span> | <span
+class="math inline">10<sup>9</sup></span> | 保证若有解则 <span
+class="math inline"><em>p</em> = <em>q</em></span> |<br />
+<span class="math inline">8</span> | <span
+class="math inline">10<sup>5</sup></span> | <span
+class="math inline">10<sup>18</sup></span> | <span
+class="math inline">10<sup>9</sup></span> | 保证有解 |<br />
+<span class="math inline">9</span> | <span
+class="math inline">10<sup>5</sup></span> | <span
+class="math inline">10<sup>18</sup></span> | <span
+class="math inline">10<sup>9</sup></span> | 无 |<br />
+<span class="math inline">10</span> | <span
+class="math inline">10<sup>5</sup></span> | <span
+class="math inline">10<sup>18</sup></span> | <span
+class="math inline">10<sup>9</sup></span> | 无 |</div>
 <h2 id="题解">题解</h2>
-<p>由题可知 <span class="math display">$$
+<p>由题可知</p>
+<p><span class="math display">$$
 \begin{aligned}
 ed &amp; = (p-1)(q-1)+1\\
 &amp; = pq-p-q+1+1 \\
 &amp; = pq-p-q+2
 \end{aligned}
-$$</span> 又因为 <span
+$$</span></p>
+<p>又因为 <span
 class="math inline"><em>n</em> = <em>p</em><em>q</em></span> ，所以
 <span
 class="math inline"><em>e</em><em>d</em> = <em>n</em> − <em>p</em> − <em>q</em> + 2</span></p>
-<p>又 <span class="math display">$$
+<p>又</p>
+<p><span class="math display">$$
 \begin{aligned}
 m &amp; = n - ed + 2\\
 &amp; = n - n + p + q -2 + 2\\
 &amp; = p + q
 \end{aligned}
-$$</span> 所以 <span class="math display">$$
+$$</span></p>
+<p>所以</p>
+<p><span class="math display">$$
 \begin{aligned}
 ed &amp; = n - (p+q) + 2\\
 &amp; = n - m + 2
 \end{aligned}
-$$</span> 所以 <span
+$$</span></p>
+<p>所以 <span
 class="math inline"><em>m</em> = <em>n</em> + 2 − <em>e</em><em>d</em></span></p>
 <p>因此可列关于 <span
 class="math inline"><em>p</em>, <em>q</em></span> 的二元一次方程组（
-<span class="math inline"><em>n</em>, <em>m</em></span> 为已知） <span
-class="math display">$$
+<span class="math inline"><em>n</em>, <em>m</em></span> 为已知）</p>
+<p><span class="math display">$$
 \begin{cases}
 p + q = m\\
 pq = n
 \end{cases}
 $$</span></p>
-<p>解： <span class="math display">$$
+<p>解：</p>
+<p><span class="math display">$$
 \begin{align}
 p = \frac n q\\
 \frac n q + q = m\\
@@ -514,7 +458,7 @@ class="math inline">$q = \frac {-b + \sqrt {\Delta}}
 <p>既然我们得到了结论，就把计算过程实现以下，<span
 class="math inline"><em>O</em>(<em>k</em>)</span> 复杂度解决。</p>
 <p><strong>注意：一定要用<code>long long</code>或者<code>int64_t</code>，不然会溢出！！！</strong></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> k;</span><br><span class="line">    cin &gt;&gt; k;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(k--)&#123;</span><br><span class="line">        <span class="type">int64_t</span> n, e, d;</span><br><span class="line">        cin &gt;&gt; n &gt;&gt; e &gt;&gt; d;</span><br><span class="line">        <span class="type">int64_t</span> m = n + <span class="number">2</span> - e*d;</span><br><span class="line">        <span class="type">int64_t</span> delta = m*m - <span class="number">4</span>*n;</span><br><span class="line">        <span class="type">int64_t</span> sd = (delta&gt;=<span class="number">0</span>?<span class="built_in">sqrt</span>(delta):<span class="number">-1</span>);</span><br><span class="line">        <span class="keyword">if</span>(sd&lt;<span class="number">0</span> || sd*sd != delta) &#123;</span><br><span class="line">            cout &lt;&lt; <span class="string">&quot;NO&quot;</span> &lt;&lt; endl;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int64_t</span> q = (m+sd)/<span class="number">2</span>;</span><br><span class="line">        <span class="type">int64_t</span> p = n/q;</span><br><span class="line">        cout &lt;&lt; p &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; q &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> k;</span><br><span class="line">    cin &gt;&gt; k;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(k--)&#123;</span><br><span class="line">        <span class="type">int64_t</span> n, e, d;</span><br><span class="line">        cin &gt;&gt; n &gt;&gt; e &gt;&gt; d;</span><br><span class="line">        <span class="type">int64_t</span> m = n + <span class="number">2</span> - e*d;</span><br><span class="line">        <span class="type">int64_t</span> delta = m*m - <span class="number">4</span>*n;</span><br><span class="line">        <span class="type">int64_t</span> sd = (delta&gt;=<span class="number">0</span>?<span class="built_in">sqrt</span>(delta):<span class="number">-1</span>);</span><br><span class="line">        <span class="keyword">if</span>(sd&lt;<span class="number">0</span> || sd*sd != delta) &#123;</span><br><span class="line">            cout &lt;&lt; <span class="string">&quot;NO&quot;</span> &lt;&lt; endl;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int64_t</span> q = (m+sd)/<span class="number">2</span>;</span><br><span class="line">        <span class="type">int64_t</span> p = n/q;</span><br><span class="line">        cout &lt;&lt; p &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; q &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -560,6 +504,13 @@ class="math inline"><em>O</em>(<em>k</em>)</span> 复杂度解决。</p>
   </div>
 </div>
 
+          <div class="post-tags">
+              <a href="/tags/cpp/" rel="tag"># C++</a>
+              <a href="/tags/algorithm/" rel="tag"># 算法</a>
+              <a href="/tags/programming/" rel="tag"># 编程</a>
+              <a href="/tags/mathematics/" rel="tag"># 数学</a>
+              <a href="/tags/csp-j/" rel="tag"># CSP-J</a>
+          </div>
 
         
 
@@ -594,7 +545,7 @@ class="math inline"><em>O</em>(<em>k</em>)</span> 复杂度解决。</p>
   </div>
   <div class="copyright">
     &copy; 
-    <span itemprop="copyrightYear">2025</span>
+    <span itemprop="copyrightYear">2026</span>
     <span class="with-love">
       <i class="fa fa-heart"></i>
     </span>

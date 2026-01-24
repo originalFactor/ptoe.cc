@@ -31,11 +31,15 @@
 <meta property="og:description" content="小杨有一棵包含 n 个节点的树，其中节点的编号从 1 到 n。节点 i 的权值为 ai。 小杨可以选择一个初始节点引燃，每个燃烧的节点会将其相邻节点中权值严格小于自身权值的在节点间扩散直到不会有新的节点被引燃。 小杨想知道在合理选择初始节点的情况下，最多可以燃烧多少个节点。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-07-25T06:11:41.000Z">
-<meta property="article:modified_time" content="2025-07-25T07:06:44.173Z">
+<meta property="article:modified_time" content="2026-01-24T18:06:26.069Z">
 <meta property="article:author" content="元素">
 <meta property="article:tag" content="C++">
+<meta property="article:tag" content="GESP">
+<meta property="article:tag" content="图论">
+<meta property="article:tag" content="数据结构">
 <meta property="article:tag" content="算法">
-<meta property="article:tag" content="Python">
+<meta property="article:tag" content="树">
+<meta property="article:tag" content="深度优先搜索">
 <meta name="twitter:card" content="summary">
 
 
@@ -167,14 +171,19 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
@@ -257,9 +266,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2025-07-25 14:11:41 / 修改时间：15:06:44" itemprop="dateCreated datePublished" datetime="2025-07-25T14:11:41+08:00">2025-07-25</time>
+      <time title="创建时间：2025-07-25 14:11:41" itemprop="dateCreated datePublished" datetime="2025-07-25T14:11:41+08:00">2025-07-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2026-01-25 02:06:26" itemprop="dateModified" datetime="2026-01-25T02:06:26+08:00">2026-01-25</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -268,6 +283,14 @@
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
           <a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/programming/algorithm/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/programming/algorithm/data-structure/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
         </span>
     </span>
 
@@ -345,7 +368,7 @@ class="math inline">1 ≤ <em>n</em> ≤ 10<sup>5</sup></span>，<span
 class="math inline">1 ≤ <em>a</em><sub><em>i</em></sub> ≤ 10<sup>6</sup></span>。</p>
 <h2 id="题解">题解</h2>
 <p>带条件的图遍历而已，甚至因为严格小都不需要标记了</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">f</span><span class="params">(vector&lt;<span class="type">int</span>&gt; m[], <span class="type">int</span> c, <span class="type">int</span> p[], <span class="type">int</span> a[])</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(a[c]) <span class="keyword">return</span> a[c];</span><br><span class="line">    a[c] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> t : m[c])</span><br><span class="line">        <span class="keyword">if</span>(p[t]&lt;p[c])</span><br><span class="line">            a[c] += <span class="built_in">f</span>(m, t, p, a);</span><br><span class="line">    <span class="keyword">return</span> a[c];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> *p = <span class="keyword">new</span> <span class="type">int</span>[n];</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++) cin &gt;&gt; p[i];</span><br><span class="line"></span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; *m = <span class="keyword">new</span> vector&lt;<span class="type">int</span>&gt;[n];</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="type">int</span> u, v;</span><br><span class="line">        cin &gt;&gt; u &gt;&gt; v;</span><br><span class="line">        u--; v--;</span><br><span class="line">        m[u].<span class="built_in">push_back</span>(v);</span><br><span class="line">        m[v].<span class="built_in">push_back</span>(u);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> *a = <span class="keyword">new</span> <span class="type">int</span>[n];</span><br><span class="line">    <span class="built_in">memset</span>(a, <span class="number">0</span>, <span class="built_in">sizeof</span>(<span class="type">int</span>)*n);</span><br><span class="line">    <span class="type">int</span> x = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++) x = <span class="built_in">max</span>(x, <span class="built_in">f</span>(m, i, p, a));</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; x;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">f</span><span class="params">(vector&lt;<span class="type">int</span>&gt; m[], <span class="type">int</span> c, <span class="type">int</span> p[], <span class="type">int</span> a[])</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(a[c]) <span class="keyword">return</span> a[c];</span><br><span class="line">    a[c] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> t : m[c])</span><br><span class="line">        <span class="keyword">if</span>(p[t]&lt;p[c])</span><br><span class="line">            a[c] += <span class="built_in">f</span>(m, t, p, a);</span><br><span class="line">    <span class="keyword">return</span> a[c];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> *p = <span class="keyword">new</span> <span class="type">int</span>[n];</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++) cin &gt;&gt; p[i];</span><br><span class="line"></span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; *m = <span class="keyword">new</span> vector&lt;<span class="type">int</span>&gt;[n];</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="type">int</span> u, v;</span><br><span class="line">        cin &gt;&gt; u &gt;&gt; v;</span><br><span class="line">        u--; v--;</span><br><span class="line">        m[u].<span class="built_in">push_back</span>(v);</span><br><span class="line">        m[v].<span class="built_in">push_back</span>(u);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> *a = <span class="keyword">new</span> <span class="type">int</span>[n];</span><br><span class="line">    <span class="built_in">memset</span>(a, <span class="number">0</span>, <span class="built_in">sizeof</span>(<span class="type">int</span>)*n);</span><br><span class="line">    <span class="type">int</span> x = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++) x = <span class="built_in">max</span>(x, <span class="built_in">f</span>(m, i, p, a));</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; x;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -391,6 +414,15 @@ class="math inline">1 ≤ <em>a</em><sub><em>i</em></sub> ≤ 10<sup>6</
   </div>
 </div>
 
+          <div class="post-tags">
+              <a href="/tags/cpp/" rel="tag"># C++</a>
+              <a href="/tags/gesp/" rel="tag"># GESP</a>
+              <a href="/tags/graph-theory/" rel="tag"># 图论</a>
+              <a href="/tags/data-structure/" rel="tag"># 数据结构</a>
+              <a href="/tags/algorithm/" rel="tag"># 算法</a>
+              <a href="/tags/tree/" rel="tag"># 树</a>
+              <a href="/tags/depth-first-search/" rel="tag"># 深度优先搜索</a>
+          </div>
 
         
 
@@ -425,7 +457,7 @@ class="math inline">1 ≤ <em>a</em><sub><em>i</em></sub> ≤ 10<sup>6</
   </div>
   <div class="copyright">
     &copy; 
-    <span itemprop="copyrightYear">2025</span>
+    <span itemprop="copyrightYear">2026</span>
     <span class="with-love">
       <i class="fa fa-heart"></i>
     </span>

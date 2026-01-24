@@ -6,7 +6,7 @@
   <link href="https://www.ptoe.cc/atom.xml" rel="self"/>
   
   <link href="https://www.ptoe.cc/"/>
-  <updated>2025-12-25T11:04:06.241Z</updated>
+  <updated>2026-01-24T18:06:57.245Z</updated>
   <id>https://www.ptoe.cc/</id>
   
   <author>
@@ -17,11 +17,105 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>P1962 斐波那契数列</title>
+    <link href="https://www.ptoe.cc/2026/01/24/p1962.html"/>
+    <id>https://www.ptoe.cc/2026/01/24/p1962.html</id>
+    <published>2026-01-24T14:42:35.000Z</published>
+    <updated>2026-01-24T18:06:57.245Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;题目描述&quot;&gt;题目描述&lt;/h2&gt;
+&lt;p&gt;大家都知道，斐波那契数列是满足如下性质的一个数列：&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;math display&quot;&gt;$$F_n = &#92;left&#92;{&#92;begin{aligned} 1 &#92;space (n
+&#92;le 2) &#92;&#92; F_{n-1}+F_{n-2} &#92;space (n&#92;ge 3)
+&#92;end{aligned}&#92;right.$$&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;请你求出 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;F&lt;/em&gt;&lt;sub&gt;&lt;em&gt;n&lt;/em&gt;&lt;/sub&gt; mod  10&lt;sup&gt;9&lt;/sup&gt; + 7&lt;/span&gt;
+的值。&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>P14923 [GESP202512 八级] 猫和老鼠</title>
+    <link href="https://www.ptoe.cc/2026/01/18/p14923.html"/>
+    <id>https://www.ptoe.cc/2026/01/18/p14923.html</id>
+    <published>2026-01-18T07:06:19.000Z</published>
+    <updated>2026-01-24T18:06:26.081Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;猫和老鼠所在的庄园可以视为一张由 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;n&lt;/em&gt;&lt;/span&gt; 个点和 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;m&lt;/em&gt;&lt;/span&gt;
+条带权无向边构成的连通图。结点依次以 &lt;span
+class=&quot;math inline&quot;&gt;1, 2, …, &lt;em&gt;n&lt;/em&gt;&lt;/span&gt; 编号，结点 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;i&lt;/em&gt;&lt;/span&gt;（&lt;span
+class=&quot;math inline&quot;&gt;1 ≤ &lt;em&gt;i&lt;/em&gt; ≤ &lt;em&gt;n&lt;/em&gt;&lt;/span&gt;）有价值为 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;c&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt;/em&gt;&lt;/sub&gt;&lt;/span&gt; 的奶酪。在
+&lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;m&lt;/em&gt;&lt;/span&gt; 条带权无向边中，第 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;i&lt;/em&gt;&lt;/span&gt;（&lt;span
+class=&quot;math inline&quot;&gt;1 ≤ &lt;em&gt;i&lt;/em&gt; ≤ &lt;em&gt;m&lt;/em&gt;&lt;/span&gt;）条无向边连接结点
+&lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;u&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt;/em&gt;&lt;/sub&gt;&lt;/span&gt; 与结点
+&lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;v&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt;/em&gt;&lt;/sub&gt;&lt;/span&gt;，边权
+&lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;w&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt;/em&gt;&lt;/sub&gt;&lt;/span&gt;
+表示猫和老鼠通过这条边所需的时间。&lt;/p&gt;
+&lt;p&gt;猫窝位于结点 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;a&lt;/em&gt;&lt;/span&gt;，老鼠洞位于结点 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;b&lt;/em&gt;&lt;/span&gt;。对于老鼠而言，结点 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;u&lt;/em&gt;&lt;/span&gt;
+是&lt;strong&gt;安全的&lt;/strong&gt;当且仅当：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;老鼠能规划一条从结点 &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;u&lt;/em&gt;&lt;/span&gt;
+出发逃往老鼠洞的路径，使得对于路径上任意结点 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;x&lt;/em&gt;&lt;/span&gt;（包括结点 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;u&lt;/em&gt;&lt;/span&gt; 与老鼠洞）都有：猫从猫窝出发到结点
+&lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;x&lt;/em&gt;&lt;/span&gt;
+的最短时间&lt;strong&gt;严格大于&lt;/strong&gt;老鼠从结点 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;u&lt;/em&gt;&lt;/span&gt;
+&lt;strong&gt;沿这条路径&lt;/strong&gt;前往结点 &lt;span
+class=&quot;math inline&quot;&gt;&lt;em&gt;x&lt;/em&gt;&lt;/span&gt; 所需的时间。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;老鼠在拿取安全结点的奶酪时不存在被猫抓住的可能，但在拿取不是安全结点的奶酪时则不一定。为了确保万无一失，老鼠决定只拿取安全结点放置的奶酪。请你计算老鼠所能拿到的奶酪价值之和。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="编程" scheme="https://www.ptoe.cc/categories/programming/"/>
+    
+    <category term="算法" scheme="https://www.ptoe.cc/categories/programming/algorithm/"/>
+    
+    <category term="数据结构" scheme="https://www.ptoe.cc/categories/programming/algorithm/data-structure/"/>
+    
+    
+    <category term="C++" scheme="https://www.ptoe.cc/tags/cpp/"/>
+    
+    <category term="GESP" scheme="https://www.ptoe.cc/tags/gesp/"/>
+    
+    <category term="图论" scheme="https://www.ptoe.cc/tags/graph-theory/"/>
+    
+    <category term="最短路" scheme="https://www.ptoe.cc/tags/shortest-path/"/>
+    
+    <category term="最大瓶颈路" scheme="https://www.ptoe.cc/tags/maximum-bottleneck-path/"/>
+    
+    <category term="数据结构" scheme="https://www.ptoe.cc/tags/data-structure/"/>
+    
+    <category term="算法" scheme="https://www.ptoe.cc/tags/algorithm/"/>
+    
+    <category term="数学" scheme="https://www.ptoe.cc/tags/mathematics/"/>
+    
+    <category term="深度优先搜索" scheme="https://www.ptoe.cc/tags/depth-first-search/"/>
+    
+    <category term="动态规划" scheme="https://www.ptoe.cc/tags/dynamic-programming/"/>
+    
+  </entry>
+  
+  <entry>
     <title>P11380 [GESP202412 八级] 排队</title>
     <link href="https://www.ptoe.cc/2025/12/25/p11380.html"/>
     <id>https://www.ptoe.cc/2025/12/25/p11380.html</id>
     <published>2025-12-25T10:53:57.000Z</published>
-    <updated>2025-12-25T11:04:06.241Z</updated>
+    <updated>2026-01-24T18:06:26.079Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;题目描述&quot;&gt;题目描述&lt;/h2&gt;
@@ -46,6 +140,30 @@ class=&quot;math inline&quot;&gt;&lt;em&gt;b&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt
     
     <category term="编程" scheme="https://www.ptoe.cc/categories/programming/"/>
     
+    <category term="算法" scheme="https://www.ptoe.cc/categories/programming/algorithm/"/>
+    
+    <category term="数据结构" scheme="https://www.ptoe.cc/categories/programming/algorithm/data-structure/"/>
+    
+    
+    <category term="C++" scheme="https://www.ptoe.cc/tags/cpp/"/>
+    
+    <category term="GESP" scheme="https://www.ptoe.cc/tags/gesp/"/>
+    
+    <category term="图论" scheme="https://www.ptoe.cc/tags/graph-theory/"/>
+    
+    <category term="数据结构" scheme="https://www.ptoe.cc/tags/data-structure/"/>
+    
+    <category term="算法" scheme="https://www.ptoe.cc/tags/algorithm/"/>
+    
+    <category term="数学" scheme="https://www.ptoe.cc/tags/mathematics/"/>
+    
+    <category term="动态规划" scheme="https://www.ptoe.cc/tags/dynamic-programming/"/>
+    
+    <category term="排序算法" scheme="https://www.ptoe.cc/tags/sorting-algorithm/"/>
+    
+    <category term="递归" scheme="https://www.ptoe.cc/tags/recursion/"/>
+    
+    <category term="模拟" scheme="https://www.ptoe.cc/tags/simulation/"/>
     
   </entry>
   
@@ -54,7 +172,7 @@ class=&quot;math inline&quot;&gt;&lt;em&gt;b&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt
     <link href="https://www.ptoe.cc/2025/12/25/cainiaosim.html"/>
     <id>https://www.ptoe.cc/2025/12/25/cainiaosim.html</id>
     <published>2025-12-25T03:19:17.000Z</published>
-    <updated>2025-12-25T03:20:13.888Z</updated>
+    <updated>2026-01-24T18:06:26.079Z</updated>
     
     
     <summary type="html">&lt;p&gt;闲着没事写的&lt;/p&gt;</summary>
@@ -63,6 +181,20 @@ class=&quot;math inline&quot;&gt;&lt;em&gt;b&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt
     
     <category term="编程" scheme="https://www.ptoe.cc/categories/programming/"/>
     
+    <category term="算法" scheme="https://www.ptoe.cc/categories/programming/algorithm/"/>
+    
+    <category term="数据结构" scheme="https://www.ptoe.cc/categories/programming/algorithm/data-structure/"/>
+    
+    
+    <category term="C++" scheme="https://www.ptoe.cc/tags/cpp/"/>
+    
+    <category term="数据结构" scheme="https://www.ptoe.cc/tags/data-structure/"/>
+    
+    <category term="算法" scheme="https://www.ptoe.cc/tags/algorithm/"/>
+    
+    <category term="编程" scheme="https://www.ptoe.cc/tags/programming/"/>
+    
+    <category term="模拟" scheme="https://www.ptoe.cc/tags/simulation/"/>
     
   </entry>
   
@@ -71,7 +203,7 @@ class=&quot;math inline&quot;&gt;&lt;em&gt;b&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt
     <link href="https://www.ptoe.cc/2025/10/04/p1668.html"/>
     <id>https://www.ptoe.cc/2025/10/04/p1668.html</id>
     <published>2025-10-04T07:34:44.000Z</published>
-    <updated>2025-10-04T07:38:27.270Z</updated>
+    <updated>2026-01-24T18:06:26.076Z</updated>
     
     
     <summary type="html">&lt;p&gt;一天有 &lt;span
@@ -87,6 +219,30 @@ href=&quot;1&#92;le%20S_i&#92;le%20E_i&#92;le%20T&quot;&gt;S_i,E_i&lt;/a&gt;$，
     
     <category term="编程" scheme="https://www.ptoe.cc/categories/programming/"/>
     
+    <category term="算法" scheme="https://www.ptoe.cc/categories/programming/algorithm/"/>
+    
+    <category term="数据结构" scheme="https://www.ptoe.cc/categories/programming/algorithm/data-structure/"/>
+    
+    
+    <category term="C++" scheme="https://www.ptoe.cc/tags/cpp/"/>
+    
+    <category term="图论" scheme="https://www.ptoe.cc/tags/graph-theory/"/>
+    
+    <category term="最短路" scheme="https://www.ptoe.cc/tags/shortest-path/"/>
+    
+    <category term="最大瓶颈路" scheme="https://www.ptoe.cc/tags/maximum-bottleneck-path/"/>
+    
+    <category term="数据结构" scheme="https://www.ptoe.cc/tags/data-structure/"/>
+    
+    <category term="算法" scheme="https://www.ptoe.cc/tags/algorithm/"/>
+    
+    <category term="编程" scheme="https://www.ptoe.cc/tags/programming/"/>
+    
+    <category term="Python" scheme="https://www.ptoe.cc/tags/python/"/>
+    
+    <category term="贪心算法" scheme="https://www.ptoe.cc/tags/greedy-algorithm/"/>
+    
+    <category term="区间覆盖" scheme="https://www.ptoe.cc/tags/interval-coverage/"/>
     
   </entry>
   
@@ -95,7 +251,7 @@ href=&quot;1&#92;le%20S_i&#92;le%20E_i&#92;le%20T&quot;&gt;S_i,E_i&lt;/a&gt;$，
     <link href="https://www.ptoe.cc/2025/07/25/p3372.html"/>
     <id>https://www.ptoe.cc/2025/07/25/p3372.html</id>
     <published>2025-07-25T07:10:27.000Z</published>
-    <updated>2025-08-08T14:52:39.872Z</updated>
+    <updated>2026-01-24T18:06:26.074Z</updated>
     
     
     <summary type="html">&lt;p&gt;如题，已知一个数列 &lt;span
@@ -110,6 +266,26 @@ class=&quot;math inline&quot;&gt;&lt;em&gt;k&lt;/em&gt;&lt;/span&gt;。&lt;/li&g
     
     <category term="编程" scheme="https://www.ptoe.cc/categories/programming/"/>
     
+    <category term="算法" scheme="https://www.ptoe.cc/categories/programming/algorithm/"/>
+    
+    <category term="数据结构" scheme="https://www.ptoe.cc/categories/programming/algorithm/data-structure/"/>
+    
+    
+    <category term="C++" scheme="https://www.ptoe.cc/tags/cpp/"/>
+    
+    <category term="数据结构" scheme="https://www.ptoe.cc/tags/data-structure/"/>
+    
+    <category term="算法" scheme="https://www.ptoe.cc/tags/algorithm/"/>
+    
+    <category term="编程" scheme="https://www.ptoe.cc/tags/programming/"/>
+    
+    <category term="树" scheme="https://www.ptoe.cc/tags/tree/"/>
+    
+    <category term="动态规划" scheme="https://www.ptoe.cc/tags/dynamic-programming/"/>
+    
+    <category term="区间覆盖" scheme="https://www.ptoe.cc/tags/interval-coverage/"/>
+    
+    <category term="递归" scheme="https://www.ptoe.cc/tags/recursion/"/>
     
   </entry>
   
@@ -118,7 +294,7 @@ class=&quot;math inline&quot;&gt;&lt;em&gt;k&lt;/em&gt;&lt;/span&gt;。&lt;/li&g
     <link href="https://www.ptoe.cc/2025/07/25/p2866.html"/>
     <id>https://www.ptoe.cc/2025/07/25/p2866.html</id>
     <published>2025-07-25T07:06:16.000Z</published>
-    <updated>2025-07-25T07:10:05.437Z</updated>
+    <updated>2026-01-24T18:06:26.070Z</updated>
     
     
     <summary type="html">&lt;p&gt;农夫约翰有 &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;N&lt;/em&gt;&lt;/span&gt;
@@ -145,6 +321,18 @@ class=&quot;math inline&quot;&gt;&lt;em&gt;C&lt;/em&gt;&lt;sub&gt;1&lt;/sub&gt;�
     
     <category term="编程" scheme="https://www.ptoe.cc/categories/programming/"/>
     
+    <category term="算法" scheme="https://www.ptoe.cc/categories/programming/algorithm/"/>
+    
+    <category term="数据结构" scheme="https://www.ptoe.cc/categories/programming/algorithm/data-structure/"/>
+    
+    
+    <category term="数据结构" scheme="https://www.ptoe.cc/tags/data-structure/"/>
+    
+    <category term="算法" scheme="https://www.ptoe.cc/tags/algorithm/"/>
+    
+    <category term="Python" scheme="https://www.ptoe.cc/tags/python/"/>
+    
+    <category term="单调栈" scheme="https://www.ptoe.cc/tags/monotonic-stack/"/>
     
   </entry>
   
@@ -153,7 +341,7 @@ class=&quot;math inline&quot;&gt;&lt;em&gt;C&lt;/em&gt;&lt;sub&gt;1&lt;/sub&gt;�
     <link href="https://www.ptoe.cc/2025/07/25/p6503.html"/>
     <id>https://www.ptoe.cc/2025/07/25/p6503.html</id>
     <published>2025-07-25T07:03:48.000Z</published>
-    <updated>2025-07-25T07:06:35.351Z</updated>
+    <updated>2026-01-24T18:06:26.074Z</updated>
     
     
     <summary type="html">&lt;p&gt;给出一个长度为 &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;n&lt;/em&gt;&lt;/span&gt; 的序列
@@ -167,6 +355,24 @@ class=&quot;math inline&quot;&gt;&lt;em&gt;a&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt
     
     <category term="编程" scheme="https://www.ptoe.cc/categories/programming/"/>
     
+    <category term="算法" scheme="https://www.ptoe.cc/categories/programming/algorithm/"/>
+    
+    
+    <category term="数据结构" scheme="https://www.ptoe.cc/tags/data-structure/"/>
+    
+    <category term="算法" scheme="https://www.ptoe.cc/tags/algorithm/"/>
+    
+    <category term="数学" scheme="https://www.ptoe.cc/tags/mathematics/"/>
+    
+    <category term="Python" scheme="https://www.ptoe.cc/tags/python/"/>
+    
+    <category term="动态规划" scheme="https://www.ptoe.cc/tags/dynamic-programming/"/>
+    
+    <category term="排序算法" scheme="https://www.ptoe.cc/tags/sorting-algorithm/"/>
+    
+    <category term="贪心算法" scheme="https://www.ptoe.cc/tags/greedy-algorithm/"/>
+    
+    <category term="单调栈" scheme="https://www.ptoe.cc/tags/monotonic-stack/"/>
     
   </entry>
   
@@ -175,7 +381,7 @@ class=&quot;math inline&quot;&gt;&lt;em&gt;a&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt
     <link href="https://www.ptoe.cc/2025/07/25/p1099.html"/>
     <id>https://www.ptoe.cc/2025/07/25/p1099.html</id>
     <published>2025-07-25T06:35:31.000Z</published>
-    <updated>2025-07-25T07:01:39.986Z</updated>
+    <updated>2026-01-24T18:06:26.067Z</updated>
     
     
     <summary type="html">&lt;p&gt;设 &lt;span
@@ -240,6 +446,28 @@ class=&quot;math inline&quot;&gt;12&lt;/span&gt;。&lt;/p&gt;
     
     <category term="编程" scheme="https://www.ptoe.cc/categories/programming/"/>
     
+    <category term="算法" scheme="https://www.ptoe.cc/categories/programming/algorithm/"/>
+    
+    <category term="数据结构" scheme="https://www.ptoe.cc/categories/programming/algorithm/data-structure/"/>
+    
+    
+    <category term="C++" scheme="https://www.ptoe.cc/tags/cpp/"/>
+    
+    <category term="图论" scheme="https://www.ptoe.cc/tags/graph-theory/"/>
+    
+    <category term="最短路" scheme="https://www.ptoe.cc/tags/shortest-path/"/>
+    
+    <category term="数据结构" scheme="https://www.ptoe.cc/tags/data-structure/"/>
+    
+    <category term="算法" scheme="https://www.ptoe.cc/tags/algorithm/"/>
+    
+    <category term="树" scheme="https://www.ptoe.cc/tags/tree/"/>
+    
+    <category term="深度优先搜索" scheme="https://www.ptoe.cc/tags/depth-first-search/"/>
+    
+    <category term="动态规划" scheme="https://www.ptoe.cc/tags/dynamic-programming/"/>
+    
+    <category term="NOIP" scheme="https://www.ptoe.cc/tags/noip/"/>
     
   </entry>
   
@@ -248,7 +476,7 @@ class=&quot;math inline&quot;&gt;12&lt;/span&gt;。&lt;/p&gt;
     <link href="https://www.ptoe.cc/2025/07/25/p2114.html"/>
     <id>https://www.ptoe.cc/2025/07/25/p2114.html</id>
     <published>2025-07-25T06:21:22.000Z</published>
-    <updated>2025-07-25T07:07:16.557Z</updated>
+    <updated>2026-01-24T18:06:26.069Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;span class=&quot;math inline&quot;&gt;21&lt;/span&gt;
@@ -286,6 +514,22 @@ drd 受到最大的伤害，请你帮他计算一下，他的一次攻击最多�
     
     <category term="编程" scheme="https://www.ptoe.cc/categories/programming/"/>
     
+    <category term="算法" scheme="https://www.ptoe.cc/categories/programming/algorithm/"/>
+    
+    <category term="数据结构" scheme="https://www.ptoe.cc/categories/programming/algorithm/data-structure/"/>
+    
+    
+    <category term="C++" scheme="https://www.ptoe.cc/tags/cpp/"/>
+    
+    <category term="数据结构" scheme="https://www.ptoe.cc/tags/data-structure/"/>
+    
+    <category term="算法" scheme="https://www.ptoe.cc/tags/algorithm/"/>
+    
+    <category term="编程" scheme="https://www.ptoe.cc/tags/programming/"/>
+    
+    <category term="位运算" scheme="https://www.ptoe.cc/tags/bit-manipulation/"/>
+    
+    <category term="NOIP" scheme="https://www.ptoe.cc/tags/noip/"/>
     
   </entry>
   
@@ -294,7 +538,7 @@ drd 受到最大的伤害，请你帮他计算一下，他的一次攻击最多�
     <link href="https://www.ptoe.cc/2025/07/25/cal-pi.html"/>
     <id>https://www.ptoe.cc/2025/07/25/cal-pi.html</id>
     <published>2025-07-25T06:18:59.000Z</published>
-    <updated>2025-07-25T06:20:17.698Z</updated>
+    <updated>2026-01-24T18:06:26.063Z</updated>
     
     
     <summary type="html">&lt;p&gt;让 AI 写了个多线程计算 π 的程序，非常适合跑分（（（&lt;/p&gt;</summary>
@@ -303,6 +547,16 @@ drd 受到最大的伤害，请你帮他计算一下，他的一次攻击最多�
     
     <category term="编程" scheme="https://www.ptoe.cc/categories/programming/"/>
     
+    <category term="算法" scheme="https://www.ptoe.cc/categories/programming/algorithm/"/>
+    
+    
+    <category term="C++" scheme="https://www.ptoe.cc/tags/cpp/"/>
+    
+    <category term="算法" scheme="https://www.ptoe.cc/tags/algorithm/"/>
+    
+    <category term="编程" scheme="https://www.ptoe.cc/tags/programming/"/>
+    
+    <category term="数学" scheme="https://www.ptoe.cc/tags/mathematics/"/>
     
   </entry>
   
@@ -311,7 +565,7 @@ drd 受到最大的伤害，请你帮他计算一下，他的一次攻击最多�
     <link href="https://www.ptoe.cc/2025/07/25/p11378.html"/>
     <id>https://www.ptoe.cc/2025/07/25/p11378.html</id>
     <published>2025-07-25T06:11:41.000Z</published>
-    <updated>2025-07-25T07:06:44.173Z</updated>
+    <updated>2026-01-24T18:06:26.069Z</updated>
     
     
     <summary type="html">&lt;p&gt;小杨有一棵包含 &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;n&lt;/em&gt;&lt;/span&gt;
@@ -326,6 +580,24 @@ class=&quot;math inline&quot;&gt;&lt;em&gt;a&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt
     
     <category term="编程" scheme="https://www.ptoe.cc/categories/programming/"/>
     
+    <category term="算法" scheme="https://www.ptoe.cc/categories/programming/algorithm/"/>
+    
+    <category term="数据结构" scheme="https://www.ptoe.cc/categories/programming/algorithm/data-structure/"/>
+    
+    
+    <category term="C++" scheme="https://www.ptoe.cc/tags/cpp/"/>
+    
+    <category term="GESP" scheme="https://www.ptoe.cc/tags/gesp/"/>
+    
+    <category term="图论" scheme="https://www.ptoe.cc/tags/graph-theory/"/>
+    
+    <category term="数据结构" scheme="https://www.ptoe.cc/tags/data-structure/"/>
+    
+    <category term="算法" scheme="https://www.ptoe.cc/tags/algorithm/"/>
+    
+    <category term="树" scheme="https://www.ptoe.cc/tags/tree/"/>
+    
+    <category term="深度优先搜索" scheme="https://www.ptoe.cc/tags/depth-first-search/"/>
     
   </entry>
   
@@ -334,7 +606,7 @@ class=&quot;math inline&quot;&gt;&lt;em&gt;a&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt
     <link href="https://www.ptoe.cc/2025/07/25/b3874.html"/>
     <id>https://www.ptoe.cc/2025/07/25/b3874.html</id>
     <published>2025-07-25T05:44:10.000Z</published>
-    <updated>2025-07-25T06:01:33.392Z</updated>
+    <updated>2026-01-24T18:06:26.061Z</updated>
     
     
     <summary type="html">&lt;p&gt;小杨的班级里共有 &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;N&lt;/em&gt;&lt;/span&gt;
@@ -352,6 +624,26 @@ class=&quot;math inline&quot;&gt;&lt;em&gt;N&lt;/em&gt; − 1&lt;/span&gt;�
     
     <category term="编程" scheme="https://www.ptoe.cc/categories/programming/"/>
     
+    <category term="算法" scheme="https://www.ptoe.cc/categories/programming/algorithm/"/>
+    
+    <category term="数据结构" scheme="https://www.ptoe.cc/categories/programming/algorithm/data-structure/"/>
+    
+    
+    <category term="C++" scheme="https://www.ptoe.cc/tags/cpp/"/>
+    
+    <category term="GESP" scheme="https://www.ptoe.cc/tags/gesp/"/>
+    
+    <category term="数据结构" scheme="https://www.ptoe.cc/tags/data-structure/"/>
+    
+    <category term="算法" scheme="https://www.ptoe.cc/tags/algorithm/"/>
+    
+    <category term="编程" scheme="https://www.ptoe.cc/tags/programming/"/>
+    
+    <category term="动态规划" scheme="https://www.ptoe.cc/tags/dynamic-programming/"/>
+    
+    <category term="排序算法" scheme="https://www.ptoe.cc/tags/sorting-algorithm/"/>
+    
+    <category term="归并排序" scheme="https://www.ptoe.cc/tags/merge-sort/"/>
     
   </entry>
   
@@ -360,7 +652,7 @@ class=&quot;math inline&quot;&gt;&lt;em&gt;N&lt;/em&gt; − 1&lt;/span&gt;�
     <link href="https://www.ptoe.cc/2025/07/25/p3366.html"/>
     <id>https://www.ptoe.cc/2025/07/25/p3366.html</id>
     <published>2025-07-25T04:00:31.000Z</published>
-    <updated>2025-07-25T04:22:10.049Z</updated>
+    <updated>2026-01-24T18:06:26.073Z</updated>
     
     
     <summary type="html">&lt;p&gt;如题，给出一个无向图，求出最小生成树，如果该图不连通，则输出
@@ -370,6 +662,20 @@ class=&quot;math inline&quot;&gt;&lt;em&gt;N&lt;/em&gt; − 1&lt;/span&gt;�
     
     <category term="编程" scheme="https://www.ptoe.cc/categories/programming/"/>
     
+    <category term="算法" scheme="https://www.ptoe.cc/categories/programming/algorithm/"/>
+    
+    <category term="数据结构" scheme="https://www.ptoe.cc/categories/programming/algorithm/data-structure/"/>
+    
+    
+    <category term="C++" scheme="https://www.ptoe.cc/tags/cpp/"/>
+    
+    <category term="图论" scheme="https://www.ptoe.cc/tags/graph-theory/"/>
+    
+    <category term="数据结构" scheme="https://www.ptoe.cc/tags/data-structure/"/>
+    
+    <category term="算法" scheme="https://www.ptoe.cc/tags/algorithm/"/>
+    
+    <category term="编程" scheme="https://www.ptoe.cc/tags/programming/"/>
     
   </entry>
   
@@ -378,7 +684,7 @@ class=&quot;math inline&quot;&gt;&lt;em&gt;N&lt;/em&gt; − 1&lt;/span&gt;�
     <link href="https://www.ptoe.cc/2025/07/25/p1000.html"/>
     <id>https://www.ptoe.cc/2025/07/25/p1000.html</id>
     <published>2025-07-25T03:59:25.000Z</published>
-    <updated>2025-07-25T05:43:06.489Z</updated>
+    <updated>2026-01-24T18:06:26.064Z</updated>
     
     
     <summary type="html">&lt;p&gt;本题是洛谷的试机题目，可以帮助了解洛谷的使用。&lt;/p&gt;
@@ -392,6 +698,16 @@ href=&quot;https://www.luogu.com.cn/discuss/show/241461&quot;&gt;新用户必读
     
     <category term="编程" scheme="https://www.ptoe.cc/categories/programming/"/>
     
+    <category term="算法" scheme="https://www.ptoe.cc/categories/programming/algorithm/"/>
+    
+    
+    <category term="C++" scheme="https://www.ptoe.cc/tags/cpp/"/>
+    
+    <category term="算法" scheme="https://www.ptoe.cc/tags/algorithm/"/>
+    
+    <category term="编程" scheme="https://www.ptoe.cc/tags/programming/"/>
+    
+    <category term="模拟" scheme="https://www.ptoe.cc/tags/simulation/"/>
     
   </entry>
   
@@ -400,7 +716,7 @@ href=&quot;https://www.luogu.com.cn/discuss/show/241461&quot;&gt;新用户必读
     <link href="https://www.ptoe.cc/2025/07/25/p1001.html"/>
     <id>https://www.ptoe.cc/2025/07/25/p1001.html</id>
     <published>2025-07-25T03:02:21.000Z</published>
-    <updated>2025-07-25T03:50:41.770Z</updated>
+    <updated>2026-01-24T18:06:26.066Z</updated>
     
     
     <summary type="html">&lt;p&gt;输入两个整数 &lt;span
@@ -411,6 +727,14 @@ class=&quot;math inline&quot;&gt;|&lt;em&gt;a&lt;/em&gt;|,|&lt;em&gt;b&lt;/em&gt
     
     <category term="编程" scheme="https://www.ptoe.cc/categories/programming/"/>
     
+    <category term="算法" scheme="https://www.ptoe.cc/categories/programming/algorithm/"/>
+    
+    
+    <category term="C++" scheme="https://www.ptoe.cc/tags/cpp/"/>
+    
+    <category term="算法" scheme="https://www.ptoe.cc/tags/algorithm/"/>
+    
+    <category term="编程" scheme="https://www.ptoe.cc/tags/programming/"/>
     
   </entry>
   
@@ -419,7 +743,7 @@ class=&quot;math inline&quot;&gt;|&lt;em&gt;a&lt;/em&gt;|,|&lt;em&gt;b&lt;/em&gt
     <link href="https://www.ptoe.cc/2025/07/24/binary-minus.html"/>
     <id>https://www.ptoe.cc/2025/07/24/binary-minus.html</id>
     <published>2025-07-24T14:34:44.000Z</published>
-    <updated>2025-07-25T03:50:17.375Z</updated>
+    <updated>2026-01-24T18:06:26.052Z</updated>
     
     
     <summary type="html">&lt;p&gt;闲着没事研究了下二进制减法。&lt;/p&gt;</summary>
@@ -428,6 +752,18 @@ class=&quot;math inline&quot;&gt;|&lt;em&gt;a&lt;/em&gt;|,|&lt;em&gt;b&lt;/em&gt
     
     <category term="编程" scheme="https://www.ptoe.cc/categories/programming/"/>
     
+    <category term="算法" scheme="https://www.ptoe.cc/categories/programming/algorithm/"/>
+    
+    
+    <category term="C++" scheme="https://www.ptoe.cc/tags/cpp/"/>
+    
+    <category term="算法" scheme="https://www.ptoe.cc/tags/algorithm/"/>
+    
+    <category term="编程" scheme="https://www.ptoe.cc/tags/programming/"/>
+    
+    <category term="位运算" scheme="https://www.ptoe.cc/tags/bit-manipulation/"/>
+    
+    <category term="数学" scheme="https://www.ptoe.cc/tags/mathematics/"/>
     
   </entry>
   
@@ -436,7 +772,7 @@ class=&quot;math inline&quot;&gt;|&lt;em&gt;a&lt;/em&gt;|,|&lt;em&gt;b&lt;/em&gt
     <link href="https://www.ptoe.cc/2025/07/24/p1008.html"/>
     <id>https://www.ptoe.cc/2025/07/24/p1008.html</id>
     <published>2025-07-24T14:29:45.000Z</published>
-    <updated>2025-07-25T03:51:47.934Z</updated>
+    <updated>2026-01-24T18:06:26.054Z</updated>
     
     
     <summary type="html">&lt;p&gt;洛谷签到题（真·签到）&lt;/p&gt;</summary>
@@ -445,6 +781,22 @@ class=&quot;math inline&quot;&gt;|&lt;em&gt;a&lt;/em&gt;|,|&lt;em&gt;b&lt;/em&gt
     
     <category term="编程" scheme="https://www.ptoe.cc/categories/programming/"/>
     
+    <category term="算法" scheme="https://www.ptoe.cc/categories/programming/algorithm/"/>
+    
+    <category term="数据结构" scheme="https://www.ptoe.cc/categories/programming/algorithm/data-structure/"/>
+    
+    
+    <category term="C++" scheme="https://www.ptoe.cc/tags/cpp/"/>
+    
+    <category term="数据结构" scheme="https://www.ptoe.cc/tags/data-structure/"/>
+    
+    <category term="算法" scheme="https://www.ptoe.cc/tags/algorithm/"/>
+    
+    <category term="编程" scheme="https://www.ptoe.cc/tags/programming/"/>
+    
+    <category term="递归" scheme="https://www.ptoe.cc/tags/recursion/"/>
+    
+    <category term="NOIP" scheme="https://www.ptoe.cc/tags/noip/"/>
     
   </entry>
   
@@ -453,7 +805,7 @@ class=&quot;math inline&quot;&gt;|&lt;em&gt;a&lt;/em&gt;|,|&lt;em&gt;b&lt;/em&gt
     <link href="https://www.ptoe.cc/2025/07/24/p3916.html"/>
     <id>https://www.ptoe.cc/2025/07/24/p3916.html</id>
     <published>2025-07-24T14:11:08.000Z</published>
-    <updated>2025-07-25T03:51:00.567Z</updated>
+    <updated>2026-01-24T18:06:26.058Z</updated>
     
     
     <summary type="html">&lt;p&gt;给出 &lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;N&lt;/em&gt;&lt;/span&gt; 个点，&lt;span
@@ -469,6 +821,22 @@ class=&quot;math inline&quot;&gt;&lt;em&gt;A&lt;/em&gt;(1), &lt;em&gt;A&lt;/em
     
     <category term="编程" scheme="https://www.ptoe.cc/categories/programming/"/>
     
+    <category term="算法" scheme="https://www.ptoe.cc/categories/programming/algorithm/"/>
+    
+    <category term="数据结构" scheme="https://www.ptoe.cc/categories/programming/algorithm/data-structure/"/>
+    
+    
+    <category term="C++" scheme="https://www.ptoe.cc/tags/cpp/"/>
+    
+    <category term="图论" scheme="https://www.ptoe.cc/tags/graph-theory/"/>
+    
+    <category term="数据结构" scheme="https://www.ptoe.cc/tags/data-structure/"/>
+    
+    <category term="算法" scheme="https://www.ptoe.cc/tags/algorithm/"/>
+    
+    <category term="编程" scheme="https://www.ptoe.cc/tags/programming/"/>
+    
+    <category term="深度优先搜索" scheme="https://www.ptoe.cc/tags/depth-first-search/"/>
     
   </entry>
   
@@ -477,7 +845,7 @@ class=&quot;math inline&quot;&gt;&lt;em&gt;A&lt;/em&gt;(1), &lt;em&gt;A&lt;/em
     <link href="https://www.ptoe.cc/2025/07/24/p7910.html"/>
     <id>https://www.ptoe.cc/2025/07/24/p7910.html</id>
     <published>2025-07-24T14:07:54.000Z</published>
-    <updated>2025-07-25T03:50:52.351Z</updated>
+    <updated>2026-01-24T18:06:26.060Z</updated>
     
     
     <summary type="html">&lt;p&gt;插入排序是一种非常常见且简单的排序算法。小 Z 是一名大一的新生，今天 H
@@ -487,47 +855,24 @@ class=&quot;math inline&quot;&gt;&lt;em&gt;A&lt;/em&gt;(1), &lt;em&gt;A&lt;/em
     
     <category term="编程" scheme="https://www.ptoe.cc/categories/programming/"/>
     
+    <category term="算法" scheme="https://www.ptoe.cc/categories/programming/algorithm/"/>
     
-  </entry>
-  
-  <entry>
-    <title>[C++] P2782 友好城市</title>
-    <link href="https://www.ptoe.cc/2025/07/24/p2782.html"/>
-    <id>https://www.ptoe.cc/2025/07/24/p2782.html</id>
-    <published>2025-07-24T12:14:01.000Z</published>
-    <updated>2025-07-25T03:51:38.312Z</updated>
+    <category term="数据结构" scheme="https://www.ptoe.cc/categories/programming/algorithm/data-structure/"/>
     
     
-    <summary type="html">&lt;p&gt;有一条横贯东西的大河，河有笔直的南北两岸，岸上各有位置各不相同的
-&lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;N&lt;/em&gt;&lt;/span&gt;
-个城市。北岸的每个城市有且仅有一个友好城市在南岸，而且不同城市的友好城市不相同。每对友好城市都向政府申请在河上开辟一条直线航道连接两个城市，但是由于河上雾太大，政府决定避免任意两条航道交叉，以避免事故。编程帮助政府做出一些批准和拒绝申请的决定，使得在保证任意两条航道不相交的情况下，被批准的申请尽量多。&lt;/p&gt;</summary>
+    <category term="C++" scheme="https://www.ptoe.cc/tags/cpp/"/>
     
+    <category term="数据结构" scheme="https://www.ptoe.cc/tags/data-structure/"/>
     
+    <category term="算法" scheme="https://www.ptoe.cc/tags/algorithm/"/>
     
-    <category term="编程" scheme="https://www.ptoe.cc/categories/programming/"/>
+    <category term="编程" scheme="https://www.ptoe.cc/tags/programming/"/>
     
+    <category term="排序算法" scheme="https://www.ptoe.cc/tags/sorting-algorithm/"/>
     
-  </entry>
-  
-  <entry>
-    <title>[C++] P2853 [USACO06DEC] Cow Picnic S</title>
-    <link href="https://www.ptoe.cc/2025/07/24/p2853.html"/>
-    <id>https://www.ptoe.cc/2025/07/24/p2853.html</id>
-    <published>2025-07-24T11:24:16.000Z</published>
-    <updated>2025-07-25T03:51:28.783Z</updated>
+    <category term="CSP-J" scheme="https://www.ptoe.cc/tags/csp-j/"/>
     
-    
-    <summary type="html">&lt;p&gt;&lt;span class=&quot;math inline&quot;&gt;&lt;em&gt;K&lt;/em&gt;(1 ≤ &lt;em&gt;K&lt;/em&gt; ≤ 100)&lt;/span&gt;
-只奶牛分散在 &lt;span
-class=&quot;math inline&quot;&gt;&lt;em&gt;N&lt;/em&gt;(1 ≤ &lt;em&gt;N&lt;/em&gt; ≤ 1000)&lt;/span&gt;
-个牧场．现在她们要集中起来进餐。牧场之间有 &lt;span
-class=&quot;math inline&quot;&gt;&lt;em&gt;M&lt;/em&gt;(1 ≤ &lt;em&gt;M&lt;/em&gt; ≤ 10000)&lt;/span&gt;
-条有向路连接，而且不存在起点和终点相同的有向路．她们进餐的地点必须是所有奶牛都可到达的地方。那么，有多少这样的牧场可供进食呢？&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="编程" scheme="https://www.ptoe.cc/categories/programming/"/>
-    
+    <category term="插入排序" scheme="https://www.ptoe.cc/tags/insertion-sort/"/>
     
   </entry>
   

@@ -31,11 +31,18 @@
 <meta property="og:description" content="一天有 T(1 ≤ T ≤ 106) 个时段。约翰正打算安排他的 N(1 ≤ N ≤ 2.5 × 104) 只奶牛来值班，打扫打扫牛棚卫生。每只奶牛都有自己的空闲时间段 $ S_i,E_i$，只能把空闲的奶牛安排出来值班。而且，每个时间段必需有奶牛在值班。 那么，最少需要动用多少奶牛参与值班呢？如果没有办法安排出合理的方案，就输出 −1。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-10-04T07:34:44.000Z">
-<meta property="article:modified_time" content="2025-10-04T07:38:27.270Z">
+<meta property="article:modified_time" content="2026-01-24T18:06:26.076Z">
 <meta property="article:author" content="元素">
 <meta property="article:tag" content="C++">
+<meta property="article:tag" content="图论">
+<meta property="article:tag" content="最短路">
+<meta property="article:tag" content="最大瓶颈路">
+<meta property="article:tag" content="数据结构">
 <meta property="article:tag" content="算法">
+<meta property="article:tag" content="编程">
 <meta property="article:tag" content="Python">
+<meta property="article:tag" content="贪心算法">
+<meta property="article:tag" content="区间覆盖">
 <meta name="twitter:card" content="summary">
 
 
@@ -167,14 +174,19 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
@@ -257,9 +269,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2025-10-04 15:34:44 / 修改时间：15:38:27" itemprop="dateCreated datePublished" datetime="2025-10-04T15:34:44+08:00">2025-10-04</time>
+      <time title="创建时间：2025-10-04 15:34:44" itemprop="dateCreated datePublished" datetime="2025-10-04T15:34:44+08:00">2025-10-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2026-01-25 02:06:26" itemprop="dateModified" datetime="2026-01-25T02:06:26+08:00">2026-01-25</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -268,6 +286,14 @@
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
           <a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/programming/algorithm/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/programming/algorithm/data-structure/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
         </span>
     </span>
 
@@ -363,6 +389,18 @@ target="_blank" rel="noopener" href="https://www.luogu.com.cn/discuss/613052">�
   </div>
 </div>
 
+          <div class="post-tags">
+              <a href="/tags/cpp/" rel="tag"># C++</a>
+              <a href="/tags/graph-theory/" rel="tag"># 图论</a>
+              <a href="/tags/shortest-path/" rel="tag"># 最短路</a>
+              <a href="/tags/maximum-bottleneck-path/" rel="tag"># 最大瓶颈路</a>
+              <a href="/tags/data-structure/" rel="tag"># 数据结构</a>
+              <a href="/tags/algorithm/" rel="tag"># 算法</a>
+              <a href="/tags/programming/" rel="tag"># 编程</a>
+              <a href="/tags/python/" rel="tag"># Python</a>
+              <a href="/tags/greedy-algorithm/" rel="tag"># 贪心算法</a>
+              <a href="/tags/interval-coverage/" rel="tag"># 区间覆盖</a>
+          </div>
 
         
 
@@ -397,7 +435,7 @@ target="_blank" rel="noopener" href="https://www.luogu.com.cn/discuss/613052">�
   </div>
   <div class="copyright">
     &copy; 
-    <span itemprop="copyrightYear">2025</span>
+    <span itemprop="copyrightYear">2026</span>
     <span class="with-love">
       <i class="fa fa-heart"></i>
     </span>
