@@ -1,9 +1,20 @@
 ---
-title: "[C++] 菜鸟驿站模拟"
+ai_analyzed: true
+categories:
+- 编程
+- 算法
+- 数据结构
 date: 2025-12-25 11:19:17
 tags:
-categories: 编程
+- C++
+- 编程
+- 算法
+- 数据结构
+- 模拟
+title: '[C++] 菜鸟驿站模拟'
 ---
+
+
 
 闲着没事写的
 

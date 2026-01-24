@@ -3,3 +3,5 @@ db.json
 public/
 .deploy_git/
 code/
+llm.txt
+.venv/

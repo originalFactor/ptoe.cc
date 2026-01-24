@@ -1,9 +1,21 @@
 ---
-title: '[C++] 士兵排列'
+ai_analyzed: true
+categories:
+- 编程
+- 算法
+- 数据结构
 date: 2025-06-10 21:09:49
-categories: 编程
 mathjax: true
+tags:
+- C++
+- 编程
+- 算法
+- 排序算法
+- 数据结构
+title: '[C++] 士兵排列'
 ---
+
+
 
 ## 题面
 
@@ -46,7 +58,7 @@ mathjax: true
 
 由题意，使用STL Deque双向队列模拟，即可
 
-*注：Wayback Machine的代码似乎有问题，我重写了，和之前的思路不一样;)，但是理论上没问题。另外，我找不到那题的OJ了*
+_注：Wayback Machine的代码似乎有问题，我重写了，和之前的思路不一样;)，但是理论上没问题。另外，我找不到那题的OJ了_
 
 ```cpp
 #include <bits/stdc++.h>

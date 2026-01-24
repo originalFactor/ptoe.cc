@@ -1,9 +1,20 @@
 ---
-title: '[C++] 找数'
+ai_analyzed: true
+categories:
+- 编程
+- 算法
+- 数据结构
 date: 2025-06-13 20:13:33
-categories: 编程
 mathjax: true
+tags:
+- 数据结构
+- 排序算法
+- C++
+- 算法
+title: '[C++] 找数'
 ---
+
+
 
 有两组数字，请找出第二组数中的哪些数在第一组中出现了，并从小到大输出。
 
