@@ -3,11 +3,14 @@ CSP-J: csp-j
 GESP: gesp
 NOIP: noip
 Python: python
+三角函数: trigonometry
 位运算: bit-manipulation
+几何: geometry
 动态规划: dynamic-programming
 区间覆盖: interval-coverage
 单调栈: monotonic-stack
 图论: graph-theory
+学科: subject
 归并排序: merge-sort
 排序算法: sorting-algorithm
 插入排序: insertion-sort
@@ -19,6 +22,7 @@ Python: python
 树: tree
 模拟: simulation
 深度优先搜索: depth-first-search
+立体几何: solid-geometry
 算法: algorithm
 编程: programming
 贪心算法: greedy-algorithm
