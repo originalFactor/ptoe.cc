@@ -64,7 +64,7 @@ pagination_dir: page
 per_page: 10
 permalink: :year/:month/:day/:title.html
 permalink_defaults: null
-post_asset_folder: true
+post_asset_folder: false
 pretty_urls:
   trailing_html: true
   trailing_index: false
