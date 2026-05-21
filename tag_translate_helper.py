@@ -1,27 +1,14 @@
-# Copyright 2026 originalFactor
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     https://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-
 # ------------------------
 # Imports
 # ------------------------
 
 from hmac import new
 from yaml import safe_load, YAMLError, safe_dump
-from os import walk
+from os import walk, getenv
 from os.path import join as pathjoin, isfile
 from openai import OpenAI
 from json import loads
+from typing import cast
 
 # ------------------------
 # Global variables
@@ -37,9 +24,6 @@ need_analyze: set[str] = set()
 # ------------------------
 # Pre-check required files
 # ------------------------
-
-if not isfile("llm.txt"):
-    raise FileNotFoundError("llm.txt not found.")
 
 if not isfile("_config.before.yml"):
     raise FileNotFoundError("_config.before.yml not found.")
@@ -63,8 +47,28 @@ else:
 # Load LLM config
 # ------------------------
 
-with open("llm.txt", encoding="utf-8") as f:
-    endpoint, model, api_key = f.read().split()
+# 优先从环境变量读取，用于 GitHub Actions
+_endpoint = getenv("LLM_ENDPOINT")
+_model = getenv("LLM_MODEL")
+_api_key = getenv("LLM_API_KEY")
+
+# 如果环境变量不存在，尝试从本地文件读取
+if not all([_endpoint, _model, _api_key]):
+    if isfile("llm.txt"):
+        with open("llm.txt", encoding="utf-8") as f:
+            parts = f.read().split()
+            _endpoint, _model, _api_key = parts[0], parts[1], parts[2]
+    else:
+        raise ValueError(
+            "LLM configuration not found. Set LLM_ENDPOINT, LLM_MODEL, LLM_API_KEY environment variables or create llm.txt file."
+        )
+
+if not _endpoint or not _model or not _api_key:
+    raise ValueError("LLM configuration incomplete.")
+
+endpoint: str = _endpoint
+model: str = _model
+api_key: str = _api_key
 
 client = OpenAI(api_key=api_key, base_url=endpoint)
 
