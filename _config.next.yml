@@ -182,7 +182,7 @@ links:
   #Title: https://example.com
   Zyx2008: https://www.dorazhang.cn/
   Zyx2012: https://blog.zyx-2012.cn/
-  Milobo:  https://www.milobo.cn/
+  Milobo:  https://www.milobo.moe/
 
 # Table of Contents in the Sidebar
 # Front-matter variable (nonsupport wrap expand_all).
@@ -568,12 +568,12 @@ math:
   every_page: false
 
   mathjax:
-    enable: true
+    enable: false
     # Available values: none | ams | all
     tags: none
 
   katex:
-    enable: false
+    enable: true
     # See: https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex
     copy_tex: false
 
