@@ -51,8 +51,8 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0
       hexo-theme-next:
-        specifier: ^8.27.0
-        version: 8.27.0
+        specifier: ^8.29.0
+        version: 8.29.0
       js-yaml:
         specifier: ^5.2.0
         version: 5.2.0
@@ -112,8 +112,8 @@ packages:
   bluebird@3.7.2:
     resolution: {integrity: sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg==}
 
-  brace-expansion@1.1.15:
-    resolution: {integrity: sha512-EwOCDEex4quD37XhqM3omwtMoJjr//isUZz1JopUNWms+4Z2ViyM/k1YIRePpoVNnQhENnxtFjLaxNHrT7xIUg==}
+  brace-expansion@1.1.18:
+    resolution: {integrity: sha512-Edep/X9fGqVNmzKBVsDYIOtD+z1tuezV70LBjdCst9Tqu76lsnvRiZ6oTic1n+/BIwX6QDGAO94PN4N2SADvtw==}
 
   brace-expansion@2.1.1:
     resolution: {integrity: sha512-WR1cURNjuvBLMZBMbqM0UoE+WAfdUcEV1ccD8PVBVOI+Z3ND4+SZbN8RsfT2bMuG1qwz5RFvPukSZm5fF2D5eA==}
@@ -402,8 +402,8 @@ packages:
     resolution: {integrity: sha512-u4s0ty9Aew6jV+a9oMrXBwhrRpUQ0U8PWM/88a5aHgDru58VY81mVrxOFxs788NAsWQ8OvsJtF5m7mnXoRnSIA==}
     engines: {node: '>=12.13.0'}
 
-  hexo-theme-next@8.27.0:
-    resolution: {integrity: sha512-5rD5njY+u3ThgD3jwz/4tQhgCJPxWJ5tBshOl+IHv04UlY76/UjUn8fEamJUVcznbmPqEVQ/fv5ED+6Y6v5B2Q==}
+  hexo-theme-next@8.29.0:
+    resolution: {integrity: sha512-mj1wFEwEQCcKeJqnKqV559WsqyVRzZC83PBjjWvOrjBAADvW6gyaCk6X4Zok55Xp6P+7an5q68y1nyzJHOVIAg==}
 
   hexo-util@2.7.0:
     resolution: {integrity: sha512-hQM3h34nhDg0bSe/Tg1lnpODvNkz7h2u0+lZGzlKL0Oufp+5KCAEUX9wal7/xC7ax3/cwEn8IuoU75kNpZLpJQ==}
@@ -778,7 +778,7 @@ packages:
     engines: {node: '>=8'}
 
   stylus@https://codeload.github.com/stylus/stylus/tar.gz/6de45269dfee369f1347e1e85c70325a7bf18fa2:
-    resolution: {tarball: https://codeload.github.com/stylus/stylus/tar.gz/6de45269dfee369f1347e1e85c70325a7bf18fa2}
+    resolution: {gitHosted: true, tarball: https://codeload.github.com/stylus/stylus/tar.gz/6de45269dfee369f1347e1e85c70325a7bf18fa2}
     version: 0.62.0
     hasBin: true
 
@@ -885,7 +885,7 @@ snapshots:
 
   bluebird@3.7.2: {}
 
-  brace-expansion@1.1.15:
+  brace-expansion@1.1.18:
     dependencies:
       balanced-match: 1.0.2
       concat-map: 0.0.1
@@ -1224,7 +1224,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  hexo-theme-next@8.27.0: {}
+  hexo-theme-next@8.29.0: {}
 
   hexo-util@2.7.0:
     dependencies:
@@ -1429,7 +1429,7 @@ snapshots:
 
   minimatch@3.1.5:
     dependencies:
-      brace-expansion: 1.1.15
+      brace-expansion: 1.1.18
 
   minimatch@5.1.9:
     dependencies:
